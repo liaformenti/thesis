@@ -1,0 +1,9 @@
+Figure out why apsrev bib style file gives weird in text labels
+- ask Brigitte / Tony
+This is to set up physical review letters reference.
+
+Today, you altered the main document file, uw-ethesis.tex, to suit
+your formatting needs. Next week, do frontpgs with your info,
+change all filenames, delete files you don't need, and simplify chapters
+
+Make this a git repo

@@ -1,0 +1,103 @@
+\documentclass[12pt]{article}
+\usepackage{amsfonts,amssymb,amsmath}
+\usepackage{float}
+\parindent 0px % Don't indent my paragraphs.
+\pagestyle{empty} % turning off page numbers
+
+\begin{document}
+The distributive property states that $a(b+c)=ab+ac$ for all $a,b,c\in\mathbb{R}$.\\[6pt] %6pt for adding extra spacing.
+The equivalence class of $a$ is $[a]$.\\
+% Curly brackets won't show up in math mode.
+% You have to backslash them.
+The set $A$ is defined to be $\{1,2,3\}$.\\
+The cost is $\$10.00$.\\
+% To auto resize the brackets for math mode, use \left( and \right)
+$$2\left(\frac{1}{x^2-1}\right)$$
+$$2\left\{\frac{1}{x^2-1}\right\}$$
+% Angular brackets
+$$2\left\langle\frac{1}{x^2-1}\right\rangle$$
+% Abs value (use pipe)
+$$2\left|\frac{1}{x^2-1}\right|$$
+% One-sided brackets -\left needs \right. Use period after \left to not draw left bracket.
+$$\left.\frac{dy}{dx}\right|_{x=1}$$
+$$\left(\frac{1}{1+\left(\frac{1}{1+x}\right)}\right)$$
+
+Tables:
+% c stands for centered, as in you want text centered in your column.
+% Other options are l and r for left and right.
+
+\begin{tabular}{|c||c|c|c|c|c|}
+\hline
+$x$ & 1 & 2 & 3 & 4 & 5 \\  % end of row
+\hline % delineating horizontal line
+$f(x)$ & 10 & 11 & 12 & 13 & 14 \\
+\hline
+\end{tabular}
+
+\vspace{1cm}
+
+% Note: the compiler chooses its "best" position for the table. 
+% To get out of this, use [H]. Need float package.
+\begin{table}[H]
+\centering % centre the table
+\def\arraystretch{3} % easy way to vertically pad table cells.
+\begin{tabular}{|c||c|c|c|c|c|}
+\hline
+$x$ & 1 & 2 & 3 & 4 & 5 \\  % end of row
+\hline % delineating horizontal line
+$f(x)$ & $\frac{1}{2}$ & 11 & 12 & 13 & 14 \\
+\hline
+\end{tabular}
+\caption{These values are a sample of the function $f(x)$.}
+\end{table}
+
+% Fancy table
+% Tables get auto numbered, tabular alone don't.
+\begin{table}[H]
+\centering % centre the table
+\def\arraystretch{1.5} % easy way to vertically pad table cells.
+\begin{tabular}{|c|c|}
+\hline
+$f'(x)$ & $f(x)$ \\  % end of row
+\hline % delineating horizontal line
+$x>0$ & The function $f(x)$ is increasing. \\
+\hline
+\end{tabular}
+\end{table}
+
+% BLAH BLAH BLAH long sentences in tables.
+\begin{table}[H]
+\centering % centre the table
+\caption{Table with a really long sentence.} % Notice the caption is on the top now.
+\def\arraystretch{1.5} % easy way to vertically pad table cells.
+\begin{tabular}{|l|p{2in}|} % This is where you make sure the long line gets wrapped.
+\hline
+$f'(x)$ & $f(x)$ \\  % end of row
+\hline % delineating horizontal line
+$x>0$ & The function $f(x)$ is increasing. What a beautiful thing! OMG I'm really enjoying this tutorial. Free thought is useful. Good day to you. \\
+\hline
+\end{tabular}
+\end{table}
+
+Arrays:
+% Inside align, you're automatically in math mode.
+% To get text using \text
+% You can force spaces in math mode with \space.
+\begin{align}
+5x^2 \space\text{My words here}
+\end{align}
+
+Arrays:
+% Inside align, you're automatically in math mode.
+% To get text using \text
+% You can force spaces in math mode with \space.
+% To line up equals signs put use &=
+% Throws an error if you backslash the last array line of align block.
+% Auto numbers each eqn of the array (carries forward to next eqns).
+% Use asterix to kill auto numbering.
+\begin{align*}
+5x^2-9&=x+3\\
+5x^2-x-12&=0
+\end{align*}
+
+\end{document}
