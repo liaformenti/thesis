@@ -13,3 +13,6 @@ revtex4-2-tds/
 *.toc
 uw*
 *.swp
+*.out
+*.bbl
+stylesStuff/atlaslatex

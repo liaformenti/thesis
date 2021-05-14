@@ -115,7 +115,8 @@
     urlcolor=black}
 }{} % end of ifthenelse (no else)
 
-\usepackage[automake,toc,abbreviations]{glossaries-extra} % Exception to the rule of hyperref being the last add-on package
+\usepackage[automake,toc,abbreviations]{}
+% \usepackage[automake,toc,abbreviations]{glossaries-extra} % Exception to the rule of hyperref being the last add-on package
 % If glossaries-extra is not in your LaTeX distribution, get it from CTAN (http://ctan.org/pkg/glossaries-extra), 
 % although it's supposed to be in both the TeX Live and MikTeX distributions. There are also documentation and 
 % installation instructions there.
@@ -155,8 +156,8 @@
 % \let\cleardoublepage\clearemptydoublepage
 
 % Define Glossary terms (This is properly done here, in the preamble and could also be \input{} from a separate file...)
-\input{glossaries}
-\makeglossaries
+% \input{glossaries}
+% \makeglossaries
 
 %======================================================================
 %   L O G I C A L    D O C U M E N T
@@ -179,9 +180,9 @@
 % Only use \documentclass or \begin{document} and \end{document} commands in this master document.
 % Tip: Putting each sentence on a new line is a way to simplify later editing.
 %----------------------------------------------------------------------
-\input{chapter-introduction.tex}
 
-\input{chapter-observations.tex}
+\input{chapters/2_Characterization_of_sTGC_modules_using_cosmic_rays}
+\input{chapters/4_Validating_xray_offsets_with_cosmics_data}
 
 %----------------------------------------------------------------------
 % END MATERIAL
@@ -192,7 +193,8 @@
 
 % The following statement selects the style to use for references.  
 % It controls the sort order of the entries in the bibliography and also the formatting for the in-text labels.
-\bibliographystyle{plain}
+% Tony used unsrt in his PhD thesis
+\bibliographystyle{unsrt}
 % This specifies the location of the file containing the bibliographic information.  
 % It assumes you're using BibTeX to manage your references (if not, why not?).
 % \cleardoublepage % This is needed if the "book" document class is used, to place the anchor in the correct page, because the bibliography will start on its own page.
@@ -225,9 +227,9 @@
 
 % GLOSSARIES (Lists of definitions, abbreviations, symbols, etc. provided by the glossaries-extra package)
 % -----------------------------
-\printglossaries
-\cleardoublepage
-\phantomsection		% allows hyperref to link to the correct page
+% \printglossaries
+% \cleardoublepage
+% \phantomsection		% allows hyperref to link to the correct page
 
 %----------------------------------------------------------------------
 \end{document} % end of logical document
