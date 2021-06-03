@@ -80,7 +80,7 @@
 %\usepackage{nomencl} % For a nomenclature (optional; available from ctan.org)
 \usepackage{amsmath,amssymb,amstext} % Lots of math symbols and environments
 \usepackage[pdftex]{graphicx} % For including graphics N.B. pdftex graphics driver 
-
+\usepackage{siunitx}
 % Hyperlinks make it very easy to navigate an electronic document.
 % In addition, this is where you should specify the thesis title and author as they appear in the properties of the PDF document.
 % Use the "hyperref" package 
@@ -159,6 +159,10 @@
 % \input{glossaries}
 % \makeglossaries
 
+% My commands
+%\newcommand{\um}{$\upmu$m} % micrometers
+%\newcommand{\urad}{$\upmu$rad} % microrads
+
 %======================================================================
 %   L O G I C A L    D O C U M E N T
 % The logical document contains the main content of your thesis.
@@ -223,8 +227,8 @@
 \chapter*{APPENDICES}
 \addcontentsline{toc}{chapter}{APPENDICES}
 % Appendices are just more chapters, with different labeling (letters instead of numbers).
-\input{appendix-matlab_plots.tex}
-
+% \input{appendices/appendix-matlab_plots.tex}
+\input{appendices/appendix-area_bin_size.tex}
 % GLOSSARIES (Lists of definitions, abbreviations, symbols, etc. provided by the glossaries-extra package)
 % -----------------------------
 % \printglossaries
