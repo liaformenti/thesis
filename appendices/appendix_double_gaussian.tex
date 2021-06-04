@@ -9,4 +9,5 @@
 % --------------------------------------------------
 
 The distribution of residuals should be modelled by a double gaussian fit:
-$$ G(r) = A_{s}exp\left[ \frac{-(r-\mu)^{2}}{2\sigma_s^{2}} \right] $$
+$$ G(r) = A_{s}exp\left[ \frac{-(r-\mu)^{2}}{2\sigma_s^{2}} \right] + A_{b}exp\left[ \frac{-(r-\mu)^{2}}{2\sigma_b^{2}} \right]$$
+where one gaussian captures the signal and the second captures residuals resulting from noise tracks. The signal is taken as the higher amplitude, smaller width gaussian. However, a single gaussian fit is less prone to failure. In this work the gaussian fits were performed by initially setting the amplitude, mean and standard deviation to 100, the histogram mean, and the RMS respectively and restricting the fit range to be $\pm$1 RMS from the histogram mean. 
