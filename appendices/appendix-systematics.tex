@@ -1,8 +1,20 @@
 % ==================================================
 % Appendix: Analysis Systematics %
 % ==================================================
+
+%TODO : Make mean diff plots not full page portrait. Half page would suffice. 
+%TODO : Currently, section A.2 figure goes in A.3 section. Organize this once you're done writing. 
+
 \chapter[Analysis systematics]{Study of analysis systematics}
 \label{appendix:systematics}
+
+% Sections:
+% Doub gaus vs gaus -- check!
+% Area bin size -- check!
+% Residual distribution bin size?
+% 2900V vs 3100V? I think just saying strip efficiency is higher for 3100V is sufficient, although the sigmas are also smaller.
+% DNL
+% ReClustering fit function? I think just saying I used an accepted standard is ok.
 
 % --------------------------------------------------
 \section{Residual distribution fit function}
@@ -32,7 +44,7 @@ For all residual distributions in \SI{100}{\milli\meter} by \SI{100}{\milli\mete
 \begin{figure}
     \centering
     \includegraphics[width = \textwidth]{figures/figure_compare_residual_fits_QL2C04_2900V_2021-02-08_2_fit_range_mean_pm_RMS_minus_quick_and_dirty_2900V_log_scale_layer1_fixedlayers34.png}
-    \caption{Difference in residual distribution means and standard deviations for a gaussian and double gaussian fit.}
+    \caption{Difference in residual distribution means and $\sigma$'s for a gaussian and double gaussian fit.}
     \label{fig:double_gaussian_compare_fits}
 \end{figure}
 
@@ -57,3 +69,67 @@ Two other factors also inform the width of the region. First, since the hits' x-
     \caption{Difference in cosmic residual means around x-ray residuals for square bins of 100 mm width and 200 mm width for QL2.C.4.}
     \label{fig:area_bin_size_mean_diff}
 \end{figure}
+
+% --------------------------------------------------
+\section{Differential non-linearity}
+% --------------------------------------------------
+\label{appendix:systematics_dnl}
+
+In this context, differential non-linearity (DNL) arises from fitting the discretely sampled cluster PDO distribution, which results in shifts in the reconstructed mean depending periodically on the relative position of the avalanche with respect to the strip center, as summarized in section 2.4 of Lefebvre's thesis \cite{lefebvre_thesis} based on Endo, 1981 \cite{endo_systematic_1981}. The cluster mean can be corrected for DNL using the equation:
+\begin{equation}
+\label{eqn:dnl_corr}
+y' = y + a \sin \left( 2 \pi y_{rel} \right)
+\end{equation}
+
+where $y$ is the cluster mean, $y_{rel}$ is the relative position of the cluster mean with respect to the strip's center, $a$ is the amplitude of the correction, and $y'$ is the corrected cluster mean. The amplitude can be derived by comparing the reconstructed hit position to the expected hit position, as done in Abusleme, 2016 \cite{abusleme_performance_2016}. With cosmic muons, there is no reference hit position to compare to, so track residuals can be used as a proxy. Lefebvre calculates the amplitude using cosmics data for sTGC quadruplets in his thesis, \cite{lefebvre_thesis} in an iterative procedure that also corrects for inter-layer misalignment. The amplitude of the corrections is ~\SI{50}{\micro\meter} for each layer and cluster size. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width = \textwidth]{figures/figure_dnl_profiles_blue_QL2P08_3100V_2021-06-18_no_dnl_green_QL2P08_3100V_2021-06-18_2_50um_universal_DNL_layer4_fixed12.pdf}
+    \caption{Effect applying a \SI{50}{\micro\meter} DNL correction to the cluster means on the residual vs $y_{rel}$ distribution for tracks built from layers 1 and 2 and extrapolated to layer 4 for QL2.P.8.}
+    \label{fig:dnl_corr_effect}
+\end{figure}
+
+The hallmark of DNL effect is the period pattern in the $y_{rel}$ distribution, and the effect of correcting the cluster means using an amplitude of \SI{50}{\micro\meter} is shown in figure \ref{fig:dnl_corr_effect}. Although the correction is not large enough in this case, the figure shows that the correction does reduce the DNL effect. Slightly better performance is seen in the interpolation tracking combinations where the quality of the residuals is better.  
+
+DNL corrections for cosmic muon data are difficult because the DNL effect is combined with the effect of inter-layer misalignments, shifts in the strip pattern on each board and noise. The issue is heightened in this analysis because tracks are built from two layers, and so are less robust. Moreover, the effect of the DNL correction on the mean of the residual distribution in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} area is on the micrometer level in the worst extrapolation case (see \ref{fig:dnl_compare_fits}).
+
+\begin{figure}
+    \centering
+    \includegraphics[width = \textwidth]{figures/figure_compare_residual_fits_QL2P08_3100V_2021-06-18_no_dnl_minus_QL2P08_3100V_2021-06-18_2_50um_universal_DNL_layer4_fixedlayers12.png}
+    \caption{Difference in residual distribution means and $\sigma$'s with and without DNL correction for residuals on layer 4 from reference layers 1 and 2 for QL2.P.8.}
+    \label{fig:dnl_compare_fits}
+\end{figure}
+
+The $\sigma$'s of the residual distributions do shrink with the DNL correction but not so much to affect the residual means, which are the important parameter for this analysis. Therefore, since the effect of the DNL correction is negligible, it was not pursued further.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
