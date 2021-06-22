@@ -6,7 +6,7 @@ revtex4-2-tds/
 *.aux
 *.blg
 *glo*
-*.pdf
+thesis.pdf
 *.log
 *.ist
 *.gz
