@@ -2,6 +2,9 @@
 % Based on: University of Waterloo Thesis Template for LaTeX 
 %======================================================================
 
+%TODO Who is the audience of my thesis?
+
+
 % DON'T FORGET TO ADD YOUR OWN NAME AND TITLE in the "hyperref" package configuration below. 
 % THIS INFORMATION GETS EMBEDDED IN THE PDF FINAL PDF DOCUMENT.
 % You can view the information if you view properties of the PDF document.
@@ -36,11 +39,9 @@
 %\documentclass[letterpaper,12pt,titlepage,openright,twoside,final]{book}
 
 % Some LaTeX commands I define for my own nomenclature.
-\newcommand{\package}[1]{\textbf{#1}} % package names in bold text
+\newcommand{\package}[1]{\texttt{#1}} % package names in bold text
 \newcommand{\cmmd}[1]{\textbackslash\texttt{#1}} % command name in tt font 
 \newcommand{\href}[1]{#1} % does nothing, but defines the command so the print-optimized version will ignore \href tags (redefined by hyperref pkg).
-%\newcommand{\texorpdfstring}[2]{#1} % does nothing, but defines the command
-% Anything defined here may be redefined by packages added below...
 
 %% PACKAGES %%
 
