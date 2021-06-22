@@ -6,7 +6,8 @@ revtex4-2-tds/
 *.aux
 *.blg
 *glo*
-thesis.pdf
+./*.pdf
+learningLatex/*.pdf
 *.log
 *.ist
 *.gz
