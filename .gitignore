@@ -6,7 +6,7 @@ revtex4-2-tds/
 *.aux
 *.blg
 *glo*
-./*.pdf
+thesis.pdf
 learningLatex/*.pdf
 *.log
 *.ist
@@ -15,5 +15,5 @@ learningLatex/*.pdf
 uw*
 *.swp
 *.out
-*.bbl
+thesis.bbl
 stylesStuff/atlaslatex
