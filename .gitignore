@@ -3,7 +3,8 @@
 *.aux
 *.blg
 *glo*
-*.pdf
+thesis.pdf
+learningLatex/*.pdf
 *.log
 *.ist
 *.gz
@@ -11,3 +12,5 @@
 uw*
 *.swp
 stylesStuff/*
+*.out
+thesis.bbl
