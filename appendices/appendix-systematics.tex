@@ -38,12 +38,11 @@ where $r$ is the residual, $A$ is the gaussian amplitude, $\mu$ is the gaussian 
 
 A single gaussian fit failed less often than a double gaussian fit. The gaussian fits were performed by initially estimating the amplitude to be 100 tracks, the gaussian mean to be the histogram mean, and gaussian $\sigma$ to be the RMS. The fit range was restricted to $\pm$1 RMS from the histogram mean. The modification helped the gaussian fit capture the signal peak. An example residual distribution is shown in figure \ref{fig:double_gaussian_example_fit}. 
 
-%TODO Why is this figure blurry?
 %TODO this doesn't need to be a full page figure.
 
 \begin{figure}
     \centering
-    \includegraphics[width = \textwidth]{figures/figure_double_gaussian_quick_and_dirty_2900V_log_scale_gaussian_QL2C04_2900V_2021-02-08_2_xbin_10_ybin_5_100mm.png}
+    \includegraphics[width = 0.5\textwidth]{figures/figure_double_gaussian_quick_and_dirty_2900V_log_scale_gaussian_QL2C04_2900V_2021-02-08_2_xbin_10_ybin_5_100mm.pdf}
     \caption{Residual distribution for tracks on layer 1 built from hits on layers 3 and 4 for $x\in\left[-3.00, 97.00\right],  y\in\left[394.60, 494.60\right] mm$ for QL2.C.4 fit with a double gaussian and a single gaussian in a range of $\pm$1 RMS from the histogram mean.}
     \label{fig:double_gaussian_example_fit}
 \end{figure}
@@ -54,7 +53,7 @@ The gaussian $\sigma$ should be larger than the double gaussian $\sigma$ because
 
 \begin{figure}
     \centering
-    \includegraphics[width = \textwidth]{figures/figure_compare_residual_fits_QL2C04_2900V_2021-02-08_2_fit_range_mean_pm_RMS_minus_quick_and_dirty_2900V_log_scale_layer1_fixedlayers34.png}
+    \includegraphics[width = 0.7\textwidth]{figures/figure_compare_residual_fits_QL2C04_2900V_2021-02-08_2_fit_range_mean_pm_RMS_minus_quick_and_dirty_2900V_log_scale_layer1_fixedlayers34.pdf} 
     \caption{Difference in residual distribution means and $\sigma$'s for a gaussian and double gaussian fit, for all residual distributions in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins on layer 1 built from hits on layers 3 and 4 for QL2.C.4, data taken at 2900 V.}
     \label{fig:double_gaussian_compare_fits}
 \end{figure}
@@ -81,12 +80,12 @@ Two other factors inform the width of the region. First, since the hits' x-coord
 
 \begin{figure}
     \centering
-    \includegraphics[width = \textwidth]{figures/compare_residual_fits_around_xrays_QL2C04_3100V_2021-05-20_100mm_width_bins_minus_QL2C04_3100V_2021-06-02_200mm_width_bins_means_difference.png}
+    \includegraphics[width = 0.5\textwidth]{figures/compare_residual_fits_around_xrays_QL2C04_3100V_2021-05-20_100mm_bins_minus_QL2C04_3100V_2021-06-02_200mm_bins_means_difference.pdf}
     \caption{Difference in cosmic residual means around x-ray residuals for square bins of 100 mm width and 200 mm width for QL2.C.4.}
     \label{fig:area_bin_size_mean_diff}
 \end{figure}
 
-For this analysis, \SI{100}{\milli\meter} by \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins were used.
+For this analysis, \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins were used.
 
 % --------------------------------------------------
 \section{Differential non-linearity}
