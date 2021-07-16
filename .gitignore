@@ -1,18 +1,13 @@
-University of Waterloo Thesis Template/
-'University of Waterloo Thesis Template.zip'
-revtex4-2-tds/
 *.bst
 *.zip
 *.aux
 *.blg
 *glo*
-thesis.pdf
+*.pdf
 *.log
 *.ist
 *.gz
 *.toc
 uw*
 *.swp
-*.out
-*.bbl
-stylesStuff/atlaslatex
+stylesStuff/*
