@@ -1,0 +1,17 @@
+% ==================================================
+% CHAPTER 2: Characterization of sTGC modules using cosmic rays %
+% ==================================================
+
+\chapter{Characterization of sTGC modules using cosmic rays}
+
+The cosmic muon data collected is high in statistics, and the clean trail of ionization left by the muons leaves a clean signal.
+
+% --------------------------------------------------
+\section{Measuring alignment using cosmics data}
+% --------------------------------------------------
+The cosmics data set is rich, but it lacks an absolute coordinate system. The true position of individual cosmic muons is not known, and in the analysis the four detector planes float with respect to a software-implemented origin  not associated with a fixed physical location. The result is that a relative coordinate system must be used to define alignment parameters. Lefebvre defines a coordinate system from two sTGC layers, referred to as fixed layers\cite{lefebvre_thesis}. The hits on the two fixed layers are used to create a track that can be interpolated or extrapolated to the other two layers. The residual is defined as 
+\begin{equation}
+    \Delta_i = y_{i,hit} - y_{i,track}
+\end{equation}
+The mean of residuals for all tracks in a local area will be shifted systematically by the misalignments between layers, as first shown in Lefebvre, 2018\cite{lefebvre_thesis}. 
+
