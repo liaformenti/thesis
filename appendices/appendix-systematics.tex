@@ -42,19 +42,19 @@ A single gaussian fit failed less often than a double gaussian fit. The gaussian
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.5\textwidth]{figures/figure_double_gaussian_quick_and_dirty_2900V_log_scale_gaussian_QL2C04_2900V_2021-02-08_2_xbin_10_ybin_5_100mm.pdf}
-    \caption{Residual distribution for tracks on layer 1 built from hits on layers 3 and 4 for $x\in\left[-3.00, 97.00\right],  y\in\left[394.60, 494.60\right] mm$ for QL2.C.4 fit with a double gaussian and a single gaussian in a range of $\pm$1 RMS from the histogram mean.}
+    \includegraphics[width = 0.85\textwidth]{figures/figure_double_gaus_vs_gaus_example_fit_QL2P08_3100V_2021-06-18_and_2021-07-19_xbin_10_ybin_5_layer4_fixedlayers12.pdf}
+    \caption{Residual distribution for tracks on layer 4 built from hits on layers 1 and 2 for $x\in\left[-3.00, 97.00\right],  y\in\left[394.60, 494.60\right] mm$ for QL2.P.8 fit with a double gaussian and a single gaussian in a range of $\pm$1 RMS from the histogram mean.}
     \label{fig:double_gaussian_example_fit}
 \end{figure}
 
-For all residual distributions in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins on layer 1 built from hits on layers 3 and 4, the difference in gaussian and double gaussian means and $\sigma$'s is shown in figure \ref{fig:double_gaussian_compare_fits}. Since the RMS of the residual mean differences distribution is less than \SI{50}{\micro\meter} the gaussian fit gave the same result within the required precision. Moreover, this is for the tracking combination with the worst extrapolation lever arm and the widest distribution of mean differences; the interpolation combinations have narrower distributions. 
+For all residual distributions in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins on layer 4 built from hits on layers 1 and 2, the difference in gaussian and double gaussian means and $\sigma$'s is shown in figure \ref{fig:double_gaussian_compare_fits}. Since the RMS of the residual mean differences distribution is less than \SI{50}{\micro\meter} the gaussian fit gave the same result within the required precision. Moreover, this is for the tracking combination with the worst extrapolation lever arm and the widest distribution of mean differences; the interpolation combinations have narrower distributions. 
 
 The gaussian $\sigma$ should be larger than the double gaussian $\sigma$ because the gaussian distribution includes the effect of the noise tracks with large residuals, while the double gaussian models signal and background residuals separately. For this analysis, only the residual mean was important, so the systematic overestimate of the signal $\sigma$ in the gaussian fit shown on the right of figure \ref{fig:double_gaussian_compare_fits} was allowed.
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.7\textwidth]{figures/figure_compare_residual_fits_QL2C04_2900V_2021-02-08_2_fit_range_mean_pm_RMS_minus_quick_and_dirty_2900V_log_scale_layer1_fixedlayers34.pdf} 
-    \caption{Difference in residual distribution means and $\sigma$'s for a gaussian and double gaussian fit, for all residual distributions in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins on layer 1 built from hits on layers 3 and 4 for QL2.C.4, data taken at 2900 V.}
+    \includegraphics[width = 0.8\textwidth]{figures/figure_compare_residual_fits_QL2P08_3100V_2021-06-18_no_dnl_minus_QL2P08_3100V_2021-07-19_doub_gaus_log_scale_layer4_fixedlayers12.pdf} 
+    \caption{Difference in residual distribution means and $\sigma$'s for a gaussian and double gaussian fit, for all residual distributions in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins on layer 4 built from hits on layers 1 and 2 for QL2.P.8.}
     \label{fig:double_gaussian_compare_fits}
 \end{figure}
 
