@@ -2,20 +2,57 @@
 % Appendix: Analysis Systematics %
 % ==================================================
 
-%TODO : Make mean diff plots not full page portrait. Half page would suffice. 
-%TODO : Currently, section A.2 figure goes in A.3 section. Organize this once you're done writing. 
-
-%TODO : Do I need to specify each quad? The voltage? 
+%TODO : Organize figure positioning once you're done writing. 
 
 \chapter[Analysis systematics]{Study of systematic uncertainties when using cosmics data for alignment studies}
 \label{appendix:systematics}
 
 % Sections:
-% Doub gaus vs gaus -- check!
-% Area bin size -- check!
+% 2900 V vs 3100 V 
+% Doub gaus vs gaus
+% Area bin size
 % Residual distribution bin size?
+%TODO : Summary of systematic uncertainties section.
 
-%TODO 2900V vs 3100V? I think just saying strip efficiency is higher for 3100V is sufficient, although the sigmas are also smaller. But L4 F12 residual mean difference RMS is 74 um ==> Add 2900V 3100V section
+% --------------------------------------------------
+\section{Cosmic muon data collection voltage}
+% --------------------------------------------------
+\label{appendix:systematics_2900V_vs_3100V}
+
+% Edit count: 1
+
+Cosmic muon data was collected at 2.9~kV and 3.1~kV because although 2.9~kV is closer to the operating conditions the chambers will be subject to in ATLAS, the extra gain provided by operating at 3.1~kV increased the signal to noise ratio for pad signals. Also, the tracking efficiency was higher with data collected at 3.1~kV. The difference in gain affected the relative population of clusters of different sizes, which in turn affected the uncertainty in the strip hit positions on each layer, the uncertainty in the track positions and the residual distributions. The residual distributions for 3.1~kV data are narrower, as shown in figure~\ref{fig:res_dist_2900V_3100V_412}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.7\textwidth]{figures/figure_residual_distributions_blue_QL2P08_2900V_2021-05-21_green_QL2P08_3100V_2021-05-21_layer4_fixedlayers12.pdf}
+    \caption{Residual distribution for tracks on layer 4 built from hits on layers 1 and 2 for QL2.P.8 for data collected at 2.9~kV and 3.1~kV.}
+    \label{fig:res_dist_2900V_3100V_412}
+\end{figure}
+
+Neither dataset is better for calculating the mean of residuals in a given area, so a systematic uncertainty can be assigned based on the difference in residual means calculated for 2.9~kV and 3.1~kV data; namely, the systematic uncertainty was approximated as the RMS of the residual mean difference distribution. Data taken with QL2.P.8 was used to estimate the RMS, as in figure~\ref{fig:voltage_compare_fits_412}.
+
+Tracks built from hits on layers 1 and 2 and extrapolated to layer 4 have the worst lever arm and hence the most uncertainty. The width of the distribution for geometrically favourable tracks are much narrower. The narrowest width of the residual mean difference distribution is for tracks on layer 2 built from hits on layers 1 and 3 (see figure~\ref{fig:voltage_compare_fits_213}). 
+
+Therefore, for each tracking combination, a systematic uncertainty equal to the RMS of the residual mean difference distribution was assigned.
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/figure_compare_residual_fits_QL2P08_2900V_2021-05-21_minus_QL2P08_3100V_2021-05-21_layer4_fixedlayers12_mean_differences.pdf}
+  \caption{Tracks on layer 4, reference layers 1 and 2.}
+  \label{fig:voltage_compare_fits_412}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/figure_compare_residual_fits_QL2P08_2900V_2021-05-21_minus_QL2P08_3100V_2021-05-21_layer2_fixedlayers13_mean_differences.pdf}
+  \caption{Tracks on layer 2, reference layers 1 and 3.}
+  \label{fig:voltage_compare_fits_213}
+\end{subfigure}
+\caption{Difference in residual means for data collected with QL2.P.8 at 2.9~kV and 3.1~kV respectively in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins for (a) tracks on layer 4 built from hits on layers 1 and 2 and (b) tracks on layer 2 built from hits on layers 1 and 3.}
+\label{fig:voltage_compare_fits}
+\end{figure}
 
 % DNL
 % ReClustering fit function? I think just saying I used an accepted standard is ok.
@@ -36,7 +73,7 @@ G(r) = A_{s}exp\left[ \frac{-(r-\mu)^{2}}{2\sigma_s^{2}} \right] + A_{b}exp\left
 
 where $r$ is the residual, $A$ is the gaussian amplitude, $\mu$ is the gaussian mean, $\sigma$ is the gaussian sigma, and the subscripts $s$ and $b$ stand for signal and background respectively. One gaussian captures the real (signal) tracks and the other captures the tracks built from noise (background). The gaussian with the smaller width is identified as the signal. 
 
-A single gaussian fit failed less often than a double gaussian fit. The gaussian fits were performed by initially estimating the amplitude to be 100 tracks, the gaussian mean to be the histogram mean, and gaussian $\sigma$ to be the RMS. The fit range was restricted to $\pm$1 RMS from the histogram mean. The modification helped the gaussian fit capture the signal peak. An example residual distribution is shown in figure \ref{fig:double_gaussian_example_fit}. 
+A single gaussian fit failed less often than a double gaussian fit. The gaussian fits were performed by initially estimating the amplitude to be 100 tracks, the gaussian mean to be the histogram mean, and gaussian $\sigma$ to be the RMS. The fit range was restricted to $\pm$1 RMS from the histogram mean. The modification helped the gaussian fit capture the signal peak. An example residual distribution is shown in figure~\ref{fig:double_gaussian_example_fit}. 
 
 %TODO this doesn't need to be a full page figure.
 
@@ -47,9 +84,9 @@ A single gaussian fit failed less often than a double gaussian fit. The gaussian
     \label{fig:double_gaussian_example_fit}
 \end{figure}
 
-For all residual distributions in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins on layer 4 built from hits on layers 1 and 2, the difference in gaussian and double gaussian means and $\sigma$'s is shown in figure \ref{fig:double_gaussian_compare_fits}. Since the RMS of the residual mean differences distribution is less than \SI{50}{\micro\meter} the gaussian fit gave the same result within the required precision. Moreover, this is for the tracking combination with the worst extrapolation lever arm and the widest distribution of mean differences; the interpolation combinations have narrower distributions. 
+For all residual distributions in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins on layer 4 built from hits on layers 1 and 2, the difference in gaussian and double gaussian means and $\sigma$'s is shown in figure~\ref{fig:double_gaussian_compare_fits}. Since the RMS of the residual mean differences distribution is less than \SI{50}{\micro\meter} the gaussian fit gave the same result within the required precision. Moreover, this is for the tracking combination with the worst extrapolation lever arm and the widest distribution of mean differences; the interpolation combinations have narrower distributions. 
 
-The gaussian $\sigma$ should be larger than the double gaussian $\sigma$ because the gaussian distribution includes the effect of the noise tracks with large residuals, while the double gaussian models signal and background residuals separately. For this analysis, only the residual mean was important, so the systematic overestimate of the signal $\sigma$ in the gaussian fit shown on the right of figure \ref{fig:double_gaussian_compare_fits} was allowed.
+The gaussian $\sigma$ should be larger than the double gaussian $\sigma$ because the gaussian distribution includes the effect of the noise tracks with large residuals, while the double gaussian models signal and background residuals separately. For this analysis, only the residual mean was important, so the systematic overestimate of the signal $\sigma$ in the gaussian fit shown on the right of figure~\ref{fig:double_gaussian_compare_fits} was allowed.
 
 \begin{figure}
     \centering
@@ -73,7 +110,7 @@ The gaussian $\sigma$ should be larger than the double gaussian $\sigma$ because
 %TODO : How do I cite the distribution of rotations angles by Dylan?
 The area of the region of interest in which to include tracks is primarily motivated by the misalignment model: the width of the region should be less than the scale on which the local offset is expected to change significantly. Changes in offset of order \SI{50}{\micro\meter}, the approximate position resolution of the sTGCs in the $\eta$-coordinate, are significant. In a misalignment model with an offset and rotation, only the rotation changes the local offset with respect to the x-coordinate \footnote{The effect of rotation can be modeled by assuming the recorded track position is related to the hit position by a passive rotation. The angle of rotation is the relative angle between the layer of interest and the nominal geometry. The local offset does change with respect to the track's y coordinate as well, but negligibly in the limit of small rotation angles.}.  The distribution of the as-built cathode board rotation angles shows that the RMS of the rotation angle is \SI{200}{\micro\radian} [https://indico.cern.ch/event/1035057/ PG. 18]; however, the distribution has a long tail so a typical rotation angle of \SI{1000}{\micro\radian} was used here. A rotation of \SI{1000}{\micro\radian} will cause a \SI{50}{\micro\meter} change in local offset over a change in x of \SI{50}{\centi\meter}. Therefore, the width of the region of interest should be less than \SI{500}{\milli\meter}.
 
-Two other factors inform the width of the region. First, since the hits' x-coordinates are discrete the width in x must be larger than the pitch of the wire groups to ensure the bin will have a sufficient number of tracks fall in it. Second, more tracks will be included in a larger area so more statistics will be available for the residual distribution fit. For the bin widths wider than two wire groups, the statistics are sufficient. For each x-ray residual, the mean cosmics residual was calculated for a few different bin widths, and the difference in means plotted. Figure \ref{fig:area_bin_size_mean_diff} shows an example for QL2.C.4. The width of the distribution is on the order of \SI{50}{\micro\meter}, showing that the calculation of the residual mean is relatively robust with respect to the area of the bin. However, \SI{50}{\micro\meter} is greater than the typical statistical uncertainty on the cosmic residual of means, which ranges from \SI{10}{\micro\meter} - \SI{40}{\micro\meter} depending on the tracking combination under study. Therefore, the cosmic residual means are assigned an uncertainty of \SI{50}{\micro\meter}.
+Two other factors inform the width of the region. First, since the hits' x-coordinates are discrete the width in x must be larger than the pitch of the wire groups to ensure the bin will have a sufficient number of tracks fall in it. Second, more tracks will be included in a larger area so more statistics will be available for the residual distribution fit. For the bin widths wider than two wire groups, the statistics are sufficient. For each x-ray residual, the mean cosmics residual was calculated for a few different bin widths, and the difference in means plotted. Figure~\ref{fig:area_bin_size_mean_diff} shows an example for QL2.C.4. The width of the distribution is on the order of \SI{50}{\micro\meter}, showing that the calculation of the residual mean is relatively robust with respect to the area of the bin. However, \SI{50}{\micro\meter} is greater than the typical statistical uncertainty on the cosmic residual of means, which ranges from \SI{10}{\micro\meter} - \SI{40}{\micro\meter} depending on the tracking combination under study. Therefore, the cosmic residual means are assigned an uncertainty of \SI{50}{\micro\meter}.
 %TODO : Verity that you actually apply the 50 um uncertainty.
 
 %TODO : This figure should have the mean and rms on it.
@@ -99,7 +136,7 @@ In this context, differential non-linearity (DNL) is when the reconstructed clus
 y' = y + a \sin \left( 2 \pi y_{rel} \right)
 \end{equation}
 
-where $y$ is the cluster mean, $y_{rel}$ is the relative position of the cluster mean with respect to the strip's center, $a$ is the amplitude of the correction, and $y'$ is the corrected cluster mean. The amplitude can be derived by comparing the reconstructed hit position to the expected hit position, as done in Abusleme, 2016 \cite{abusleme_performance_2016}. With cosmic muons, there is no reference hit position to compare to, so track residuals were used as a proxy \cite{lefebvre_thesis}. The hallmark of the DNL effect is the periodic pattern in the residual versus $y_{rel}$ profile, and the effect of correcting the cluster means using an amplitude of \SI{50}{\micro\meter} is shown in figure \ref{fig:dnl_corr_effect}. An amplitude of \SI{50}{\micro\meter} was based on Lefebvre's estimate of the DNL amplitudes by layer, quadruplet and cluster size using exclusive cosmic muon tracks in \package{tgc\_analysis/CosmicsAnalysis}. Little variation was seen in the amplitude parameters with respect to the quadruplet tested, the layer and the cluster size so a universal correction was used.
+where $y$ is the cluster mean, $y_{rel}$ is the relative position of the cluster mean with respect to the strip's center, $a$ is the amplitude of the correction, and $y'$ is the corrected cluster mean. The amplitude can be derived by comparing the reconstructed hit position to the expected hit position, as done in Abusleme, 2016 \cite{abusleme_performance_2016}. With cosmic muons, there is no reference hit position to compare to, so track residuals were used as a proxy \cite{lefebvre_thesis}. The hallmark of the DNL effect is the periodic pattern in the residual versus $y_{rel}$ profile, and the effect of correcting the cluster means using an amplitude of \SI{50}{\micro\meter} is shown in figure~\ref{fig:dnl_corr_effect}. An amplitude of \SI{50}{\micro\meter} was based on Lefebvre's estimate of the DNL amplitudes by layer, quadruplet and cluster size using exclusive cosmic muon tracks in \package{tgc\_analysis/CosmicsAnalysis}. Little variation was seen in the amplitude parameters with respect to the quadruplet tested, the layer and the cluster size so a universal correction was used.
 %TODO How little is little? Check your notes.
 %TODO exclusive better be defined somewhere clearly.
 
@@ -110,9 +147,9 @@ where $y$ is the cluster mean, $y_{rel}$ is the relative position of the cluster
     \label{fig:dnl_corr_effect}
 \end{figure} 
 
-Although the correction is not large enough in this case, the figure shows that the correction does reduce the DNL effect. Slightly better performance is seen in the interpolation tracking combinations where the quality of the residuals is better. DNL corrections for cosmic muon data are difficult because the DNL effect is obscured by the effect of misalignments and noise. Misalignments cause the center of the sine pattern in figure \ref{fig:dnl_corr_effect} to be shifted off of zero, since the mean of residuals is shifted.
+Although the correction is not large enough in this case, the figure shows that the correction does reduce the DNL effect. Slightly better performance is seen in the interpolation tracking combinations where the quality of the residuals is better. DNL corrections for cosmic muon data are difficult because the DNL effect is obscured by the effect of misalignments and noise. Misalignments cause the center of the sine pattern in figure~\ref{fig:dnl_corr_effect} to be shifted off of zero, since the mean of residuals is shifted.
 
-In figure \ref{fig:dnl_compare_fits}, it is apparent that the effect of the DNL correction on the mean of the residual distribution in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} areas is on the order of micrometers in the worst extrapolation case. Although the $\sigma$'s of the residual distributions shrink with the DNL correction, the mean is the parameter of interest. Therefore, for this analysis DNL was not corrected for.
+In figure~\ref{fig:dnl_compare_fits}, it is apparent that the effect of the DNL correction on the mean of the residual distribution in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} areas is on the order of micrometers in the worst extrapolation case. Although the $\sigma$'s of the residual distributions shrink with the DNL correction, the mean is the parameter of interest. Therefore, for this analysis DNL was not corrected for.
 
 \begin{figure}
     \centering
