@@ -32,5 +32,61 @@ Track residuals are affected by the local offset in the area of each layer's hit
     \label{fig:fake_event_display}
 \end{figure}
 
-Of course, a single track residual says nothing of the real relative local offset thanks to the limited spatial resolution of the detectors and tracks caused by noise or delta rays contributing large residuals. However, the mean of residuals for all tracks in a local area will be shifted systematically by the local offsets between layers~\cite{lefebvre_thesis}. 
+Of course, a single track residual says nothing of the real relative local offset because of the limited spatial resolution of the detectors and tracks caused by noise or delta rays contributing large residuals. However, the mean of residuals for all tracks in a region will be shifted systematically by the local offsets between layers~\cite{lefebvre_thesis}. For a perfectly aligned quadruplet, the mean of residuals should be zero in all regions, unlike the example regions shown in figure~\ref{fig:res_dist}.
+
+%TODO : add residual distribution in area for quad that you will show TH2F, for L2 F13 and L4 F12
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/potato.jpg}
+  \caption{Tracks on layer 2, reference layers 1 and 3.}
+  \label{fig:res_dist_L2_F13}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/potato.jpg}
+  \caption{Tracks on layer 4, reference layers 1 and 2.}
+  \label{fig:res_dist_L4_F12}
+\end{subfigure}
+\caption{Residual distribution in the region $x\in\left[xlow, xhigh\right],  y\in\left[ylow, yhigh\right] mm$ (100 mm by 100 mm area) for two different tracking combinations. }
+\label{fig:res_dist}
+\end{figure}
+
+A feature of this analysis is that the residual distribution is wider for tracking combinations where the extrapolation lever arm is largest. In general, this means that residual means calculated geometrically less favourable tracking combinations have larger statistical and systematic uncertainties. The bin size of \SI{200}{\micro\meter} for the distributions shown in figure~\ref{fig:res_dist} was chosen based on the uncertainty on residuals calculated from tracks on layer 4 (1) built from hits on layers 1 and 2 (3 and 4) given a cluster y-position uncertainty of \SI{60}{\micro\meter}, since these tracks yield residuals with the largest uncertainties.
+
+A gaussian fit was used to extract the mean of the residual distributions. Theoretically, a double gaussian distribution is more apt, but for this analysis the gaussian fit was sufficient, as discussed in appendix~\ref{appendix:systematics_res_fit_fcn}.
+
+The motivation for the area of the region of interest will be discussed in CHAPTER 5, COMPARISON (ADD IN REF ONCE CREATED).
+
+% --------------------------------------------------
+\section{Visualizing relative misalignments between quadruplet layers}
+% --------------------------------------------------
+
+The mean of residuals was extracted for regions across entire quadruplet layers for every tracking combination to get a picture of the relative misalignments between layers. An example for QXX.X.X is shown in figure~\ref{fig:res_mean_th2}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.95\textwidth]{figures/potato.jpg}
+    \caption{The mean of residuals represented by colour for each 100 mm by 100 mm region across layer C of quadruplet QXX.X.X for tracks built from hits on layers A and B.}
+    \label{fig:res_mean_th2}
+\end{figure}
+
+\textitt{comment on what you can see in this figure. Suggested interpretation? Potential rotation? Patterns of where there are stripes?}
+
+Often patterns of horizontal stripes can be explained by considering regions of inefficiency on both the layer displayed and the reference layers used to calculate the residuals, namely, the position of the wire supports on all three layers. They result in less hits in each bin. For the example above, the number of entries in each bin in shown in figure~\ref{fig:num_entries_th2}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.95\textwidth]{figures/potato.jpg}
+    \caption{The number of residual entries in each 100 mm by 100 mm region across layer C of quadruplet QXX.X.X for tracks built from hits on layers A and B.}
+    \label{fig:num_entries_th2}
+\end{figure}
+
+%TODO : wrap up method
+%TODO : systematics section
+
+
+
+
 
