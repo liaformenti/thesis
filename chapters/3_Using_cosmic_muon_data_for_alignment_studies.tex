@@ -67,24 +67,66 @@ The mean of residuals was extracted for regions across entire quadruplet layers 
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.95\textwidth]{figures/potato.jpg}
+    \includegraphics[width = 0.6\textwidth]{figures/potato.jpg}
     \caption{The mean of residuals represented by colour for each 100 mm by 100 mm region across layer C of quadruplet QXX.X.X for tracks built from hits on layers A and B.}
     \label{fig:res_mean_th2}
 \end{figure}
 
-\textitt{comment on what you can see in this figure. Suggested interpretation? Potential rotation? Patterns of where there are stripes?}
+\textit{on what you can see in this figure. Suggested interpretation? Potential rotation? Patterns of where there are stripes?}
 
-Often patterns of horizontal stripes can be explained by considering regions of inefficiency on both the layer displayed and the reference layers used to calculate the residuals, namely, the position of the wire supports on all three layers. They result in less hits in each bin. For the example above, the number of entries in each bin in shown in figure~\ref{fig:num_entries_th2}.
+Often patterns of horizontal and vertical stripes can be explained by considering regions of inefficiency, and hence less tracks, on both the layer displayed and the reference layers used to calculate the residuals. Vertical strips are typically caused by slightly less efficient wires; horizontal stripes are typically caused by the shadow of the wire supports on the three layers involved. For the example above, the number of entries in each bin in shown in figure~\ref{fig:num_entries_th2}.
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.95\textwidth]{figures/potato.jpg}
+    \includegraphics[width = 0.6\textwidth]{figures/potato.jpg}
     \caption{The number of residual entries in each 100 mm by 100 mm region across layer C of quadruplet QXX.X.X for tracks built from hits on layers A and B.}
     \label{fig:num_entries_th2}
 \end{figure}
 
-%TODO : wrap up method
-%TODO : systematics section
+The local residual means will be used to validate absolute local offset measurements done by the so-called x-ray method, discussed in CHAPTER 4 X-RAY METHOD (REF ONCE CREATED).
+
+% --------------------------------------------------
+\section{Systematic uncertainty}
+% --------------------------------------------------
+
+The statistical uncertainty on the local residual means is typically around \SI{10}{} - \SI{20}{\micro\meter}, and appendix~\ref{appendix:statistics} shows that the analysis is not statistically limited by the number of triggers we collect for each quadruplet. The systematic uncertainties are more significant. 
+
+Systematic uncertainties were assigned per tracking combination as the RMS of the distribution of the difference in local residual means calculated each with a different analysis choice. For example, the RMS associated with fitting the local residual distributions with a Gaussian or double Gaussian is \SI{25}{\micro\meter} for the geometrically least favourable tracking combinations and the distribution is shown in appendix~\ref{appendix:systematics_res_fit_fcn}.
+
+Other choices were whether to use data collected at 2.9~kV or 3.1~kV (\ref{appendix:systematics_2900V_vs_3100V}); whether or not to apply a differential non-linearity (DNL) correction to the cluster y-positions (differential non-linearity\ref{appendix:systematics_dnl}); and what cluster fitting algorithm to use (REF ONCE YOU WRITE). A choice was made in each case, by a systematic uncertainty was assigned using the method above to account for the effect of the choice. The reasons for each choice are listed below.
+
+Data taken at 3.1~kV was used over 2.9~kV because the strip and wire tracking efficiency increases with higher voltage.
+
+The \package{Minuit2} package \cite{hatlo_developments_2005} was used to fit clusters over Guo's method \cite{guo_simple_2011} because it provides better and automatic statistical uncertainty estimates.
+
+The DNL correction was not applied because its affect on the residual means was negligible.
+
+A summary of the systematic uncertainty assigned for each choice and tracking combination is given in
+
+%TODO : decide on an order for the table and the appendix systematics sections
+%\begin{center}
+\begin{tabularx}{\textwidth} {
+ | >{\raggedright\arraybackslash}X 
+ | >{\raggedright\arraybackslash}X 
+ | >{\raggedright\arraybackslash}X
+ | >{\raggedright\arraybackslash}X 
+ | >{\raggedright\arraybackslash}X 
+ | >{\raggedright\arraybackslash}X 
+ | >{\raggedright\arraybackslash}X 
+ | >{\raggedright\arraybackslash}X 
+ | >{\raggedright\arraybackslash}X | }
+ \hline
+ \textbf{Layer} & \textbf{Fixed layer 1} & \textbf{Fixed layer 2} & \textbf{2.9~kV vs 3.1~kV} & \textbf{Residual fit function} & \textbf{Cluster fit algorithm} & \textbf{DNL} & \textbf{Total} \\ 
+ \hline
+ \hline
+ 3 & 1 & 2 & & 
+ cell4 & cell5 & cell6 & 9 & 10 & 11 & 12 & 13 \\ 
+ \hline
+ cell7 & cell8 & cell9 & 10 & 11 & 12 & 13 & 14 \\ 
+ \hline
+\end{tabularx}
+% \end{center}
+
 
 
 
