@@ -60,7 +60,7 @@ A gaussian fit was used to extract the mean of the residual distributions. Theor
 The motivation for the area of the region of interest will be discussed in CHAPTER 5, COMPARISON (ADD IN REF ONCE CREATED).
 
 % --------------------------------------------------
-\section{Visualizing relative misalignments between quadruplet layers}
+\section{Visualizing relative misalignments between layers}
 % --------------------------------------------------
 
 The mean of residuals was extracted for regions across entire quadruplet layers for every tracking combination to get a picture of the relative misalignments between layers. An example for QXX.X.X is shown in figure~\ref{fig:res_mean_th2}.
@@ -91,7 +91,7 @@ The local residual means will be used to validate absolute local offset measurem
 
 The statistical uncertainty on the local residual means is typically around \SI{10}{} - \SI{20}{\micro\meter}, and appendix~\ref{appendix:statistics} shows that the analysis is not statistically limited by the number of triggers we collect for each quadruplet. The systematic uncertainties are more significant. 
 
-Systematic uncertainties were assigned per tracking combination as the RMS of the distribution of the difference in local residual means calculated each with a different analysis choice. For example, the RMS associated with fitting the local residual distributions with a Gaussian or double Gaussian is \SI{25}{\micro\meter} for the geometrically least favourable tracking combinations and the distribution is shown in appendix~\ref{appendix:systematics_res_fit_fcn}.
+Systematic uncertainties were assigned per tracking combination as the RMS of the distribution of the difference in local residual means calculated each with a different analysis choice. For geometrically similar tracking combinations (like: layer 1 and fixed layers 3 and 4, layer 4 and fixed layers 1 and 2), the systematic uncertainty was assigned as the average RMS for both. For example, the RMS associated with fitting the local residual distributions with a Gaussian or double Gaussian is \SI{25}{\micro\meter} for the geometrically least favourable tracking combinations and the distribution is shown in appendix~\ref{appendix:systematics_res_fit_fcn}.
 
 Other choices were whether to use data collected at 2.9~kV or 3.1~kV (\ref{appendix:systematics_2900V_vs_3100V}); whether or not to apply a differential non-linearity (DNL) correction to the cluster y-positions (differential non-linearity\ref{appendix:systematics_dnl}); and what cluster fitting algorithm to use (REF ONCE YOU WRITE). A choice was made in each case, by a systematic uncertainty was assigned using the method above to account for the effect of the choice. The reasons for each choice are listed below.
 
@@ -101,10 +101,12 @@ The \package{Minuit2} package \cite{hatlo_developments_2005} was used to fit clu
 
 The DNL correction was not applied because its affect on the residual means was negligible.
 
-A summary of the systematic uncertainty assigned for each choice and tracking combination is given in
+A summary of the systematic uncertainty assigned for each choice and tracking combination is given in table~\ref{tab:sys_uncerts}.
 
-%TODO : decide on an order for the table and the appendix systematics sections
+%TODO : Maybe just make the table have the total sys uncertainty, and put the breakdown at the end of appendix:systematics
 %\begin{center}
+\begin{table}
+
 \begin{tabularx}{\textwidth} {
  | >{\raggedright\arraybackslash}X 
  | >{\raggedright\arraybackslash}X 
@@ -115,16 +117,40 @@ A summary of the systematic uncertainty assigned for each choice and tracking co
  | >{\raggedright\arraybackslash}X 
  | >{\raggedright\arraybackslash}X 
  | >{\raggedright\arraybackslash}X | }
+ 
  \hline
- \textbf{Layer} & \textbf{Fixed layer 1} & \textbf{Fixed layer 2} & \textbf{2.9~kV vs 3.1~kV} & \textbf{Residual fit function} & \textbf{Cluster fit algorithm} & \textbf{DNL} & \textbf{Total} \\ 
+ \textbf{Layer} & \textbf{Fixed layer 1} & \textbf{Fixed layer 2} & \textbf{\ref{appendix:systematics_res_fit_fcn}} & \textbf{\ref{appendix:systematics_2900V_vs_3100V}} & \textbf{\ref{appendix:systematics_cluster_fit_fcn}} & \textbf{\ref{appendix:systematics_dnl}} & \textbf{Total} \\ 
  \hline
+ \hline 
+ 3 & 1 & 2 & 0.010 & 0.041 & 0.018 & 0.008 & \textbf{0.047} \\
  \hline
- 3 & 1 & 2 & & 
- cell4 & cell5 & cell6 & 9 & 10 & 11 & 12 & 13 \\ 
+    4 & 1 & 2 & 0.025 & 0.091 & 0.027 & 0.012 & \textbf{0.098} \\
  \hline
- cell7 & cell8 & cell9 & 10 & 11 & 12 & 13 & 14 \\ 
+    2 & 1 & 3 & 0.008 & 0.020 & 0.012 & 0.003 & \textbf{0.025} \\
  \hline
+    4 & 1 & 3 & 0.007 & 0.042 & 0.013 & 0.005 & \textbf{0.044} \\
+ \hline
+    2 & 1 & 4 & 0.006 & 0.035 & 0.012 & 0.005 & \textbf{0.038} \\
+ \hline
+    3 & 1 & 4 & 0.006 & 0.035 & 0.012 & 0.005 & \textbf{0.038} \\
+ \hline
+    1 & 2 & 3 & 0.010 & 0.041 & 0.018 & 0.008 & \textbf{0.047} \\
+ \hline
+    4 & 2 & 3 & 0.010 & 0.041 & 0.018 & 0.008 & \textbf{0.047} \\
+ \hline
+    1 & 2 & 4 & 0.007 & 0.042 & 0.013 & 0.005 & \textbf{0.044} \\
+ \hline
+    3 & 2 & 4 & 0.008 & 0.020 & 0.012 & 0.003 & \textbf{0.025} \\
+ \hline
+    1 & 3 & 4 & 0.025 & 0.091 & 0.027 & 0.012 & \textbf{0.098} \\
+ \hline
+    2 & 3 & 4 & 0.010 & 0.041 & 0.018 & 0.008 & \textbf{0.047} \\
+ \hline
+ 
 \end{tabularx}
+\caption{Systematic uncertainty assigned for each analysis option, the average of geometrically similar tracking combination's RMS of residual mean difference distributions, detailed in appendix~\ref{appendix:systematics}.}
+\label{tab:sys_uncerts}
+\end{table}
 % \end{center}
 
 
