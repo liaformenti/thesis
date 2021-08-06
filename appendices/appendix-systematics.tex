@@ -12,8 +12,45 @@
 % Doub gaus vs gaus
 % Area bin size
 % Residual distribution bin size?
-%TODO : Summary of systematic uncertainties section.
 %TODO : Effect of clustering algorithm (reclustering) on residual means section.
+
+% --------------------------------------------------
+\section{Residual distribution fit function}
+% --------------------------------------------------
+\label{appendix:systematics_res_fit_fcn}
+
+% Edit count: 1
+
+The distribution of residuals should be modelled by a double gaussian fit\cite{lefebvre_thesis}:
+
+\begin{equation}
+\label{eqn:doub_gaus}
+G(r) = A_{s}exp\left[ \frac{-(r-\mu)^{2}}{2\sigma_s^{2}} \right] + A_{b}exp\left[ \frac{-(r-\mu)^{2}}{2\sigma_b^{2}} \right]
+\end{equation}
+
+where $r$ is the residual, $A$ is the gaussian amplitude, $\mu$ is the gaussian mean, $\sigma$ is the gaussian sigma, and the subscripts $s$ and $b$ stand for signal and background respectively. One gaussian captures the real (signal) tracks and the other captures the tracks built from noise (background). The gaussian with the smaller width is identified as the signal. 
+
+A single gaussian fit failed less often than a double gaussian fit. The gaussian fits were performed by initially estimating the amplitude to be 100 tracks, the gaussian mean to be the histogram mean, and gaussian $\sigma$ to be the RMS. The fit range was restricted to $\pm$1 RMS from the histogram mean. The modification helped the gaussian fit capture the signal peak. An example residual distribution is shown in figure~\ref{fig:double_gaussian_example_fit}. 
+
+%TODO this doesn't need to be a full page figure.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.85\textwidth]{figures/figure_double_gaus_vs_gaus_example_fit_QL2P08_3100V_2021-06-18_and_2021-07-19_xbin_10_ybin_5_layer4_fixedlayers12.pdf}
+    \caption{Residual distribution for tracks on layer 4 built from hits on layers 1 and 2 for $x\in\left[-3.00, 97.00\right],  y\in\left[394.60, 494.60\right] mm$ for QL2.P.8 fit with a double gaussian and a single gaussian in a range of $\pm$1 RMS from the histogram mean.}
+    \label{fig:double_gaussian_example_fit}
+\end{figure}
+
+For all residual distributions in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins on layer 4 built from hits on layers 1 and 2, the difference in gaussian and double gaussian means and $\sigma$'s is shown in figure~\ref{fig:double_gaussian_compare_fits}. Since the RMS of the residual mean differences distribution is less than \SI{50}{\micro\meter} the gaussian fit gave the same result within the required precision. Moreover, this is for the tracking combination with the worst extrapolation lever arm and the widest distribution of mean differences; the interpolation combinations have narrower distributions. 
+
+The gaussian $\sigma$ should be larger than the double gaussian $\sigma$ because the gaussian distribution includes the effect of the noise tracks with large residuals, while the double gaussian models signal and background residuals separately. For this analysis, only the residual mean was important, so the systematic overestimate of the signal $\sigma$ in the gaussian fit shown on the right of figure~\ref{fig:double_gaussian_compare_fits} was allowed.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.8\textwidth]{figures/figure_compare_residual_fits_QL2P08_3100V_2021-06-18_no_dnl_minus_QL2P08_3100V_2021-07-19_doub_gaus_log_scale_layer4_fixedlayers12.pdf} 
+    \caption{Difference in residual distribution means and $\sigma$'s for a gaussian and double gaussian fit, for all residual distributions in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins on layer 4 built from hits on layers 1 and 2 for QL2.P.8.}
+    \label{fig:double_gaussian_compare_fits}
+\end{figure}
 
 % --------------------------------------------------
 \section{Cosmic muon data collection voltage}
@@ -55,46 +92,25 @@ Therefore, for each tracking combination, a systematic uncertainty equal to the 
 \label{fig:voltage_compare_fits}
 \end{figure}
 
+% Effect of reclustering on residual means
 % --------------------------------------------------
-\section{Residual distribution fit function}
+\section{Cluster fit algorithm}
 % --------------------------------------------------
-\label{appendix:systematics_res_fit_fcn}
-
-% Edit count: 1
-
-The distribution of residuals should be modelled by a double gaussian fit\cite{lefebvre_thesis}:
-
-\begin{equation}
-\label{eqn:doub_gaus}
-G(r) = A_{s}exp\left[ \frac{-(r-\mu)^{2}}{2\sigma_s^{2}} \right] + A_{b}exp\left[ \frac{-(r-\mu)^{2}}{2\sigma_b^{2}} \right]
-\end{equation}
-
-where $r$ is the residual, $A$ is the gaussian amplitude, $\mu$ is the gaussian mean, $\sigma$ is the gaussian sigma, and the subscripts $s$ and $b$ stand for signal and background respectively. One gaussian captures the real (signal) tracks and the other captures the tracks built from noise (background). The gaussian with the smaller width is identified as the signal. 
-
-A single gaussian fit failed less often than a double gaussian fit. The gaussian fits were performed by initially estimating the amplitude to be 100 tracks, the gaussian mean to be the histogram mean, and gaussian $\sigma$ to be the RMS. The fit range was restricted to $\pm$1 RMS from the histogram mean. The modification helped the gaussian fit capture the signal peak. An example residual distribution is shown in figure~\ref{fig:double_gaussian_example_fit}. 
-
-%TODO this doesn't need to be a full page figure.
+\label{appendix:systematics_cluster_fit_fcn}
+To ensure that changing the cluster fitting algorithm like in appendix~\ref{appendix:clustering} would not change the calculated mean of residuals in each region of interest significantly, the residual means were compared in both cases. The distribution of the difference in residual means is plotted in figure~\ref{fig:cluster_fit_res_mean_compare_fits} for the tracking combination with the worst extrapolation lever arm.
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.85\textwidth]{figures/figure_double_gaus_vs_gaus_example_fit_QL2P08_3100V_2021-06-18_and_2021-07-19_xbin_10_ybin_5_layer4_fixedlayers12.pdf}
-    \caption{Residual distribution for tracks on layer 4 built from hits on layers 1 and 2 for $x\in\left[-3.00, 97.00\right],  y\in\left[394.60, 494.60\right] mm$ for QL2.P.8 fit with a double gaussian and a single gaussian in a range of $\pm$1 RMS from the histogram mean.}
-    \label{fig:double_gaussian_example_fit}
+    \includegraphics[width = 0.7\textwidth]{figures/compare_residual_fits_QL2P08_3100V_2021-06-18_no_dnl_minus_QL2P08_3100V_2021-07-21_no_reclustering_layer4_fixedlayers12.pdf}
+    \caption{Difference in residual means when the cluster fit algorithm is \package{Minuit2}~\cite{hatlo_developments_2005} versus Guo's method~\cite{guo_simple_2011} for tracks on layer 4 built from hits on layers 1 and 2 for QL2.P.8.}
+    \label{fig:cluster_fit_res_mean_compare_fits}
 \end{figure}
 
-For all residual distributions in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins on layer 4 built from hits on layers 1 and 2, the difference in gaussian and double gaussian means and $\sigma$'s is shown in figure~\ref{fig:double_gaussian_compare_fits}. Since the RMS of the residual mean differences distribution is less than \SI{50}{\micro\meter} the gaussian fit gave the same result within the required precision. Moreover, this is for the tracking combination with the worst extrapolation lever arm and the widest distribution of mean differences; the interpolation combinations have narrower distributions. 
+The other tracking combinations had smaller RMS values. Differences on the order of \SI{50}{\micro\meter} are important, so figure~\ref{fig:cluster_fit_res_mean_compare_fits} shows that the clustering algorithm had a small but notable effect. Therefore, the RMS for each tracking combination will be used to add a systematic uncertainty on the residual means.
 
-The gaussian $\sigma$ should be larger than the double gaussian $\sigma$ because the gaussian distribution includes the effect of the noise tracks with large residuals, while the double gaussian models signal and background residuals separately. For this analysis, only the residual mean was important, so the systematic overestimate of the signal $\sigma$ in the gaussian fit shown on the right of figure~\ref{fig:double_gaussian_compare_fits} was allowed.
-
-\begin{figure}
-    \centering
-    \includegraphics[width = 0.8\textwidth]{figures/figure_compare_residual_fits_QL2P08_3100V_2021-06-18_no_dnl_minus_QL2P08_3100V_2021-07-19_doub_gaus_log_scale_layer4_fixedlayers12.pdf} 
-    \caption{Difference in residual distribution means and $\sigma$'s for a gaussian and double gaussian fit, for all residual distributions in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins on layer 4 built from hits on layers 1 and 2 for QL2.P.8.}
-    \label{fig:double_gaussian_compare_fits}
-\end{figure}
-
+%TODO : REMOVE THIS
 % --------------------------------------------------
-\section{Area of residual distribution regions of interest}
+\section{OBSOLETE, DELETE LATER Area of residual distribution regions of interest}
 % --------------------------------------------------
 \label{appendix:systematics_bin_size}
 % Edit count: 1
@@ -105,6 +121,8 @@ The gaussian $\sigma$ should be larger than the double gaussian $\sigma$ because
 % Also need to establish x == perpendicular to wires; y == perpendicular to strips. ==> How do I do this consistently?
 % May need to add 3100V reference if it's not already defined in your thesis.
 % Define ROI as short form?
+
+\textit{This section is outdated, and likely needs to be removed}
 
 %TODO : How do I cite the distribution of rotations angles by Dylan?
 The area of the region of interest in which to include tracks is primarily motivated by the misalignment model: the width of the region should be less than the scale on which the local offset is expected to change significantly. Changes in offset of order \SI{50}{\micro\meter}, the approximate position resolution of the sTGCs in the $\eta$-coordinate, are significant. In a misalignment model with an offset and rotation, only the rotation changes the local offset with respect to the x-coordinate \footnote{The effect of rotation can be modeled by assuming the recorded track position is related to the hit position by a passive rotation. The angle of rotation is the relative angle between the layer of interest and the nominal geometry. The local offset does change with respect to the track's y coordinate as well, but negligibly in the limit of small rotation angles.}.  The distribution of the as-built cathode board rotation angles shows that the RMS of the rotation angle is \SI{200}{\micro\radian} [https://indico.cern.ch/event/1035057/ PG. 18]; however, the distribution has a long tail so a typical rotation angle of \SI{1000}{\micro\radian} was used here. A rotation of \SI{1000}{\micro\radian} will cause a \SI{50}{\micro\meter} change in local offset over a change in x of \SI{50}{\centi\meter}. Therefore, the width of the region of interest should be less than \SI{500}{\milli\meter}.
