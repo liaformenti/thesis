@@ -3,20 +3,20 @@
 % ==================================================
 
 % Edit count: Lia - 1, Brigitte - 0
-\chapter{Using cosmic muon data for alignment studies}
+\chapter{Datasets used for alignment studies}
 
 % --------------------------------------------------
 \section{Measuring alignment using cosmics data}
 % --------------------------------------------------
 
-Misalignments can be modeled as passive transformations. Ideally, a misalignment model would be chosen and the parameters (for example, a global offset and rotation for each layer) calculated. To understand the potential of cosmic muon data, it is useful to define a local offset. For each area of a strip layer, the local offset is the offset of the strip pattern in that area with respect to the nominal geometry.  Local offsets systematically change the strip that is hit by a muon passing through the area. The \package{tgc\_analysis/CosmicsAnalysis} software assumes the nominal geometry, so the recorded muon y-position ($y_{cluster}$) is shifted opposite to the local offset ($d_{local}$),
+Misalignments can be modeled as passive transformations. Ideally, a misalignment model would be chosen and the parameters (for example, a global offset and rotation for each layer) calculated. To understand the potential of cosmic muon data, it is useful to define a local offset. For each area of a strip layer, the local offset is the shift of the strip pattern in that area with respect to the nominal geometry.  Local offsets systematically change the strip that is hit by a muon passing through the area. The \package{tgc\_analysis/CosmicsAnalysis} software assumes the nominal geometry, so the recorded muon y-position ($y$) is shifted opposite to the local offset ($d_{local}$),
 % Maybe useful sentence?: The local offset is a result of the non-conformities in the strip pattern etching and inter-layer misalignments.
 \begin{equation}
-    y_{cluster} = y_{nom} - d_{local},
+    y = y_{nom} - d_{local},
     \label{eqn:local_translation}
 \end{equation}
 % Maybe useful sentence?: The true position of individual cosmic muons is not known, and in the analysis the four detector planes float with respect to a software-implemented origin that is not associated with a fixed physical location.
-where $y_{nom}$ is the position of the muon that would have been recorded if there was no local offset. Equation~\ref{eqn:local_translation} ignores other factors that could affect the cluster position (like resolution). The local offset is unknown and there is no external reference to measure $y_{nom}$. Therefore, only relative alignment parameters can be extracted. 
+where $y_{nom}$ is the position of the muon that would have been recorded if there was no local offset. Equation~\ref{eqn:local_translation} ignores other factors that could affect the cluster position (like position resolution). The local offset is unknown and there was no external reference to measure $y_{nom}$. Therefore, only relative alignment parameters can be extracted. 
 
 The minimal relative coordinate system uses two reference or fixed layers~\cite{lefebvre_thesis}. The hits on the two fixed layers were used to create tracks that can be interpolated or extrapolated (polated) to the other two layers. The residual of track $i$, $\Delta_i$ is defined as,
 \begin{equation}
@@ -50,13 +50,15 @@ where $y_{i,hit}$ is the recorded hit position and $y_{i,track}$ is the polated 
 \label{fig:res_dist}
 \end{figure}
 
-The residual distributions were wider for tracking combinations where the extrapolation lever arm was largest. In general, residual means calculated with geometrically less favourable tracking combinations have larger statistical and systematic uncertainties. The bin size of \SI{200}{\micro\meter} for the distributions shown in figure~\ref{fig:res_dist} was chosen based on the uncertainty on residuals calculated from tracks on layer 4 (1) built from hits on layers 1 and 2 (3 and 4) given a cluster y-position uncertainty of \SI{60}{\micro\meter} (\ref{appendix:clustering}), since these tracks yield residuals with the largest uncertainties.
+The residual distributions were wider for tracking combinations where the extrapolation lever arm was largest. In general, residual means calculated with geometrically less favourable tracking combinations have larger statistical and systematic uncertainties. The bin size of \SI{200}{\micro\meter} for the distributions shown in figure~\ref{fig:res_dist} was chosen based on the uncertainty on residuals calculated from tracks on layer 4 (1) built from hits on layers 1 and 2 (3 and 4) given a cluster y-position uncertainty of \SI{60}{\micro\meter} (appendix~\ref{appendix:clustering}), since these tracks yield residuals with the largest uncertainties.
 
 A gaussian fit was used to extract the mean of the residual distributions. Theoretically, a double gaussian distribution is more apt, but for this analysis the gaussian fit was sufficient, as discussed in appendix~\ref{appendix:systematics_res_fit_fcn}.
 
-The motivation for the area of the region of interest will be discussed in CHAPTER 5, COMPARISON (ADD IN REF ONCE CREATED).
+%TODO : The x-ray area of interest is only about 20 mm, not 80 mm as previously thought (you were looking at plots without collimator). Gotta sort this out.
 
-It is only possible to calculate relative local offsets with csomics data because there was no external reference which positions on all layers could be measured with respect to. As an example, in figure~\ref{fig:fake_event_display}, the residual on layer 2 could be caused by layer 2 being misaligned from nominal, but it could also be caused by layers 1 and 4 being misaligned from nominal while layer 2 is in its expected position! Any number of combinations of local offsets on layers 1, 2 and 4 could produce the residual on layer 2. Nonetheless, the value of relative local offset measurements will be shown and discussed throughout this work.
+The motivation for the area of the region of interest will be discussed in chapter~\ref{chap:comparison}.
+
+It is only possible to calculate relative local offsets with cosmics data because there was no external reference to measure positions on all layers with respect to. As an example, assuming that the residual on layer 2 in figure~\ref{fig:fake_event_display} is representative of the relative local offset, the residual on layer 2 could be caused by layer 2 being misaligned from nominal, but it could also be caused by layers 1 and 4 being misaligned from nominal while layer 2 is in its expected position! Any number of combinations of local offsets on layers 1, 2 and 4 could produce the residual on layer 2. The value of relative local offset measurements will be shown and discussed throughout this work.
 
 % --------------------------------------------------
 \section{Visualizing relative misalignments between layers}
@@ -83,17 +85,15 @@ The mean of residuals was extracted for regions across entire quadruplet layers 
 \label{fig:res_mean_th2}
 \end{figure}
 
-Figure~\ref{fig:res_mean_th2}, contains the mean of residuals on layers 2 and 4 with tracking reference layers 1 and 3. Many of the residual means are non-zero, indicating that there are local relative misalignments. Given that the residual mean changes with $x$ in figure~\ref{fig:res_mean_th2_L2_F13}, there is likely a rotation of layer 2 with respect to layers 1 and 3, combined with an offset of the entire layer. For layer 4 in figure~\ref{fig:res_mean_th2_L4_F13}, perhaps there is a scaling~\cite{carlson_results_2019} of the strip pattern with respect to layers 1 and 3. The interpretation of the patterns in the residual means depends on the choice of misalignment model.
-
-Work on characterizing relative misalignments between quadruplet layers in ongoing~\cite{zhao_cosmic_2019}, \textcolor{red}{(Can I cite John's thesis-in-progress?)} but what is required are the absolute strip positions with respect to their nominal position in the ATLAS analysis coordinate system \textcolor{red}{to be input into Athena(?)}. Somehow, absolute misalignment parameters must be derived to create a model of absolute strip positions - which is not possible with the cosmics dataset. Absolute local offset measurements were done by the so-called x-ray method, discussed in CHAPTER 4 X-RAY METHOD (REF ONCE CREATED). Given the degree of confidence in the local mean cosmic residual measurements detailed below, they were used to validate the absolute local offset measurements provided by the x-ray method (details to follow in CHAPTER 5 COMPARISON).
+Figure~\ref{fig:res_mean_th2} contains the mean of residuals on layers 2 and 4 with tracking reference layers 1 and 3. Many of the residual means are non-zero, and change smoothly over the layer, indicating that there are relative misalignments. Given that the residual mean changes with $x$ in figure~\ref{fig:res_mean_th2_L2_F13}, there is likely a rotation of layer 2 with respect to layers 1 and 3, combined with an offset of the entire layer. For layer 4 in figure~\ref{fig:res_mean_th2_L4_F13}, perhaps there is a scaling~\cite{carlson_results_2019} of the strip pattern with respect to layers 1 and 3. The interpretation of the patterns in the residual means depends on the choice of misalignment model.
 
 % --------------------------------------------------
-\section{Systematic uncertainty}
+\section{Systematic uncertainty in cosmic residual means}
 % --------------------------------------------------
 
 The statistical uncertainty on the local residual means was typically around \SI{10}{} - \SI{20}{\micro\meter}, and appendix~\ref{appendix:statistics} shows that the analysis was not statistically limited by the number of triggers collected for each quadruplet. The systematic uncertainties were more significant. 
 
-Systematic uncertainties were assigned per tracking combination as the RMS of the distribution of the difference in local residual means calculated each with a different analysis choice. For example, the RMS associated with fitting the local residual distributions with a Gaussian or double Gaussian is \SI{25}{\micro\meter} for the geometrically least favourable tracking combinations and the distribution is shown in appendix~\ref{appendix:systematics_res_fit_fcn}. For geometrically similar tracking combinations (like: tracks on layer 1 built from hits on layers 3 and 4, and tracks on layer 4 built from hits on layers 1 and 2), the systematic uncertainty was assigned as the average RMS for both.
+Systematic uncertainties were assigned per tracking combination as the RMS of the distribution of the difference in local residual means each calculated with a different analysis choice. For example, the RMS associated with fitting the local residual distributions with a Gaussian or double Gaussian is \SI{25}{\micro\meter} for the geometrically least favourable tracking combinations and the distribution is shown in appendix~\ref{appendix:systematics_res_fit_fcn}. For geometrically similar tracking combinations (like: tracks on layer 1 built from hits on layers 3 and 4, and tracks on layer 4 built from hits on layers 1 and 2), the systematic uncertainty was assigned as the average RMS for both.
 
 Other choices were whether to use data collected at 2.9~kV or 3.1~kV; what cluster fitting algorithm to use; and whether or not to apply a differential non-linearity (DNL) correction to the cluster y-positions. A systematic uncertainty was assigned using the method above to account for the effect of each choice. The reasons for each choice are listed below.
 
@@ -154,10 +154,35 @@ A summary of the systematic uncertainties assigned for each tracking combination
 \label{tab:sys_uncerts}
 \end{table}
 
-Given that the uncertainty in the cosmics residual means is lesser than or near to the order of the required position resolution of the sTGCs (\SI{100}{\micro\meter}~\cite{nsw_tdr} the cosmic residual means are relevant for characterizing misalignments.
+Given that the uncertainty in the cosmics residual means is lesser than or near to the order of the required position resolution of the sTGCs (\SI{100}{\micro\meter}~\cite{nsw_tdr}) the cosmic residual means are relevant input for alignment studies.
 
+% --------------------------------------------------
+\section{The x-ray method}
+% --------------------------------------------------
+\label{x_ray}
 
+Work on characterizing relative misalignments between quadruplet layers is ongoing~\cite{zhao_cosmic_2019}, \textcolor{red}{(Can I cite John's thesis-in-progress?)} but what is required are the absolute strip positions with respect to their nominal position in the ATLAS analysis coordinate system \textcolor{red}{to be input into Athena(?)}. Somehow, absolute misalignment parameters must be derived to create a model of absolute strip positions - which is not possible with the cosmics dataset. Absolute local offset measurements were done by the so-called x-ray method~\cite{lefebvre_precision_2020}. The x-ray tests were performed after the quadruplets arrived at CERN and were assembled into wedges. Essentially, an x-ray gun was attached to one of the source plates glued to the surface of the wedge (figure~\ref{fig:xray_setup}), and the beam profile recorded by the strips.
 
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.5\textwidth]{figures/figure_xray_setup.pdf}
+    \caption{The x-ray gun mounted to the alignment platform on the surface of the wedge. Adapted from \copyright  CERN for the benefit of the ATLAS collaboration. CC-BY-4.0 license.}
+    \label{fig:xray_setup}
+\end{figure}
 
+% During ATLAS operation, the position of the source plates will be monitored using the new alignment system~\cite{nsw_tdr}. Therefore, their position will be known in the absolute ATLAS coordinate system. 
 
+The gun produced x-rays of 7 - \SI{15}{\kilo\electronvolt} that were collimated before reaching the surface of the wedge. The x-rays mostly interacted with the wedge's copper electrodes and gold-plated tungsten wires via the photo effect. \textcolor{red}{The resulting photoelectrons ionized the CO$_2$ in the gap, which resulted in detectable Townsend avalanches -- \textit{is it really avalanches or just electrons drifting back?}}. The beam profile was captured by the distribution of cluster positions. A typical beam profile is shown in figure~\ref{fig:xray_beam_profile}.
 
+%TODO : What separates a delta ray and a photoelectron?
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.5\textwidth]{figures/figure_xray_beam_profile.pdf}
+    \caption{Distribution of x-ray cluster mean positions after the analysis cuts and corrections. The strip cluster multiplicity, $m$, was limited to 3, 4 and 5. The red line is a Gaussian fit of the distribution and the pink lines denote the edges of the strips. Adapted from \copyright CERN for the benefit of the ATLAS collaboration. CC-BY-4.0 license.}
+    \label{fig:xray_beam_profile}
+\end{figure}
+
+The mean of the cluster position distribution was taken as the x-ray beam profile center. The expected center was calculated assuming a wedge with nominal geometry given the gun position. The difference between the expected and reconstructed beam profile center is a measure of the local offset. Applying the logic of equation~\ref{eqn:local_translation} to the beam profile, the fitted mean acts as $y$, the expected center is $y_{nom}$ and the local offset is $d_{local}$ as before. The x-ray local offsets  give the absolute local position of the strip pattern with respect to the source plates. Since the position of the source plates will be monitored by the alignment system in ATLAS~\cite{nsw_tdr}, the local position of the strip pattern can be known in the ATLAS coordinate system for every position where x-ray data was taken.
+
+The main advantage of the x-ray dataset over the cosmics dataset is that absolute local offsets are measurable thanks to the reference frame provided by the source plates. However, the systematic uncertainty on the x-ray offsets is large: \SI{120}{\micro\meter} was accepted by the collaboration. The cuts and corrections applied to the x-ray data that motivate the uncertainty are detailed in Lefebvre, 2020~\cite{lefebvre_precision_2020}. In addition, local offset measurements were limited to the positions of the alignment platforms; only 10 - 20 positions were surveyed for each wedge. Therefore, validating the x-ray measurements and seeing how they can be improved is important because of the uncertainty and incompleteness of the dataset. How the cosmics dataset was used for this purpose is discussed in chapter~\ref{chap:comparison}. 
