@@ -110,7 +110,7 @@ The other tracking combinations had smaller RMS values. Differences on the order
 
 %TODO : REMOVE THIS
 % --------------------------------------------------
-\section{OBSOLETE, DELETE LATER Area of residual distribution regions of interest}
+\section{OBSOLETE, WRITE ONCE YOU'RE SURE. Area of residual distribution regions of interest}
 % --------------------------------------------------
 \label{appendix:systematics_bin_size}
 % Edit count: 1
@@ -121,6 +121,8 @@ The other tracking combinations had smaller RMS values. Differences on the order
 % Also need to establish x == perpendicular to wires; y == perpendicular to strips. ==> How do I do this consistently?
 % May need to add 3100V reference if it's not already defined in your thesis.
 % Define ROI as short form?
+\textit{This is the reasoning as of 2021-08-10}.
+Several factors went into choosing the area of the region of interest. First, the uncertainty in the cosmics tracks in the x-coordinates for the least geometrically favourable case was just under \SI{40}{\milli\meter}, so the width of the bin in x had to be larger. Also since the x-coordinate was discrete the number of entries in each bin was smoothed out by making the width in x larger than two wire groups, or \SI{72}{\milli\meter}. Second, the scale on which local offsets vary by more than \SI{50}{\micro\meter} is \SI{500}{\milli\meter}, assuming a large but possible rotation angle on a layer of \SI{1000}{\micro\radian}. Variations of \SI{50}{\micro\meter} were deemed significant since the desired position resolution of the quadruplet is \SI{100}{\micro\meter}. Therefore, the area had to be significantly lesser than \SI{500}{\milli\meter}. Third, the x-ray gun only covered an area of \SI{20}{\milli\meter} by \SI{20}{\milli\meter}, so ideally only cosmics tracks in that region would be included in the calculation of the mean. However, \SI{20}{\milli\meter} in $x$ was too small and the number of tracks is limited in small bins. Balancing these considerations, \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins were used. The variation in differences between cosmics residual means for these bins and \SI{40}{\milli\meter} by \SI{20}{\milli\meter} bins was insignificant thanks to the increased statistical uncertainty on the cosmics residual means for the smaller bins.
 
 \textit{This section is outdated, and likely needs to be removed}
 
