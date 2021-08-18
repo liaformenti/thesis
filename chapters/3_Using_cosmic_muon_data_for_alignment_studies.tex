@@ -54,9 +54,7 @@ The residual distributions were wider for tracking combinations where the extrap
 
 A gaussian fit was used to extract the mean of the residual distributions. Theoretically, a double gaussian distribution is more apt, but for this analysis the gaussian fit was sufficient, as discussed in appendix~\ref{appendix:systematics_res_fit_fcn}.
 
-%TODO : The x-ray area of interest is only about 20 mm, not 80 mm as previously thought (you were looking at plots without collimator). Gotta sort this out.
-
-The motivation for the area of the region of interest will be discussed in chapter~\ref{chap:comparison}.
+The area of the region of interest was \SI{100}{\milli\meter} by \SI{100}{\milli\meter}. The size balanced the amount of tracks falling in the region of interest to give sufficient statistics to the local residual distributions, while being smaller than the order on which misalignments were expected to effect the local offsets significantly. "Significantly" in this context was defined based on the distance in $x$ that a large but possible rotation of \SI{1000}{\micro\radian} would change the local offset by more than \SI{50}{\micro\meter}, which is half the required position resolution of the sTGCs~\cite{nsw_tdr}.
 
 It is only possible to calculate relative local offsets with cosmics data because there was no external reference to measure positions on all layers with respect to. As an example, assuming that the residual on layer 2 in figure~\ref{fig:fake_event_display} is representative of the relative local offset, the residual on layer 2 could be caused by layer 2 being misaligned from nominal, but it could also be caused by layers 1 and 4 being misaligned from nominal while layer 2 is in its expected position! Any number of combinations of local offsets on layers 1, 2 and 4 could produce the residual on layer 2. The value of relative local offset measurements will be shown and discussed throughout this work.
 
@@ -160,6 +158,8 @@ Given that the uncertainty in the cosmics residual means is lesser than or near 
 \section{The x-ray method}
 % --------------------------------------------------
 \label{x_ray}
+
+%TODO : consistently call the x-ray centroids the "x-ray beam profile centers"
 
 Work on characterizing relative misalignments between quadruplet layers is ongoing~\cite{zhao_cosmic_2019}, \textcolor{red}{(Can I cite John's thesis-in-progress?)} but what is required are the absolute strip positions with respect to their nominal position in the ATLAS analysis coordinate system \textcolor{red}{to be input into Athena(?)}. Somehow, absolute misalignment parameters must be derived to create a model of absolute strip positions - which is not possible with the cosmics dataset. Absolute local offset measurements were done by the so-called x-ray method~\cite{lefebvre_precision_2020}. The x-ray tests were performed after the quadruplets arrived at CERN and were assembled into wedges. Essentially, an x-ray gun was attached to one of the source plates glued to the surface of the wedge (figure~\ref{fig:xray_setup}), and the beam profile recorded by the strips.
 
