@@ -5,6 +5,8 @@
 % Edit count: Lia - 2, Brigitte - 0
 \chapter{Datasets used for alignment studies}
 
+%TODO : Include CMM data
+
 % --------------------------------------------------
 \section{Measuring alignment using cosmics data}
 % --------------------------------------------------
@@ -28,7 +30,7 @@ where $y_{i,hit}$ is the recorded hit position and $y_{i,track}$ is the polated 
 \begin{figure}
     \centering
     \includegraphics[width = 0.9\textwidth]{figures/figure_fake_event_display.pdf}
-    \caption{Representation of a muon event recorded by an sTGC. The clusters are fit with a Gaussian and the mean is taken as the hit position. A track is built from the chosen reference layers, 1 and 4, and the residual calculated on layer 2. The clusters come from a real muon event, but their positions were modified to highlight the idea of residuals.}
+    \caption{Representation of a muon event recorded by an sTGC. The clusters are fit with a Gaussian and the mean is taken as the hit position. A track is built from the chosen reference layers, 1 and 4, and the residual calculated on layer 2. The clusters come from a real muon event, but their positions were modified to highlight the residual on layer 2.}
     \label{fig:fake_event_display}
 \end{figure}
 
@@ -152,7 +154,7 @@ A summary of the systematic uncertainties assigned for each tracking combination
 \label{tab:sys_uncerts}
 \end{table}
 
-Given that the uncertainty in the cosmics residual means is lesser than or near to the order of the required position resolution of the sTGCs (\SI{100}{\micro\meter}~\cite{nsw_tdr}) the cosmic residual means are relevant input for alignment studies.
+The uncertainty in each mean cosmics residual was assigned as the sum in quadrature of the statistical uncertainty in the mean and the appropriate systematic uncertainty for the tracking combination. Given that the uncertainty in the mean cosmics residuals is lesser than or near to the order of the required position resolution of the sTGCs (\SI{100}{\micro\meter}~\cite{nsw_tdr}) the cosmic residual means are relevant input for alignment studies.
 
 % --------------------------------------------------
 \section{The x-ray method}
