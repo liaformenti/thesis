@@ -5,7 +5,9 @@
 % Edit count: Lia - 2, Brigitte - 0
 \chapter{Datasets used for alignment studies}
 
-%TODO : Include CMM data
+%TODO : Include CMM data if needed. Is the intro enough? Would it flow better here?
+
+Three methods were used to characterize each quadruplet's alignment: the CMM method, cosmic ray tracing and x-ray profile reconstruction. For present purposes, the CMM method was described sufficiently in the introduction. The x-ray method is detailed at the end of this chapter (section~\ref{sec:x_ray}). How cosmic ray tracing was used for alignment studies, with the goal of independently validating the x-ray method, is the main focus of this chapter and this thesis. 
 
 % --------------------------------------------------
 \section{Measuring alignment using cosmics data}
@@ -105,13 +107,9 @@ The DNL correction was not applied because its effect on the residual means was 
 
 A summary of the systematic uncertainties assigned for each tracking combination is given in table~\ref{tab:sys_uncerts}.
 
-%TODO : Maybe just make the table have the total sys uncertainty, and put the breakdown at the end of appendix:systematics
-%\begin{center}
 \begin{table}
 
 \begin{tabularx}{\textwidth} {
- | >{\raggedright\arraybackslash}X 
- | >{\raggedright\arraybackslash}X 
  | >{\raggedright\arraybackslash}X
  | >{\raggedright\arraybackslash}X 
  | >{\raggedright\arraybackslash}X 
@@ -121,32 +119,18 @@ A summary of the systematic uncertainties assigned for each tracking combination
  | >{\raggedright\arraybackslash}X | }
  
  \hline
- \textbf{Layer} & \textbf{Fixed layer 1} & \textbf{Fixed layer 2} & \textbf{\ref{appendix:systematics_res_fit_fcn}} & \textbf{\ref{appendix:systematics_2900V_vs_3100V}} & \textbf{\ref{appendix:systematics_cluster_fit_fcn}} & \textbf{\ref{appendix:systematics_dnl}} & \textbf{Total} \\ 
+ \textbf{Tracking geometry} & \textbf{Residual distribution fit function (\ref{appendix:systematics_res_fit_fcn})} & \textbf{Cosmics data collection voltage (\ref{appendix:systematics_2900V_vs_3100V})} & \textbf{Cluster fit algorithm (\ref{appendix:systematics_cluster_fit_fcn})} & \textbf{Apply DNL correction or not (\ref{appendix:systematics_dnl})} & \textbf{Total} \\ 
  \hline
  \hline 
- 3 & 1 & 2 & 0.010 & 0.041 & 0.018 & 0.008 & \textbf{0.047} \\
+   Layer 3, fixed layers 1, 2 - like & 0.01 & 0.04 & 0.02 & 0.01 & \textbf{0.05} \\
  \hline
-    4 & 1 & 2 & 0.025 & 0.091 & 0.027 & 0.012 & \textbf{0.098} \\
+   Layer 4, fixed layers 1, 2 - like & 0.03 & 0.01 & 0.03 & 0.01 & \textbf{0.10} \\
  \hline
-    2 & 1 & 3 & 0.008 & 0.020 & 0.012 & 0.003 & \textbf{0.025} \\
+    Layer 2, fixed layers 1, 3 - like & 0.01 & 0.02 & 0.01 & 0.000 & \textbf{0.03} \\
  \hline
-    4 & 1 & 3 & 0.007 & 0.042 & 0.013 & 0.005 & \textbf{0.044} \\
+    Layer 4, fixed layers 1, 3 - like & 0.01 & 0.04 & 0.01 & 0.01 & \textbf{0.04} \\
  \hline
-    2 & 1 & 4 & 0.006 & 0.035 & 0.012 & 0.005 & \textbf{0.038} \\
- \hline
-    3 & 1 & 4 & 0.006 & 0.035 & 0.012 & 0.005 & \textbf{0.038} \\
- \hline
-    1 & 2 & 3 & 0.010 & 0.041 & 0.018 & 0.008 & \textbf{0.047} \\
- \hline
-    4 & 2 & 3 & 0.010 & 0.041 & 0.018 & 0.008 & \textbf{0.047} \\
- \hline
-    1 & 2 & 4 & 0.007 & 0.042 & 0.013 & 0.005 & \textbf{0.044} \\
- \hline
-    3 & 2 & 4 & 0.008 & 0.020 & 0.012 & 0.003 & \textbf{0.025} \\
- \hline
-    1 & 3 & 4 & 0.025 & 0.091 & 0.027 & 0.012 & \textbf{0.098} \\
- \hline
-    2 & 3 & 4 & 0.010 & 0.041 & 0.018 & 0.008 & \textbf{0.047} \\
+    Layer 2, fixed layers 1, 4 - like & 0.01 & 0.04 & 0.01 & 0.01 & \textbf{0.04} \\
  \hline
  
 \end{tabularx}
@@ -159,11 +143,11 @@ The uncertainty in each mean cosmics residual was assigned as the sum in quadrat
 % --------------------------------------------------
 \section{The x-ray method}
 % --------------------------------------------------
-\label{x_ray}
+\label{sec:x_ray}
 
 %TODO : consistently call the x-ray centroids the "x-ray beam profile centers"
 
-Work on characterizing relative misalignments between quadruplet layers is ongoing~\cite{zhao_cosmic_2019}, \textcolor{red}{(Can I cite John's thesis-in-progress?)} but what is required are the absolute strip positions with respect to their nominal position in the ATLAS analysis coordinate system \textcolor{red}{to be input into Athena(?)}. Somehow, absolute misalignment parameters must be derived to create a model of absolute strip positions - which is not possible with the cosmics dataset. Absolute local offset measurements were done by the so-called x-ray method~\cite{lefebvre_precision_2020}. The x-ray tests were performed after the quadruplets arrived at CERN and were assembled into wedges. Essentially, an x-ray gun was attached to one of the source plates glued to the surface of the wedge (figure~\ref{fig:xray_setup}), and the beam profile recorded by the strips.
+Work on characterizing relative misalignments between quadruplet layers is ongoing~\cite{zhao_cosmic_2019}, \textcolor{red}{(Can I cite John's thesis-in-progress?)} but what is required are the absolute strip positions with respect to their nominal position in the ATLAS analysis coordinate system to be input into Athena~\cite{the_atlas_collaboration_athena}. Somehow, absolute misalignment parameters must be derived to create a model of absolute strip positions - which is not possible with the cosmics dataset. Absolute local offset measurements were done by the so-called x-ray method~\cite{lefebvre_precision_2020}. The x-ray tests were performed after the quadruplets arrived at CERN and were assembled into wedges. Essentially, an x-ray gun was attached to one of the source plates glued to the surface of the wedge (figure~\ref{fig:xray_setup}), and the beam profile recorded by the strips.
 
 \begin{figure}
     \centering
@@ -174,9 +158,7 @@ Work on characterizing relative misalignments between quadruplet layers is ongoi
 
 % During ATLAS operation, the position of the source plates will be monitored using the new alignment system~\cite{nsw_tdr}. Therefore, their position will be known in the absolute ATLAS coordinate system. 
 
-The gun produced x-rays of 7 - \SI{15}{\kilo\electronvolt} that were collimated before reaching the surface of the wedge. The x-rays mostly interacted with the wedge's copper electrodes and gold-plated tungsten wires via the photo effect. \textcolor{red}{The resulting photoelectrons ionized the CO$_2$ in the gap, which resulted in detectable Townsend avalanches -- \textit{is it really avalanches or just electrons drifting back?}}. The beam profile was captured by the distribution of cluster positions. A typical beam profile is shown in figure~\ref{fig:xray_beam_profile}.
-
-%TODO : What separates a delta ray and a photoelectron?
+The gun produced x-rays of 7 - \SI{15}{\kilo\electronvolt} that were collimated before reaching the surface of the wedge. The x-rays mostly interacted with the wedge's copper electrodes and gold-plated tungsten wires via the photo effect. The resulting photoelectrons caused ionization avalanches. The beam profile was captured by the distribution of cluster positions. A typical beam profile is shown in figure~\ref{fig:xray_beam_profile}.
 
 \begin{figure}
     \centering
@@ -184,6 +166,8 @@ The gun produced x-rays of 7 - \SI{15}{\kilo\electronvolt} that were collimated 
     \caption{Distribution of x-ray cluster mean positions after the analysis cuts and corrections. The strip cluster multiplicity, $m$, was limited to 3, 4 and 5. The red line is a Gaussian fit of the distribution and the pink lines denote the edges of the strips. Adapted from \copyright CERN for the benefit of the ATLAS collaboration. CC-BY-4.0 license.}
     \label{fig:xray_beam_profile}
 \end{figure}
+
+Clusters with signal on more than 5 strips were cut because they were most likely caused by photoelectrons ejected with enough energy to cause more primary ionization and subsequent avalanches ($\delta$-rays)~\cite{lefebvre_precision_2020}.
 
 The mean of the cluster position distribution was taken as the x-ray beam profile center. The expected center was calculated assuming a wedge with nominal geometry given the gun position. The difference between the expected and reconstructed beam profile center is a measure of the local offset. Applying the logic of equation~\ref{eqn:local_translation} to the beam profile, the fitted mean acts as $y$, the expected center is $y_{nom}$ and the local offset is $d_{local}$ as before. The x-ray local offsets  give the absolute local position of the strip pattern with respect to the source plates. Since the position of the source plates will be monitored by the alignment system in ATLAS~\cite{nsw_tdr}, the local position of the strip pattern can be known in the ATLAS coordinate system for every position where x-ray data was taken.
 
