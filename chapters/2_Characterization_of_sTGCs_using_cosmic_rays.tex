@@ -2,13 +2,20 @@
 % CHAPTER 2: Characterization of sTGCs using cosmic rays %
 % ==================================================
 
+% Note: in intro you'll need to introduce pads, strips and wires == electrodes.
+
 \chapter{Characterization of sTGCs using cosmic rays}
 \label{chap:cosmics}
 % Edit count: Lia - 0, Brigitte - 0
 
-In Canada, the cathode boards were prepared at TRIUMF in Vancouver, British Columbia; the quadruplets were constructed at Carleton University in Ottawa, Ontario; and were tested and characterized with cosmic muons at McGill University in Montreal, Quebec. Cosmic muon characterization was done with a typical hodoscope.  The quadruplet was placed in the test bench (of which a complete description can be found in Lefebvre, 2018~\cite{lefebvre_thesis}). Above and below it was a layer of scintillator-PMT arrays, labelled in figure~\ref{fig:hodoscope}. If one scintillator from each array fired in coincidence, it indicated the passage of a cosmic muon to be recorded by the quadruplet. The trigger was passed \iffalse through a KC705\footnote{Xilinx, Xilinx Kintex-7 FPGA KC705 Evaluation Kit, EK-K7-KC705-G, 2018} which sent it \fi to the front end boards (FEBs) attached to the adaptor boards of each layer of the quadruplet to readout the electrodes.
+In Canada, the cathode boards were prepared at TRIUMF in Vancouver; the quadruplets were constructed at Carleton University in Ottawa; and the completed quadruplets were tested and characterized with cosmic muons at McGill University in Montreal before being sent to CERN. In this chapter pertinent details of cosmic muon testing at McGill are presented. 
 
+% --------------------------------------------------
 \section{Collecting cosmic muon data}
+% --------------------------------------------------
+
+Cosmic muon characterization was done with a typical hodoscope.  The quadruplet was placed in the test bench (of which a complete description can be found in Lefebvre, 2018~\cite{lefebvre_thesis}). Above and below it was a layer of scintillator-PMT arrays, labelled in figure~\ref{fig:hodoscope}. If one scintillator from each array fired in coincidence, it indicated the passage of a cosmic muon to be recorded by the quadruplet. The trigger was passed \iffalse through a KC705\footnote{Xilinx, Xilinx Kintex-7 FPGA KC705 Evaluation Kit, EK-K7-KC705-G, 2018} which sent it \fi to the front end boards (FEBs) attached to the adaptor boards of each layer of the quadruplet, which readout the electrodes.
+
 \begin{figure}
     \centering
     \includegraphics[width = 0.9\textwidth]{figures/figure_test_bench.png}
@@ -17,33 +24,38 @@ In Canada, the cathode boards were prepared at TRIUMF in Vancouver, British Colu
 \end{figure}
 
 % It would be great to have a scope trace here, preferably of a strip. Oops.
-Each sTGC electrode was connected to a channel on an ASIC\footnote{VMM3~\cite{iakovidis_vmm3_2017}} on the FEB, which was set to measure and record the channel's maximum output (called peak detector output, or PDO) \textcolor{red}{if the channel was above threshold}. Thresholds were measured~\cite{chen_calibration_2019} and adjusted manually in the configuration/readout software (\package{stgc\_readout\_sw}~\cite{siyuan_sun_stgc_readout_sw}). For each trigger, the PDO of all channels above threshold were recorded and stored in a binary file, which could be decoded into a usable ROOT tree~\cite{ROOT} by \package{tgc\_analysis/vmm3Decoder}~\cite{lefebvre_tgc_analysis}. A event recorded in the tree corresponded to one trigger of the scintillator-PMT arrays. 
+Each sTGC electrode was connected to a channel on an ASIC\footnote{the VMM3~\cite{iakovidis_vmm3_2017}} on the FEB, which was set to measure and record the channel's maximum output (called peak detector output, or PDO) if the channel was above threshold. Thresholds were measured~\cite{chen_calibration_2019} and adjusted manually in the configuration/readout software (\package{stgc\_readout\_sw}~\cite{siyuan_sun_stgc_readout_sw}). For each trigger, the PDO of all channels above threshold were recorded and stored in a binary file, which could be decoded into a usable ROOT tree~\cite{ROOT} by \package{tgc\_analysis/vmm3Decoder}~\cite{lefebvre_tgc_analysis}. A event recorded in the tree corresponded to one trigger from the scintillator-PMT arrays. 
 
+To operate, the chambers also needed gas and high voltage. A pentane-CO$_{2}$ mixture was mixed and provided to each chamber in the quadruplet by a custom-built gas system~\cite{keyes_development_2017}. High voltage was provided by CAEN boards. Cosmic muon data was collected at 2.9~kV and 3.1~kV. Although the chambers will be operated at 2.8~kV in ATLAS, 3.1~kV was required separate the cosmic ray pad signals from noise since noise is less well controlled at the cosmic muon testing sites than in ATLAS. To better approach the ATLAS operating conditions, running at 2.9~kV provided sufficient distinction of strip and wire signals from noise.
+
+% --------------------------------------------------
+\section{Rebuilding cosmic muon tracks for characterization}
+% --------------------------------------------------
 %TODO : Redo this section once you're sure what figures you're using.
-The package \package{tgc\_analysis/CosmicsAnalysis}~\cite{lefebvre_tgc_analysis} was used to characterize quadruplets. Many of the characterization methods were based on rebuilding muon tracks. The x and y positions of the muon track on each layer were extracted from the signal on the wires and strips respectively, as shown in figure~\ref{fig:coord_system}. The x-coordinate was taken as the center of the wire group with the maximum PDO, since the wires' pitch was larger than the typical charge spreading. The y-coordinate was taken as the Gaussian mean of the PDO distribution across groups of contiguous strips. The process of grouping contiguous strips that fired was called clustering, and the resulting group was called a cluster. A sample cluster is shown in figure~\ref{fig:sample_cluster}.
+
+The package \package{tgc\_analysis/CosmicsAnalysis}~\cite{lefebvre_tgc_analysis} was used to analyze cosmic muon data and calculate high-level characterization metrics. Many of the characterization methods were based on rebuilding muon tracks. The x and y positions of the muon track on each layer were extracted from the signal on the wires and strips respectively, as is sketched in figure~\ref{fig:mwpc_coords}.
+
+The x-coordinate was taken as the center of the wire group with the maximum PDO, since the wire groups' pitch was larger than the typical charge spreading. Assuming that the true x-position of the hit was uniformly distributed over the width of the wire group, the uncertainty in the x-position was given by $\frac{w}{\sqrt(12)}$, where $w$ was the width of the wire group~\cite{Sauli:117989}. sTGC wire groups were \SI{36}{\milli\meter} wide so the hit x-position uncertainty was \SI{10}{\milli\meter}.
+
+The y-coordinate was taken as the Gaussian mean of the PDO distribution across groups of contiguous strips. The process of grouping contiguous strips with signal above threshold\footnote{Note during cosmic ray testing, the hardware was configured to also record the PDO of strips adjacent to a strip above threshold.} was called clustering, and the resulting group was called a cluster. Figure~\ref{fig:mwpc_coords} helps to sketch out the clustering process and a sample cluster is shown in figure~\ref{fig:sample_cluster}.
 
 %TODO : Use fig 2.12 pg 36 Benoit's thesis on left with sample cluster on right for fig:sample_cluster and REMOVE this. Rewrite text to match figure scheme.
 \begin{figure}
     \centering
-    \includegraphics[width = 0.9\textwidth]{figures/potato.jpg}
-    \caption{Coordinate system for the hits on each layer of an sTGC. The x-axis is perpendicular to the wires and the y-axis is perpendicular to the strips. The z-axis (not pictured) is centered between layer 2 and 3 and points towards layer 4. This is the coordinate system used in \package{tgc\_analysis}~\cite{lefebvre_tgc_analysis}.}
-    \label{fig:coord_system}
+    \includegraphics[width = 0.6\textwidth]{figures/mwpc_lefebvre_thesis_gatti.png}
+    \caption{A sketch of an sTGC-lke detector. The position of the avalanche could be extracted from the wires and strips that picked up the avalanche signal. The signals on individual strips are sketched. Clustering was the processs of fitting a Gaussian to the peak value of the individual contiguous strips, as is done in figure~\ref{fig:sample_cluster}. In this work, the x(y)-coordinate will always refer to the coordinate perpendicular to the wires (strips)~\cite{lefebvre_thesis, gatti_optimum_1979}.}
+    \label{fig:mwpc_coords}
 \end{figure}
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.9\textwidth]{figures/sample_cluster_QL2C04_event5_layer2.pdf}
+    \includegraphics[width = 0.6\textwidth]{figures/sample_cluster_QL2C04_event5_layer2.pdf}
     \caption{A sample cluster resulting from the current picked up on a group of strips (presumably) after the passing of a muon. The grey line is a Gaussian fit.}
     \label{fig:sample_cluster}
 \end{figure}
 
-Note that for strips, the hardware was configured to also record the PDO of strips adjacent to a strip above threshold during cosmic muon testing.
-
-After the coordinates of the muon's passage were estimated on all layers, tracks were reconstructed in x and y separately as a step towards characterization metrics like electrode efficiency and spatial resolution~\cite{lefebvre_thesis}. 
-
 The uncertainty in the cluster mean could be taken as the fitted mean's statistical uncertainty; however, after comparing the difference in cluster means for different fitting algorithms in appendix~\ref{sec:appendix_clustering_cluster_fit}, \SI{60}{\micro\meter} of uncertainty was assigned to the cluster means for the work in this thesis.
     
-%TODO : Mention slow control and gas system where?
-%TODO : Mention 2900V vs 3100V where?
-%TODO : Mention uncertainty on hit x-position where?
-%TODO : Does Tony do Twiki hits map?
+After the coordinates of the muon's passage were estimated on all layers, tracks were reconstructed in x and y separately as a step towards characterization metrics like electrode efficiency and spatial resolution~\cite{lefebvre_thesis}. 
+
+%TODO : Include hit and track map? 
