@@ -24,9 +24,9 @@ Cosmic muon characterization was done with a typical hodoscope.  The quadruplet 
 \end{figure}
 
 % It would be great to have a scope trace here, preferably of a strip. Oops.
-Each sTGC electrode was connected to a channel on an ASIC\footnote{the VMM3~\cite{iakovidis_vmm3_2017}} on the FEB, which was set to measure and record the channel's maximum output (called peak detector output, or PDO) if the channel was above threshold. Thresholds were measured~\cite{chen_calibration_2019} and adjusted manually in the configuration/readout software~\cite{siyuan_sun_stgc_readout_sw}. For each trigger, the PDO of all channels above threshold were recorded and stored in a binary file, which could be decoded into a usable ROOT tree~\cite{ROOT} by \package{tgc\_analysis/vmm3Decoder}~\cite{lefebvre_tgc_analysis}. A event recorded in the tree corresponded to one trigger from the scintillator-PMT arrays. 
+Each sTGC electrode was connected to a channel on an ASIC\footnote{the VMM3~\cite{iakovidis_vmm3_2017} \textcolor{red}{check this in lab}} on the FEB, which was set to measure and record the channel's maximum output (called peak detector output, or PDO) if the channel was above threshold. Thresholds were measured~\cite{chen_calibration_2019} and adjusted manually in the configuration/readout software~\cite{siyuan_sun_stgc_readout_sw}. For each trigger, the PDO of all channels above threshold were recorded and stored in a binary file, which could be decoded into a usable ROOT tree~\cite{ROOT} by \package{tgc\_analysis/vmm3Decoder}~\cite{lefebvre_tgc_analysis}. A event recorded in the tree corresponded to one trigger from the scintillator-PMT arrays. 
 
-Operating the chambers also required gas and high voltage. A pentane-CO$_{2}$ mixture was mixed and provided to each chamber in the quadruplet by a custom-built gas system, controlled by a custom slow control system~\cite{keyes_development_2017}. High voltage was provided by CAEN boards. Cosmic muon data was collected at 2.9~kV and 3.1~kV. Although the chambers will be operated at 2.8~kV in ATLAS, 3.1~kV was required separate the cosmic ray pad signals from noise since noise was less well controlled at the cosmic muon testing sites than it will be in ATLAS. To better approach the ATLAS operating conditions, running at 2.9~kV provided sufficient distinction of strip and wire signals from noise.
+Operating the chambers also required gas and high voltage. A pentane-CO$_{2}$ mixture was created and delivered to each sTGC with a gas system controlled by a slow control program~--- both the gas system and control program were designed and made at McGill~\cite{keyes_development_2017}. High voltage was provided by CAEN boards. Cosmic muon data was collected at 2.9~kV and 3.1~kV. Although the chambers will be operated at 2.8~kV in ATLAS, an earlier version of the FEBs was used at McGill that had a worse signal-to-noise ratio. Separately pad signals sufficiently from noise required operating at 3.1~kV to increase the chambers' gain while 2.9~kV, closer to the nominal voltage, was sufficient for strip and wire signals. Collecting 1 million triggers at each voltage provided enough statistics to calculate characterization metrics, which meant collecting data for just over two hours per quadruplet per voltage.
 
 % --------------------------------------------------
 \section{Rebuilding cosmic muon tracks for characterization}
@@ -47,7 +47,7 @@ The y-coordinate was taken as the Gaussian mean of the PDO distribution across g
     \vspace*{\floatsep}
 %\begin{figure}
     \centering
-    \includegraphics[width = 0.6\textwidth]{figures/sample_cluster_QL2C04_event5_layer2.pdf}
+    \includegraphics[width = 0.5\textwidth]{figures/sample_cluster_QL2C04_event5_layer2.pdf}
     \caption{A sample cluster resulting from the current picked up on a group of strips (presumably) after the passing of a muon. The grey line is a Gaussian fit.}
     \label{fig:sample_cluster}
 \end{figure}
