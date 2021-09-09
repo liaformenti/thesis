@@ -32,7 +32,7 @@ Operating the chambers also required gas and high voltage. A pentane-CO$_{2}$ mi
 \section{Rebuilding cosmic muon tracks for characterization}
 % --------------------------------------------------
 
-Many of the high-level characterization metrics required rebuilding muon tracks. For events passing quality cuts \textcolor{red}{[CITE]}, the x- and y-coordinates of the ionization avalanche on each layer were extracted from the signal on the wires and strips respectively for each event, as is sketched in figure~\ref{fig:mwpc_coords}. In this work, $x$ was the coordinate perpendicular to the wires and $y$ was the coordinate perpendicular to the strips, as is drawn in figure~\ref{fig:mwpc_coords}.
+Many of the high-level characterization metrics required rebuilding muon tracks. For events passing quality cuts~\cite{lefebvre_tgc_analysis}, the x- and y-coordinates of the ionization avalanche on each layer were extracted from the signal on the wires and strips respectively for each event, as is sketched in figure~\ref{fig:mwpc_coords}. In this work, $x$ was the coordinate perpendicular to the wires and $y$ was the coordinate perpendicular to the strips, as is drawn in figure~\ref{fig:mwpc_coords}.
 
 The x-coordinate was taken as the center of the wire group with the maximum PDO, since the wire groups' pitch (\SI{36}{\milli\meter}) was larger than the typical charge spreading. Assuming that the true x-position of the hit was uniformly distributed over the width of the wire group, the uncertainty in the x-position was given by $\frac{36~mm}{\sqrt{12}} = 10~mm$~\cite{Sauli:117989}.
 
@@ -54,9 +54,8 @@ The y-coordinate was taken as the Gaussian mean of the PDO distribution across g
 
 The uncertainty in the y-coordinate could have been taken as the fitted cluster mean's statistical uncertainty; however, after comparing the difference in cluster means for different fitting algorithms in appendix~\ref{sec:appendix_clustering_cluster_fit}, \SI{60}{\micro\meter} of uncertainty was assigned.
 
-The coordinates of the avalanches' on all layers were used to reconstruct tracks in x and y respectively. Most tracks passing quality cuts were probably cosmic muons, but $\delta$-rays and noise contributed. The tracks were then used to calculate characterization metrics like electrode efficiency and spatial resolution, the details of which are discussed in~\cite{lefebvre_thesis}.
+The coordinates of the avalanches' on all layers were used to reconstruct tracks in x and y respectively. Most tracks passing quality cuts were probably cosmic muons, but of course some $\delta$-rays and noise contributed. The tracks were then used to calculate characterization metrics like electrode efficiency and spatial resolution, the details of which are discussed in~\cite{lefebvre_thesis}.
 
-%TODO : edit fig:coord_mwpc. Try and "fit" the cluster in the diagram and label the layers "pad, wires, strips"
 %TODO : Figure out the correct citation for quality cuts. Is Benoit's thesis ok or should you just point people to the software? 
 %TODO : Should I be citing sections as opposed to the whole thesis? I feel like I'll keep citing different sections of thesis.
 %TODO : Include hit and track map? - yes if Brigitte says you need a num_entries plot in chapter 3. You didn't include it because you never mention wire supports in TH2 analysis. But if you want to add num entries for clarity, include cluster map here. Cluster map > raw hits because less cuts and gets across the idea that x is just hit or no hit while y comes from clustering. 
