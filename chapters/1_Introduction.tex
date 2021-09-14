@@ -28,11 +28,11 @@ The ATLAS experiment is one of the LHC's general-purpose particle detector array
 
 Information necessary to understand the ATLAS detector, the NSW upgrade, sTGCs and the NSW alignment system are presented. In chapter 2, the details of how cosmic muon data was collected are presented. In chapter 3, I explain one way cosmic muon data can be used for alignment. BLAH BLAH BLAH. 
 
-\section{Background}
+\section{The Large Hadron Collider}
 
-\subsection{The Large Hadron Collider}
-
-The LHC is an accelerator \SI{27}{\kilo\meter} in circumference and located $\sim$\SI{100}{\meter} underground at CERN near Geneva, Switzerland~\cite{evans_lhc_2008}. It has two beam pipes that counter-circulate bunches of protons\footnote{the LHC also accelerates lead ions, but this paper only considers proton-proton collisions} before colliding the bunches in the center of one of four major experiments, such as the ATLAS experiment (discussed in section~\ref{sec:atlas}). The LHC enables physicists to study particle physics at the energy frontier. In the previous run of the LHC (run 2), protons were collided with a center of mass energy of \SI{13}{\tera\electronvolt}. 
+% Include order for inst lum.
+% Include bunch crossing frequency
+The LHC is an accelerator \SI{27}{\kilo\meter} in circumference and located $\sim$\SI{100}{\meter} underground at CERN near Geneva, Switzerland~\cite{evans_lhc_2008}. It has two beam pipes that counter-circulate bunches of protons\footnote{the LHC also accelerates lead ions, but this paper only considers proton-proton collisions} before colliding the bunches in the center of one of four major experiments, such as the ATLAS experiment (discussed in section~\ref{sec:atlas}). There, the partons interact and many physics processes can occur. The LHC enables physicists to study particle physics at the energy frontier. In the previous run of the LHC (run 2), protons were collided with a center of mass energy of \SI{13}{\tera\electronvolt}. 
 
 % There are two main branches of study that can be pursued with the LHC and ATLAS. First, properties predicted by the standard model (SM) of particle physics can be measured. Else, physicists can search for evidence of processes predicted by theories beyond the standard model. Both the SM measurement and search analyses are based on measuring the number of times a given process occurs and comparing it to expectations. In this way, the number of proton-proton interactions created by the LHC directly affects the statistics available to do SM measurements and searches using the ATLAS experiment.
 
@@ -49,7 +49,7 @@ Predicting the number of proton-proton interactions requires defining a metric c
 \label{eqn:inst_lum}
 \end{equation}
 
-In equation~\ref{eqn:inst_lum}, $f$ is the frequency of the bunch crossings, $N_{1}$ and $N_{2}$ are the number of protons in each bunch, and $\sigma_{x}$ and $\sigma_{y}$ are the RMS of the spatial distributions of the bunch; therefore, luminosity is a property of the accelerator and its operating parameters. Multiplying the luminosity by the cross section of a given process gives the expected rate for that process.
+In equation~\ref{eqn:inst_lum}, $f$ is the frequency of the bunch crossings (\SI{25}{\nano\second}), $N_{1}$ and $N_{2}$ are the number of protons in each bunch ($\sim 10^{11}$ protons / bunch), and $\sigma_{x}$ and $\sigma_{y}$ are the RMS of the spatial distributions of the bunch; therefore, luminosity is a property of the accelerator and its operating parameters. The design luminosity of the LHC was $10^{34}$ cm$^{-2}$s$^{-1}$. Multiplying the luminosity by the cross section of a given process gives the expected rate for that process.
 
 Integrating the \textit{instantaneous} luminosity (equation~\ref{eqn:inst_lum}) over a period of data collection gives the integrated luminosity,
 
@@ -58,9 +58,9 @@ L = \int \mathcal{L} \left( t \right) \,dt
 \label{eqn:int_lum}
 \end{equation}
 
-with units of an inverse cross section and related to the total number of collisions. In this way, the luminosity is the link between the accelerator and the statistical power of measurements to be made with the data collected. 
+with units of an inverse cross section and related to the total number of interactions. In this way, the luminosity is the link between the accelerator and the statistical power of measurements to be made with the data collected. 
 
-So far, the LHC provided an integrated luminosity of \SI{30}{\per\femto\barn} in run 1 and \SI{190}{\per\femto\barn} in run 2, as shown in figure~\ref{fig:hl-lhc}. The HL-LHC upgrade~\cite{hl_lhc_tdr} \textcolor{red}{(this will be discussed earlier in the introduction)} was accepted because without increasing the luminosity of the LHC tenfold, running the accelerator will not provide significant statistical gain on measurements. Also, some systems will need repair and replacement to operate past $\sim$2020. The energy accessible at the LHC offers irreplaceable ability to study Higgs- and electroweak-sector physics~\cite{dainese_physics_2018}, so the European Strategy for Particle Physics made it a priority ``to fully exploit the physics potential of the LHC'' with ``a major luminosity upgrade''~\cite{european_strategy_for_particle_physics}. The goal is for the LHC to provide \SI{3000}{\per\femto\barn} of collisions in the 12 years following the upgrade. The luminosity actually achieved will depend on a combination of technological advances and upgrades in progress~\cite{hl_lhc_tdr} that affect the factors contributing to luminosity, as defined in equation~\ref{eqn:inst_lum}.
+So far, the LHC provided an integrated luminosity of \SI{30}{\per\femto\barn} in run 1 and \SI{190}{\per\femto\barn} in run 2, as shown in figure~\ref{fig:hl-lhc}. The HL-LHC upgrade~\cite{hl_lhc_tdr} \textcolor{red}{(this will be discussed earlier in the introduction)} was accepted because without increasing the luminosity of the LHC tenfold, running the accelerator will not provide significant statistical gain on measurements. Also, some systems will need repair and replacement to operate past $\sim$2020. The energy accessible at the LHC offers irreplaceable ability to study Higgs- and electroweak-sector physics~\cite{dainese_physics_2018}, so the European Strategy for Particle Physics made it a priority ``to fully exploit the physics potential of the LHC'' with ``a major luminosity upgrade''~\cite{european_strategy_for_particle_physics}. The goal is for the LHC to provide an integrated luminosity\SI{3000}{\per\femto\barn} in the 12 years following the upgrade. The luminosity actually achieved will depend on a combination of technological advances and upgrades in progress~\cite{hl_lhc_tdr} that affect the factors contributing to luminosity, as defined in equation~\ref{eqn:inst_lum}.
 
 
 \begin{figure}
@@ -79,16 +79,61 @@ So far, the LHC provided an integrated luminosity of \SI{30}{\per\femto\barn} in
 % The energies accessible by the accelerator make it unique infrastructure with which to study processes of the standard model of particle physics and search for new phenomenon beyond the standard
 % model. Considerable progress has been made towards answering the questions originally used to motivate the construction of the LHC, but many remain unanswered or only partially answered~ \cite{brianti_large_1984}. Therefore, the continued use and maintenance of the accelerator 
 
-\subsection{The ATLAS experiment}
+\section{The ATLAS experiment}
 \label{sec:atlas}
+%TODO : define forward
+
+The ATLAS experiment~\cite{collaboration_atlas_2008} was designed to support all the physics goals of the LHC. It is \SI{44}{\meter} long and \SI{25}{\meter} in diameter, and weighs 7000 tones. It is an array of particle detector subsystems arranged cylindrically around the beam pipe and centered around one of the LHC's interaction points (a place where the beams collide), as shown in figure~\ref{fig:atlas}. Often, ATLAS is considered a cylinder and it is helpful to separate the components in the barrel and those in the endcaps / in the so-called ``forward'' region.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = \textwidth]{figures/atlas_diagram.png}
+    \caption{Diagram of the ATLAS experiment, with the various detector subsystems labelled. Figure from~\cite{collaboration_atlas_2008}, which also contains more details about the ATLAS experiment.}
+    \label{fig:atlas}
+\end{figure}
+
+For analysis, ATLAS is typically described in spherical coordinates. The azimuthal angle $\phi$ is measured around the beampipe and the polar angle $\theta$ is measured from the beam pipe. A more useful coordinate than $\theta$ is the pseudo-rapidity, $\eta = -\ln\tan\left(\theta/2\right)$, because it approaches the rapidity of a particle when its momentum is much greater than its mass and differences in rapidity are approximately invariant to a Lorentz boost parallel to the beam. The range of $\eta$ is 0 (perpendicular to the beam) to $\pm\inf$ (parallel to the beam).
+
+It is not actually the proton bunches that collide and generate physics processes, but their constituent partons. Since the partons may carry an unknown fraction of the momentum, ATLAS analyses are based on the sum of the transverse momentum and energy of outgoing particle being approximately zero, transverse meaning perpendicular to the beam.
+
+A brief overview of the sub-systems of ATLAS is given, starting from the system closest to the beam and moving outwards. 
+
+\subsection{The inner detector}
+%TODO : Do I ref the technical design reports like Alessandro or is the instrum. paper citation at the beginning enough?
+%TODO : Do I include a diagram of the inner detector?
+The inner detector is for precision tracking, vertex measurements and electron identification. It is immersed in a \SI{2}{\tesla} magnetic field parallel to the beam to bend the track of outgoing particles to make momentum measurements. The innermost part is made of high-resolution semiconductor pixel and strip detectors for precision tracking while the outermost part are straw-tubes that generate and detect transition radiation for electron identification.
+
+\subsection{Calorimeters}
+Electromagnetic and hadronic sampling calorimeter units are used to record the energy of electrons, photons, jets and missing transverse energy (from neutrinos, for example). A combination of liquid-argon electromagnetic and hadronic calorimeters and tile-scintillator hadronic calorimeters cover close to the entire rapidity range, $|\eta| < 4.9$, as shown in figure~\ref{fig:atlas_calorimeter}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.5\textwidth]{figures/calorimeter.png}
+    \caption{Diagram of the ATLAS calorimeter system, with the different segments and the technology used labelled. Figure from~\cite{collaboration_atlas_2008}.}
+    \label{fig:atlas_calorimeter}
+\end{figure}
+
+The calorimeters cause incoming charged particles to shower and deposit their energy in the sensitive volume. Particles other than those mentioned would have decayed in the inner detector before reaching the calorimeter. Only muons and neutrinos are known to pass the calorimeters to the muon spectrometer. 
 
 \subsection{The ATLAS muon spectrometer}
-The outermost detector subsystem of ATLAS is the muon spectrometer since muons, being minimum ionizing particles, are not stopped by the calorimeters.
 
-The muon spectrometer is the outermost layer of the ATLAS detector, since only muons (and neutrinos) can pass through the calorimeters. For muons that are ejected towards the end-caps of ATLAS, their trajectory is bent by the magentic field and their position recorded by three successive wheels of muon detectors. With each wheel providing the position of the muon along its trajectory and knowledge of the magentic field, the momentum of the muon generated in the collision can be reconstructed. 
+Muon energy and momentum are measured based on magnetic deflection by superconducting air-core toroid magnets. In the barrel of ATLAS, eight coils bent into ``racetracks'' in separate cryostat housings are arranged around the beampipe to provide the magentic field. Each of the eight cryostats are held together by a mechanical structure. In the forward region, two end-cap toroids contain eight smaller racetrack shaped coils arranged symmetrically around the beampipe in a single cryostat housing are inserted in the ends of the barrel. Figure~\ref{fig:atlas_muon_spectrometer} shows the toroid magnets and the different parts of the ATLAS muon spectrometer.
 
-\subsection{Motivation for replacing the NSW}
-Currently, the small wheel is made of thin-gap chambers, whi22ch record hits. They have the known problem that particles generated in the material of the end-cap toroid magnet that hit the small wheel cannot be distinguished from muons from the interaction point. For example, in figure~\ref{fig:nsw_track_triggering}, all three tracks would be triggered on.
+\begin{figure}
+    \centering
+    \includegraphics[width = \textwidth]{figures/atlas_muon_spectrometer.jpg}
+    \caption{Diagram of the ATLAS muon spectrometer, with the different detector technologies and toroid magnets labelled. Figure from~\cite{collaboration_atlas_2008}.}
+    \label{fig:atlas_muon_spectrometer}
+\end{figure}
+
+In the barrel, three layers of monitored drift tubes (MDTs) are arranged between, above and below the barrel toroid magnets. They are used for precision tracking. On both sides of the middle layer of  MDTs and on the top of the top layer of MDTs are resitive plate chambers (RPCs), used for triggering. The encaps of the muon spectrometer are composed of three wheels each, the small wheel (SW), big wheel, and outer wheel. The big wheel and the outer wheel have MDTs for offline precision tracking and the big wheel has layers of thin gap chambers (TGCs) on either side for triggering. In the first two runs of ATLAS, offline precision tracking on the outer rim was of the small wheel was done with MDTs. The inner part had cathode strip chambers (CSCs), which had higher granularity to handle the increased background radiation rate in the forward region~\cite{atlas_muon_spectrometer_tdr}. 
+
+For the design momentum resolution of \textcolor{red}{$\delta p_T / p_T < 1\times10^{-4} p / GeV$ <- what does p/GeV mean? From muon spec. TDR} for $p_T$ < 300 GeV, the MDTs and CSCs required position resolution of \SI{50}{\micro\meter} each. Accordingly, an optical alignment system was designed to monitor and correct for chamber positions as well~\cite{atlas_muon_spectrometer_tdr, aefsky_optical_2008}.
+
+% The muon spectrometer is the outermost layer of the ATLAS detector, since only muons (and neutrinos) can pass through the calorimeters. For muons that are ejected towards the end-caps of ATLAS, their trajectory is bent by the magentic field and their position recorded by three successive wheels of muon detectors. With each wheel providing the position of the muon along its trajectory and knowledge of the magentic field, the momentum of the muon generated in the collision can be reconstructed. 
+
+\section{Motivation for replacing the SW}
+Currently, the small wheel is made of thin-gap chambers, which record hits. They have the known problem that particles generated in the material of the end-cap toroid magnet that hit the small wheel cannot be distinguished from muons from the interaction point. For example, in figure~\ref{fig:nsw_track_triggering}, all three tracks would be triggered on.
 
 \begin{figure}
     \centering
