@@ -81,9 +81,8 @@ So far, the LHC provided an integrated luminosity of \SI{30}{\per\femto\barn} in
 
 \section{The ATLAS experiment}
 \label{sec:atlas}
-%TODO : define forward
 
-The ATLAS experiment~\cite{collaboration_atlas_2008} was designed to support all the physics goals of the LHC. It is \SI{44}{\meter} long and \SI{25}{\meter} in diameter, and weighs 7000 tones. It is an array of particle detector subsystems arranged cylindrically around the beam pipe and centered around one of the LHC's interaction points (a place where the beams collide), as shown in figure~\ref{fig:atlas}. Often, ATLAS is considered a cylinder and it is helpful to separate the components in the barrel and those in the endcaps / in the so-called ``forward'' region.
+The ATLAS experiment~\cite{collaboration_atlas_2008} was designed to support all the physics goals of the LHC. It is \SI{44}{\meter} long and \SI{25}{\meter} in diameter, and weighs 7000 tones. It is an array of particle detector subsystems arranged concentrically around the beam pipe and centered around one of the LHC's interaction points (a place where the beams collide), as shown in figure~\ref{fig:atlas}. It is helpful to separate the subsystems of ATLAS into the so-called ``barrel'' and ``encap'' (or forward region), referring to the cylindrical shape.  % <- maybe move this sentence to muon spec section
 
 \begin{figure}
     \centering
@@ -92,47 +91,81 @@ The ATLAS experiment~\cite{collaboration_atlas_2008} was designed to support all
     \label{fig:atlas}
 \end{figure}
 
-For analysis, ATLAS is typically described in spherical coordinates. The azimuthal angle $\phi$ is measured around the beampipe and the polar angle $\theta$ is measured from the beam pipe. A more useful coordinate than $\theta$ is the pseudo-rapidity, $\eta = -\ln\tan\left(\theta/2\right)$, because it approaches the rapidity of a particle when its momentum is much greater than its mass and differences in rapidity are approximately invariant to a Lorentz boost parallel to the beam. The range of $\eta$ is 0 (perpendicular to the beam) to $\pm\inf$ (parallel to the beam).
+For analysis, ATLAS is typically described in spherical coordinates. The azimuthal angle $\phi$ is measured around the beampipe and the polar angle $\theta$ is measured from the beam pipe. A more useful coordinate than $\theta$ is the pseudo-rapidity, $\eta = -\ln\tan\left(\theta/2\right)$, because it approaches the rapidity of a particle when its momentum is much greater than its mass and differences in rapidity are approximately invariant to a Lorentz boost parallel to the beam. The range of $\eta$ is 0 (perpendicular to the beam) to $\pm\inf$ (parallel to the beam). Typically, $\eta$ is the physically interesting coordinate because the $\phi$ coordinate follows the cylindrical symmetry.
 
-It is not actually the proton bunches that collide and generate physics processes, but their constituent partons. Since the partons may carry an unknown fraction of the momentum, ATLAS analyses are based on the sum of the transverse momentum and energy of outgoing particle being approximately zero, transverse meaning perpendicular to the beam.
-
-A brief overview of the sub-systems of ATLAS is given, starting from the system closest to the beam and moving outwards. 
+It is not actually the proton bunches that collide and generate physics processes, but their constituent partons. Since the partons may carry an unknown fraction of the momentum, ATLAS analyses are based on the sum of the transverse momentum and energy of outgoing particle being approximately zero, transverse meaning perpendicular to the beam. The goal of ATLAS is to reconstruct the 4-momentum of each collision product to understand what happened in each collision. A brief overview of the sub-systems of ATLAS is given, starting from the system closest to the beam and moving outwards. 
 
 \subsection{The inner detector}
-%TODO : Do I ref the technical design reports like Alessandro or is the instrum. paper citation at the beginning enough?
 %TODO : Do I include a diagram of the inner detector?
-The inner detector is for precision tracking, vertex measurements and electron identification. It is immersed in a \SI{2}{\tesla} magnetic field parallel to the beam to bend the track of outgoing particles to make momentum measurements. The innermost part is made of high-resolution semiconductor pixel and strip detectors for precision tracking while the outermost part are straw-tubes that generate and detect transition radiation for electron identification.
-
-\subsection{Calorimeters}
-Electromagnetic and hadronic sampling calorimeter units are used to record the energy of electrons, photons, jets and missing transverse energy (from neutrinos, for example). A combination of liquid-argon electromagnetic and hadronic calorimeters and tile-scintillator hadronic calorimeters cover close to the entire rapidity range, $|\eta| < 4.9$, as shown in figure~\ref{fig:atlas_calorimeter}.
+The inner detector~\cite{atlas_inner_detector_tdr_1, atlas_inner_detector_tdr_2} (figure~\ref{fig:atlas_inner_detector}) is for precision tracking, vertex measurements and electron identification. A \SI{2}{\tesla} solenoid with field parallel to the beam bends the track of outgoing particles to make momentum measurements possible. The innermost part is made of high-resolution semiconductor pixel and strip detectors for precision tracking while the outermost part are straw-tubes that generate and detect transition radiation for electron identification.
 
 \begin{figure}
     \centering
-    \includegraphics[width = 0.5\textwidth]{figures/calorimeter.png}
+    \includegraphics[width = 0.5\textwidth]{figures/atlas_inner_detector.jpg}
+    \caption{Diagram of the ATLAS experiment's inner detector, with the different segments and the technology used labelled. Figure from~\cite{collaboration_atlas_2008}.}
+    \label{fig:atlas_inner_detector}
+\end{figure}
+
+\subsection{Calorimeters}
+Electromagnetic and hadronic sampling calorimeter units are used to record the energy of electrons, photons, jets and missing transverse energy (from neutrinos, for example). A combination of liquid-argon electromagnetic and hadronic calorimeters~\cite{atlas_lar_cal_tdr} and tile-scintillator hadronic calorimeters~\cite{atlas_tile_cal_tdr} cover the rapidity range $|\eta| < 4.9$, as shown in figure~\ref{fig:atlas_calorimeter}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.5\textwidth]{figures/atlas_calorimeter.png}
     \caption{Diagram of the ATLAS calorimeter system, with the different segments and the technology used labelled. Figure from~\cite{collaboration_atlas_2008}.}
     \label{fig:atlas_calorimeter}
 \end{figure}
 
-The calorimeters cause incoming charged particles to shower and deposit their energy in the sensitive volume. Particles other than those mentioned would have decayed in the inner detector before reaching the calorimeter. Only muons and neutrinos are known to pass the calorimeters to the muon spectrometer. 
+The calorimeters cause incoming charged particles to shower and deposit their energy in the sensitive volume. Only muons and neutrinos are known to pass the calorimeters to the muon spectrometer.  Particles other than those mentioned would have decayed in the inner detector before reaching the calorimeter. 
 
 \subsection{The ATLAS muon spectrometer}
 
-Muon energy and momentum are measured based on magnetic deflection by superconducting air-core toroid magnets. In the barrel of ATLAS, eight coils bent into ``racetracks'' in separate cryostat housings are arranged around the beampipe to provide the magentic field. Each of the eight cryostats are held together by a mechanical structure. In the forward region, two end-cap toroids contain eight smaller racetrack shaped coils arranged symmetrically around the beampipe in a single cryostat housing are inserted in the ends of the barrel. Figure~\ref{fig:atlas_muon_spectrometer} shows the toroid magnets and the different parts of the ATLAS muon spectrometer.
+Muon energy and momentum are measured based on magnetic deflection by superconducting air-core toroid magnets. In the barrel of ATLAS, eight coils bent into ``racetracks'' in separate cryostat housings are arranged around the beampipe to provide the magentic field. Each of the eight cryostats are held together by a mechanical structure. In the forward region, two end-cap toroids each with eight smaller racetrack shaped coils arranged symmetrically around the beampipe in a single cryostat housing are inserted in the ends of the barrel. Figure~\ref{fig:atlas_muon_spectrometer} shows the toroid magnets and the different parts of the ATLAS muon spectrometer.
 
 \begin{figure}
-    \centering
-    \includegraphics[width = \textwidth]{figures/atlas_muon_spectrometer.jpg}
-    \caption{Diagram of the ATLAS muon spectrometer, with the different detector technologies and toroid magnets labelled. Figure from~\cite{collaboration_atlas_2008}.}
-    \label{fig:atlas_muon_spectrometer}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/atlas_muon_spectrometer.jpg}
+  \label{fig:atlas_muon_spectrometer_3D}
+  \caption{}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/atlas_old_muon_spec_quarter_cut.png}
+  \label{fig:atlas_muon_spectrometer_cut}
+  \caption{}
+\end{subfigure}
+\caption{(a) The ATLAS muon spectrometer~\cite{collaboration_atlas_2008}. (b) A quarter-cut of ATLAS, with the interaction point in the bottom left corner. The small wheel is just left of the end cap toroid, the big wheel is to its right, and the outer wheel is the rightmost structure~\cite{atlas_performance_muon_trigger_2015}}
+\label{fig:atlas_muon_spectrometer}
 \end{figure}
 
-In the barrel, three layers of monitored drift tubes (MDTs) are arranged between, above and below the barrel toroid magnets. They are used for precision tracking. On both sides of the middle layer of  MDTs and on the top of the top layer of MDTs are resitive plate chambers (RPCs), used for triggering. The encaps of the muon spectrometer are composed of three wheels each, the small wheel (SW), big wheel, and outer wheel. The big wheel and the outer wheel have MDTs for offline precision tracking and the big wheel has layers of thin gap chambers (TGCs) on either side for triggering. In the first two runs of ATLAS, offline precision tracking on the outer rim was of the small wheel was done with MDTs. The inner part had cathode strip chambers (CSCs), which had higher granularity to handle the increased background radiation rate in the forward region~\cite{atlas_muon_spectrometer_tdr}. 
+In the barrel, three layers of monitored drift tubes (MDTs) are used for precision tracking, and resistive plate chambers are used for triggering. The endcaps of the muon spectrometer are composed of three wheels each, the small wheel (SW), big wheel, and outer wheel. The big wheel and the outer wheel have MDTs for offline precision tracking and the thin gap chambers (TGCs) on either side for triggering. In the first two runs of ATLAS, offline precision tracking on the small wheel was done with MDTs and cathode strip chambers (CSCs), and their output did not contribute to the trigger.~\cite{atlas_muon_spectrometer_tdr}. 
 
-For the design momentum resolution of \textcolor{red}{$\delta p_T / p_T < 1\times10^{-4} p / GeV$ <- what does p/GeV mean? From muon spec. TDR} for $p_T$ < 300 GeV, the MDTs and CSCs required position resolution of \SI{50}{\micro\meter} each. Accordingly, an optical alignment system was designed to monitor and correct for chamber positions as well~\cite{atlas_muon_spectrometer_tdr, aefsky_optical_2008}.
+% Sentences if you go without 1/4 cut figure
+In the barrel, three layers of monitored drift tubes (MDTs) are arranged between, above and below the barrel toroid magnets. They are used for precision tracking. On both sides of the middle layer of  MDTs and on the top of the top layer of MDTs are resitive plate chambers (RPCs), used for triggering.
+%  The inner part had cathode strip chambers (CSCs), which had higher granularity to handle the increased background radiation rate in the forward region
+
+For the design momentum resolution of $\Delta p_T / p_T < 1\times10^{-4}~p / GeV$ for $p_T < 300 GeV$ and a few percent for lower $p_T$ muons, the MDTs and CSCs required position resolution of \SI{50}{\micro\meter} each. Accordingly, an optical alignment system was designed to monitor and correct for chamber positions as well~\cite{atlas_muon_spectrometer_tdr, aefsky_optical_2008}.
 
 % The muon spectrometer is the outermost layer of the ATLAS detector, since only muons (and neutrinos) can pass through the calorimeters. For muons that are ejected towards the end-caps of ATLAS, their trajectory is bent by the magentic field and their position recorded by three successive wheels of muon detectors. With each wheel providing the position of the muon along its trajectory and knowledge of the magentic field, the momentum of the muon generated in the collision can be reconstructed. 
 
-\section{Motivation for replacing the SW}
+\subsection{Triggering}
+
+It would be impossible to record all the data from bunch crossings every \SI{25}{\nano\second} at a rate of $\sim$\SI{40}{MHz}, so ATLAS has a multi-level trigger system to select events of interest and unambiguously assign them a to a bunch crossing. The Level-1 (L1) hardware trigger uses the muon spectrometer's TGCs and RPCs to trigger on high $p_T$ muons and the calorimeter detector units to trigger on electrons, jets, high missing transverse energy, and $\tau$ decaying to hadrons, with a maximum trigger rate of \SI{100}{kHz} and latency of \SI{2.5}{\micro\second}. The L1 trigger only uses a fraction of the granularity offered by the detectors~\cite{atlas_l1_trigger_tdr}.
+
+The L1 trigger is used to define regions of interest that are fed into the software high level trigger (HLT), in which the full granularity of the muon spectrometer and calorimeter are used with information from the inner detector to reduce the trigger rate to 1 kHz. Events that pass the L1 and HLT trigger are recorded for use in offline analysis~\cite{atlas_hlt_trigger_tdr}.
+
+% Decide how you want to do this based on the next section.
+% At least 2 TGC layers in coincidence comes from muon spectrometer TDR; coincidence with "forward inner" detectors (small wheel) comes from run 2 trigger upgrades paper, Martinez.
+\textcolor{red}{The run 2 L1 muon trigger was passed if TGC layers (two for low $p_T$ muons, three for high $p_T$ muons) of the big wheel fired in coincidence with a hit from the MDTs of the small wheel on the order of the bunch crossing time. The regions of interest defined by the TGCs were fed into the HLT, where MDT and TGC data could be combined for further cuts. The $p_T$ resolution of the L1 trigger is improved by the MDT tracking information. \textit{I'll decide how I want to do this after writing the motivation for the NSW}}
+
+The ATLAS trigger system is described in the reference above but the trigger rates quoted here are after the upgrades implemented for run 2, described in~\cite{martinez_run-2_2016}.
+
+\section{The New Small Wheel (NSW)}
+
+The small wheel of the ATLAS muon spectrometer will be replaced in preparation for the HL-LHC. 
+\subsection{Motivation}
 Currently, the small wheel is made of thin-gap chambers, which record hits. They have the known problem that particles generated in the material of the end-cap toroid magnet that hit the small wheel cannot be distinguished from muons from the interaction point. For example, in figure~\ref{fig:nsw_track_triggering}, all three tracks would be triggered on.
 
 \begin{figure}
@@ -141,6 +174,8 @@ Currently, the small wheel is made of thin-gap chambers, which record hits. They
     \caption{A schematic of a quarter cross section of the ATLAS detector, with the collision/interaction point (IP) in the bottom left corner. Three possible tracks are labelled. Ideally, track A would be triggered upon while track B and C discarded. With the small wheel, only the big wheel provides the trigger so all three tracks would be recorded. With the new small wheel, only track A would be recorded.}
     \label{fig:nsw_track_triggering}
 \end{figure}
+
+\subsection{Design}
 
 
 
