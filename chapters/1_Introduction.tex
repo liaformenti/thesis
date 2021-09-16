@@ -195,8 +195,7 @@ The NSW will solve both these problems. It will be covered with precision tracki
 
 \section{Design of the NSWs}
 
-The NSWs are covered with two detector technologies: micromegas (MM) and small-strip thin gap chambers (sTGCs). MMs are the primary tracking detectors and sTGCs are the primary triggering detectors, but for redundancy sake both could do either. Four layered chambers of each type create quadruplet modules. Quadruplets of different sizes are assembled into wedges. Two sTGC wedges and two MM wedges are layered to create sectors (with the sTGC wedges on the outside). Sectors covered the wheel, as shown in figure~\ref{fig:nsw_diagram}. Practically, two different wedge sizes, small and large, were required for complete coverage.
-
+The NSWs are covered with two detector technologies: micromegas (MM) and small-strip thin gap chambers (sTGCs). MMs are the primary tracking detectors and sTGCs are the primary triggering detectors, but for redundancy sake both could do either. As such, both sets of detectors are to have better than $\sim$\SI{100}{\micro\meter} per plane. Four layered chambers of each type create quadruplet modules. Quadruplets of different sizes are assembled into wedges. Two sTGC wedges and two MM wedges are layered to create sectors (with the sTGC wedges on the outside). Sectors covered the wheel, as shown in figure~\ref{fig:nsw_diagram}. Practically, two different wedge sizes, small and large, were required to completely cover the wheel.
 \begin{figure}
     \centering
     \includegraphics[width = 0.9\textwidth]{figures/nsw_diagram.png}
@@ -218,3 +217,40 @@ Micromegas have three components: a drift plane, a gas gap, a mesh, and readout 
 \end{figure}
 
 Four micromega modules will be layered to form a quadruplet, then two quadruplets of different sizes form a wedge. The muon position provided by each of the four layers will provide the NSW precision tracking information~\cite{nsw_tdr}.
+
+\section{Small-strip thin gap chambers}
+
+sTGCs are gas ionization chambers operated with a CO$_2$:n-pentane ratio of 55:45. A wire plane with \SI{1.8}{mm} is suspended between two cathode planes made of FR-4, \SI{1.4}{mm} each away. One cathode board is segmented into pads of varying area (around \SI{300}{cm^2}), and the other segmented into strips of \SI{3.2}{mm} pitch, perpendicular to the wires. High voltage is applied to the wires and the cathode planes are grounded. When a muon passes through, the gas is ionized and the electric field in the gas gap causes an ionization avalanche~\cite{townsend_electricity_1915}. The motion of the ions and electrons are picked up on the nearby wire, strip and pad electrodes. The hatching of the strips and wires establishes a coordinate system from which to extract the coordinate of the muon as it passes through the layer. The average single chamber position resolution in the strip coordinate was \SI{45}{\micro\meter} was measured for perpendicular muon tracks in a test beam~\cite{abusleme_performance_2016}, well within design specifications. When four sTGCs are glued together into a quadruplet the design angular resolution of ~\SI{1}{mrad} is achievable~\cite{nsw_tdr, perez-codina_small-strip_2016}.
+
+The pad electrodes are used for NSW triggering. A 3-out-of-4 coincidence in the pad electrodes of a quadruplet will define a region of interest where the strip and wire electrodes should be readout. Then, a track segment with the required angular resolution can be constructed and provided to the L1 trigger. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
