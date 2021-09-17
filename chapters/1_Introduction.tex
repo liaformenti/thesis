@@ -18,7 +18,9 @@
 %The questions proposed in the first recorded physics case for the Large Hadron Collider (LHC) are still only 
 %If the study of particle physics is to continue, studying the Higgs boson 
 
+% --------------------------------------------------
 \section{Introduction}
+% --------------------------------------------------
 
 THIS IS REALLY ROUGH. BASED ON ALESSANDRO'S IDEA OF SHOWING THE FULL INTRO OVERVIEW THEN DIVING INTO ALL THE NECESSARY DETAILS.
 
@@ -28,7 +30,9 @@ The ATLAS experiment is one of the LHC's general-purpose particle detector array
 
 Information necessary to understand the ATLAS detector, the NSW upgrade, sTGCs and the NSW alignment system are presented. In chapter 2, the details of how cosmic muon data was collected are presented. In chapter 3, I explain one way cosmic muon data can be used for alignment. BLAH BLAH BLAH. 
 
+% --------------------------------------------------
 \section{The Large Hadron Collider}
+% --------------------------------------------------
 
 % Include order for inst lum.
 % Include bunch crossing frequency
@@ -79,7 +83,9 @@ So far, the LHC provided an integrated luminosity of \SI{30}{\per\femto\barn} in
 % The energies accessible by the accelerator make it unique infrastructure with which to study processes of the standard model of particle physics and search for new phenomenon beyond the standard
 % model. Considerable progress has been made towards answering the questions originally used to motivate the construction of the LHC, but many remain unanswered or only partially answered~ \cite{brianti_large_1984}. Therefore, the continued use and maintenance of the accelerator 
 
+% --------------------------------------------------
 \section{The ATLAS experiment}
+% --------------------------------------------------
 \label{sec:atlas}
 
 The ATLAS experiment~\cite{collaboration_atlas_2008} was designed to support all the physics goals of the LHC. It is \SI{44}{\meter} long and \SI{25}{\meter} in diameter, and weighs 7000 tones. It is an array of particle detector subsystems arranged concentrically around the beam pipe and centered around one of the LHC's interaction points (a place where the beams collide), as shown in figure~\ref{fig:atlas}. It is helpful to separate the subsystems of ATLAS into the so-called ``barrel'' and ``encap'' (or forward region), referring to the cylindrical shape.  % <- maybe move this sentence to muon spec section
@@ -172,7 +178,9 @@ In run 1, low (high) $p_T$ muons were triggered on at L1 if two (three) of the R
 
 % The muon spectrometer is the outermost layer of the ATLAS detector, since only muons (and neutrinos) can pass through the calorimeters. For muons that are ejected towards the end-caps of ATLAS, their trajectory is bent by the magentic field and their position recorded by three successive wheels of muon detectors. With each wheel providing the position of the muon along its trajectory and knowledge of the magentic field, the momentum of the muon generated in the collision can be reconstructed. 
 
+% --------------------------------------------------
 \section{Motivation for the New Small Wheels (NSWs)}
+% --------------------------------------------------
 
 At the end of the HL-LHC upgrade, there could be up to a sevenfold increase in luminosity. Simultaneously, the background radiation rate increases linearly with luminosity, presenting problems for both the tracking and triggering capabilities of the muon spectrometer.
 
@@ -193,7 +201,9 @@ The NSW will solve both these problems. It will be covered with precision tracki
     \label{fig:nsw_track_triggering}
 \end{figure}
 
+% --------------------------------------------------
 \section{Design of the NSWs}
+% --------------------------------------------------
 
 The NSWs are covered with two detector technologies: micromegas (MM) and small-strip thin gap chambers (sTGCs). MMs are the primary tracking detectors and sTGCs are the primary triggering detectors, but for redundancy sake both could do either. As such, both sets of detectors are to have better than $\sim$\SI{100}{\micro\meter} per plane. Four layered chambers of each type create quadruplet modules. Quadruplets of different sizes are assembled into wedges. Two sTGC wedges and two MM wedges are layered to create sectors (with the sTGC wedges on the outside). Sectors covered the wheel, as shown in figure~\ref{fig:nsw_diagram}. Practically, two different wedge sizes, small and large, were required to completely cover the wheel.
 \begin{figure}
@@ -205,7 +215,11 @@ The NSWs are covered with two detector technologies: micromegas (MM) and small-s
 
 For the tracking and triggering goals, each chamber must have a position resolution of $\sim$\SI{100}{\micro\meter}. 
 
+%TODO : Pivot vs confirm?
+
+% --------------------------------------------------
 \section{Micromegas}
+% --------------------------------------------------
 
 Micromegas have three components: a drift plane, a gas gap, a mesh, and readout strips, as shown in figure~\ref{fig:micromega}. High voltage is applied to the readout strips. An ionization event in the gas causes electrons to drift towards the mesh. Once they arrived, they are amplified by the strong field and the avalanche is picked up by the readout electrodes. The small distance between the readout electrodes and the mesh, \SI{128}{\micro\meter}, means that positive ions are evacuated in $\sim$\SI{100}{\nano\second}, making micromegas a good choice for high rate environments~\cite{nsw_tdr}. The small pitch of the readout electrodes, \SI{0.425}{mm} provide spatial resolution better than \SI{100}{\micro\meter}~\cite{stelzer_new_2016}.
 
@@ -218,12 +232,63 @@ Micromegas have three components: a drift plane, a gas gap, a mesh, and readout 
 
 Four micromega modules will be layered to form a quadruplet, then two quadruplets of different sizes form a wedge. The muon position provided by each of the four layers will provide the NSW precision tracking information~\cite{nsw_tdr}.
 
+% --------------------------------------------------
 \section{Small-strip thin gap chambers}
+% --------------------------------------------------
 
-sTGCs are gas ionization chambers operated with a CO$_2$:n-pentane ratio of 55:45. A wire plane with \SI{1.8}{mm} is suspended between two cathode planes made of FR-4, \SI{1.4}{mm} each away. One cathode board is segmented into pads of varying area (around \SI{300}{cm^2}), and the other segmented into strips of \SI{3.2}{mm} pitch, perpendicular to the wires. High voltage is applied to the wires and the cathode planes are grounded. When a muon passes through, the gas is ionized and the electric field in the gas gap causes an ionization avalanche~\cite{townsend_electricity_1915}. The motion of the ions and electrons are picked up on the nearby wire, strip and pad electrodes. The hatching of the strips and wires establishes a coordinate system from which to extract the coordinate of the muon as it passes through the layer. The average single chamber position resolution in the strip coordinate was \SI{45}{\micro\meter} was measured for perpendicular muon tracks in a test beam~\cite{abusleme_performance_2016}, well within design specifications. When four sTGCs are glued together into a quadruplet the design angular resolution of ~\SI{1}{mrad} is achievable~\cite{nsw_tdr, perez-codina_small-strip_2016}.
+sTGCs are gas ionization chambers operated with a CO$_2$:n-pentane ratio of 55:45. Gold-plated tungsten wires of \SI{50}{\micro\meter} in diameter are suspended in the plane with \SI{1.8}{mm} is suspended between two cathode planes made of FR-4, \SI{1.4}{mm} each away. One cathode board is segmented into pads of varying area (around \SI{300}{cm^2}), and the other segmented into strips of \SI{3.2}{mm} pitch, perpendicular to the wires. High voltage is applied to the wires and the cathode planes are grounded. When a muon passes through, the gas is ionized and the electric field in the gas gap causes an ionization avalanche~\cite{townsend_electricity_1915}. The motion of the ions and electrons are picked up on the nearby wire, strip and pad electrodes. The hatching of the strips and wires establishes a coordinate system from which to extract the coordinate of the muon as it passes through the layer. Signal is readout from groups of successive wires, so the position resolution in the direction perpendicular to the wires is $\sim$\SI{10}{mm}. The resolution in this direction does not matter since it will give the symmetric azimuthal coordinate in ATLAS. Good resolution on the $\eta$ coordinate is important, which is the direction perpendicular to the strips. The average single chamber position resolution in the strip coordinate was \SI{45}{\micro\meter} measured for perpendicular muon tracks in a test beam~\cite{abusleme_performance_2016}~--- well within design specifications. When four sTGCs are glued together into a quadruplet the design angular resolution of ~\SI{1}{mrad} in the strip coordinate is achievable~\cite{nsw_tdr, perez-codina_small-strip_2016}.
 
-A 3-out-of-4 coincidence in the pad electrodes of a quadruplet will define a region of interest where the strip and wire electrodes should be readout~\cite{nsw_tdr}. Then, a track segment with the required angular resolution can be constructed and provided as input to the L1 trigger~\cite{tdaq_phase1_tdr}. For run 3, the L1 trigger will pass if the track segment from the small wheel matches a region of interest defined by the TGCs of the big wheel. The increased angular resolution and $\eta$ coverage of the quadruplets will be an improvement in the triggering scheme over the current SW TGCs. After the phase II upgrade of the trigger and data acquisition system, which includes upgrades to the big wheel's angular resolution, there will only be a trigger if the combined track points back to the interaction point, increasing the muon $p_T$ resolution.
+A 3-out-of-4 coincidence in the pad electrodes of a quadruplet will define a region of interest where the strip and wire electrodes should be readout~\cite{nsw_tdr}. Then, a track segment with the required angular resolution can be constructed and provided as input to the L1 trigger~\cite{tdaq_phase1_tdr}. For run 3, the L1 trigger will pass if the track segment from the small wheel matches a region of interest defined by the TGCs of the big wheel. The increased angular resolution and $\eta$ coverage of the quadruplets will be an improvement in the triggering scheme over the current SW TGCs. After the phase II upgrade of the trigger and data acquisition system, which includes upgrades to the big wheel's angular resolution, there will only be a trigger if the combined track points back to the interaction point, increasing the muon $p_T$ resolution~\cite{tdaq_phase2_tdr}.
 
+% Maybe put NSW alignment system next, then go into construction and misalignment. This paragraph can go after section on NSW alignment system.
+The original design goal was to position the strips within \SI{40}{\micro\meter} per detector plane. This was necessary to ensure that the position reconstruction would be unbiased when the quadruplets are installed in ATLAS, allowing the quadruplets to deliver the design angular resolution. The NSW alignment system will monitor the surface of the sTGC wedges (discussed \textcolor{red}{LATER}) so the internal alignment of the chambers had to be controlled during construction or quantified before installation. The main alignment feature of the strip cathode boards were brass inserts along one of their angled edges, near the long edge and short edge. These inserts accessible outside the gas gap throughout the construction process, and were meant to provide an external reference from which to measure the position of internal components of the chambers. The brass inserts on a quadruplet are visible in figure~\ref{fig:brasses}. The process of sTGC construction is highlighted in section~\ref{sec:stgc_construction}, with steps important to alignment highlighted.
+
+% In addition, the sTGC quadruplets should be able to provide precision tracking within \SI{100}{\micro\meter} per plane in the event of a MM module failure.
+
+\begin{figure}
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/brass_top.jpg}
+  \caption{Brass insert near long edge.}
+  \label{fig:brass_top}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/brass_bottom.jpg}
+  \caption{Brass insert near short edge.}
+  \label{fig:brass_bottom}
+\end{subfigure}
+\caption{The brass inserts sticking out from the gas volumes of an sTGC quadruplet (from a bird's eye view). These inserts were pressed against alignment pins when the individual sTGCs were being glued together.}
+\label{fig:brasses}
+\end{figure}
+
+% --------------------------------------------------
+\section{sTGC Quadruplet Construction}
+% --------------------------------------------------
+\label{sec:stgc_construction}
+
+Five countries were responsible for producing the sTGC modules of varying geometries for the NSW: Canada, Chile, China, Israel and Russia. Canada was responsible for 1/4 of the required sTGCs, of three different geometries. The steps of the construction process in each country were similar. The process followed in Canada is detailed in this section.
+
+The cathode boards were prepared at a commercial industry. They are multilayer boards made of FR-4, but the strip boards required precision machining to etch the strip pattern and install the brass inserts~\cite{nsw_tdr}. Two sources of misalignment resulted at board level: the placement and shape of the brass inserts could be imperfect and there could be non-conformities in the strip pattern. Carlson addressed and measured the non-conformities in the strip pattern of Canadian cathode boards in his thesis~\cite{carlson_results_2019}. A coordinate measuring machine (CMM) or FaroArm was used to measure non-conformities in the strip pattern, and the results are available on a QA/QC database. Non-conformities included an offset and rotation, plus some higher order deformations. It is common, however, for alignment models to only consider an offset and rotation. Tracking accuracy not affected by micrometer-level non-conformities in the pad pattern so it is not of concern.
+% Do I need to define elongation, non-parallelism?
+
+Once the cathode boards were created, they were sent to TRIUMF in Vancouver, British Columbia to be sprayed with the graphite coating. After spraying, the coating was polished until the resistivity was between 90 and \SI{110}{\kilo\ohm}$/\msquare$, then wire support structures and frames were installed~\cite{nsw_tdr}. The completed boards were sent to Carleton university for construction into gas gaps and multiplets.
+
+First, anode wires are wound onto the the pad cathode boards using a rotating vacuum table. Then, the wires are soldered in place. Gluing is done with the cathode boards held in place by vacuum on a flat (within \SI{20}{\micro\meter}) granite table. To create a gas gap, a wired-pad board is held in place on a vacuum table and a strip board glued on top~\cite{nsw_tdr}. Any relative misalignment of the pad board with respect to the strip board is not significant since the pad does not provide precision coordinates. Half a layer of honeycomb spacer is glued on top of each singlet. Two brasses of the strip boards of two singlets are pushed against alignment pins and glued to create a doublet. In the same way, two doublets can be glued into a quadruplet. The position of the brasses are recorded in 3D using an x-ray gun~\cite{nsw_tdr}. Also, the alignment between strips visible outside the gas gap is checked with a microscope. Once a quadruplet is glued, adapator boards used to route the electrodes to the front end electronics are soldered on to the angled sides of the quadruplet~\cite{nsw_tdr}. 
+
+Quality control tests of alignment, ability to hold high voltage, gas sealing etc. were undertaken at every stage in the construction process, the details of which can be found in~\cite{nsw_tdr}. The final set of quality control and characterization was done at McGill University in Montreal, Quebec. Completed quadruplets were tested for gas leaks, the noise of the electrodes measured, and finally characterized with cosmics rays. The details of cosmic ray testing are described in chapter~\cite{chap:cosmics}.
+
+% --------------------------------------------------
+\section{NSW alignment}
+% --------------------------------------------------
+
+Once the quadruplets have been tested with cosmics rays, they are sent to CERN to be further tested, assembled into wedges then sectors, then installed on the NSWs. 
+
+
+
+Moreover, as-built alignment parameters must be measured and extracted to ensure proper function and provide a way to correct for misalignment. The next section breaks down the sTGC construction process to highlight the stages of alignment.
+All countries successfully finished delivering their modules this year, and the sectors have been installed on the NSWs. 
 
 
 
