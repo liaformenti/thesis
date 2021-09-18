@@ -285,10 +285,28 @@ Quality control tests of alignment, ability to hold high voltage, gas sealing et
 
 Once the quadruplets have been tested with cosmics rays, they are sent to CERN to be further tested, assembled into wedges then sectors, then installed on the NSWs. 
 
+The idea of the NSW alignment system is presented in~\cite{nsw_tdr}, but the details have only been presented internally so far. The original goal of the alignment system was to provide the position in the precision coordinate with respect to one another of any three chambers traversable by a muon track with an accuracy of \SI{40}{\micro\meter}~\cite{nsw_tdr}. For sTGCs, this amounts to knowledge of the positions of each strip in the ATLAS coordinate system. 
 
+%TODO : 
+\textcolor{red}{What figures can I use to show the bars, the alignment jig, the platforms and the optical fibres?}.
+After the wedges are constructed, alignment platforms are installed on every sTGC quadruplet and optical fibres routed to them. They are positioned with the help of an alignment jig, which is like a frame that can be positioned on top of a wedge with cut outs for the alignment platforms. The jig is positioned with respect to the alignment pins like the brasses \textcolor{red}{[Benoit 2020-01-20, 2020-04-16 presentations]}.  Light from the optical fibres will be monitored in real time by cameras (BCAMs) mounted on the alignment bars of the new small wheel. The system will thus record the positions of the alignment platforms in the ATLAS coordinate system at any point during operation \textcolor{red}{Camila Pazos, 2021-02-01 and Chris Armstrong 2021-02-02 during muon weekb https://indico.cern.ch/event/983500/}. The final link in the sTGC alignment system requires knowing the position of the strips inside a chamber with respect to the alignment platforms.
 
-Moreover, as-built alignment parameters must be measured and extracted to ensure proper function and provide a way to correct for misalignment. The next section breaks down the sTGC construction process to highlight the stages of alignment.
-All countries successfully finished delivering their modules this year, and the sectors have been installed on the NSWs. 
+The design goal was to control the position of the strips in the chamber to within ~\SI{40}{\micro\meter} for the precision tracking goals and optimal triggering~\cite{nsw_tdr} --- then knowing the position of the brass inserts with respect to the alignment platforms would allow the strips to be positioned sufficiently. That is the alignment scheme shown in solid arrows in figure~\ref{fig:alignment_elements}. Due to time constraints, tolerances on the non-conformities in the etched strip pattern were loosened, with the condition that they would have to be corrected for in the software~\cite{carlson_results_2019}. Then, non-conformities in the brass inserts, misalignment of the pins the brass inserts were pushed against, and shifts of the strip layers while the glue was curing resulted in misalignments between the brass inserts and the strips layers that prevent using the brasses as an external reference of the position of the strips. The misalignments between Canadian sTGCs were shown to be random~\cite{carlson_results_2019}, so no one correction would suffice.
+
+\begin{figure}
+    \centering
+    \includegraphics[width = 0.9\textwidth]{figures/alignment_system_element_relations.png}
+    \caption{How the different elements of the sTGC alignment system relate to one another. The solid arrows denote the planned alignment scheme. The dashed arrow shows the modification being finalized now. This figure is based off of \textcolor{red}{Benoit's presentation, 2021-01-30.}}
+    \label{fig:alignment_elements}
+\end{figure}
+
+A different method to get the position of the individual strips or local strip pattern with respect to the alignment platform is currently in its final stages. It uses the quadruplet characterization datasets (cosmic muon, CMM, and the yet unmentioned x-ray datasets) to skip having to reference the brass inserts altogether, represented as the dashed line in figure~\ref{fig:alignment_elements}. In chapter~\ref{chap:cosmics}, how cosmic muon data collection and processing is done at McGill University is presented. Chapter~\ref{chap:cosmics_for_alignment} and \textcolor{red}{CHAPTER XRAY} detail how measurements of local strip pattern offsets are measured with cosmic muon data and x-ray data. In chapter~\ref{chap:comparison}, cosmic muon and x-ray local strip pattern offsets are compared to validate the x-ray dataset. Finally, in chapter~\ref{chap:outlook}, the context of these results in the alignment scheme is presented.
+
+% Snippets
+%The main dataset was collected using x-rays as the probe. The x-ray data has been combined with the CMM data to create an alignment model that can be used to estimate the position of each strip. The goal of this work was to validate the measurements of strip pattern offsets done with the x-ray dataset with the cosmic muon data. Currently, only modules made in Canada have been analyzed in this way, but the method applies for other countries that were able to collect cosmic muon data on multiple quadruplet layers. 
+
+%Moreover, as-built alignment parameters must be measured and extracted to ensure proper function and provide a way to correct for misalignment. The next section breaks down the sTGC construction process to highlight the stages of alignment.
+%All countries successfully finished delivering their modules this year, and the sectors have been installed on the NSWs. 
 
 
 
