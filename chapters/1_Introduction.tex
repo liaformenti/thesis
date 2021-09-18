@@ -24,11 +24,11 @@
 
 THIS IS REALLY ROUGH. BASED ON ALESSANDRO'S IDEA OF SHOWING THE FULL INTRO OVERVIEW THEN DIVING INTO ALL THE NECESSARY DETAILS.
 
-The High-Lumnosity Large Hadron Collider (HL-LHC) project was approved to combat the plateau in statistial gain of recording particle collisions at the LHC at CERN~\cite{hl_lhc_tdr}. Being the most energetic particle accelerator, the LHC still offers unique physics opportunities for studying the Higgs and electroweak sectors of the standard model; if the study of the standard model is to continue, the LHC must go on. The HL-LHC upgrade aims to \textcolor{red}{increase the luminosity of the LHC by up to a factor of 10 in the next 10 years, namely by increasing the proton-proton collision rate}. Naturally, various sub-systems of the experiments used to capture the outcomes of the collisions will require upgrades to handle higher collision rates and background radiation rates than they were designed for. 
+The High-Lumnosity Large Hadron Collider (HL-LHC) project was approved to combat the plateau in statistial gain of recording particle collisions at the LHC at CERN~\cite{hl_lhc_tdr}. Being the most energetic particle accelerator, the LHC still offers unique physics opportunities for studying the Higgs and electroweak sectors of the standard model; if the study of the standard model is to continue, the LHC must go on. The HL-LHC upgrade aims to increase the luminosity of the LHC by up to a factor of 7 in the next 10 years, which ultimately increases the number of meaningful collisions. Naturally, various sub-systems of the experiments used to capture the outcomes of the collisions will require upgrades to handle higher collision rates and background radiation rates than they were designed for. 
 
 The ATLAS experiment is one of the LHC's general-purpose particle detector arrays. The largest upgrade the ATLAS experiment will undergo is the replacement of the small wheels of the muon spectrometer with the so-called New Small Wheels (NSWs). Two different detector technologies will be installed: micromegas, and small-strip thin gap chambers (or sTGCs). In this work, the dataset used to correct for the internal alignment of sTGC components is validated with characterization data collected on the sTGCs using cosmic muons. How the internal alignment fits into the overall alignment system is also detailed. 
 
-Information necessary to understand the ATLAS detector, the NSW upgrade, sTGCs and the NSW alignment system are presented. In chapter 2, the details of how cosmic muon data was collected are presented. In chapter 3, I explain one way cosmic muon data can be used for alignment. BLAH BLAH BLAH. 
+Information necessary to understand the ATLAS detector, the NSW upgrade, sTGCs and the NSW alignment system is presented in this chapter. 
 
 % --------------------------------------------------
 \section{The Large Hadron Collider}
@@ -205,12 +205,44 @@ The NSW will solve both these problems. It will be covered with precision tracki
 \section{Design of the NSWs}
 % --------------------------------------------------
 
-The NSWs are covered with two detector technologies: micromegas (MM) and small-strip thin gap chambers (sTGCs). MMs are the primary tracking detectors and sTGCs are the primary triggering detectors, but for redundancy sake both could do either. As such, both sets of detectors are to have better than $\sim$\SI{100}{\micro\meter} per plane. Four layered chambers of each type create quadruplet modules. Quadruplets of different sizes are assembled into wedges. Two sTGC wedges and two MM wedges are layered to create sectors (with the sTGC wedges on the outside). Sectors covered the wheel, as shown in figure~\ref{fig:nsw_diagram}. Practically, two different wedge sizes, small and large, were required to completely cover the wheel.
+The NSWs are covered with two detector technologies: micromegas (MM) and small-strip thin gap chambers (sTGCs). MMs are the primary tracking detectors and sTGCs are the primary triggering detectors, but for redundancy sake both are designed to do either. As such, both sets of detectors are to have better than $\sim$\SI{100}{\micro\meter} per plane. Four layered chambers of each type create quadruplet modules. Quadruplets of different sizes are assembled into wedges. Two sTGC wedges and two MM wedges are layered to create sectors (with the sTGC wedges on the outside). Sectors covered the wheel, as shown in figure~\ref{fig:nsw_diagram}. Practically, two different wedge sizes, small and large, were required to completely cover the wheel.
 \begin{figure}
     \centering
     \includegraphics[width = 0.9\textwidth]{figures/nsw_diagram.png}
     \caption{Drawing of the new small wheel, and diagrams of the individual small and large wedges. Each colour represents a different sTGC module size.}
     \label{fig:nsw_diagram}
+\end{figure}
+
+\begin{figure}
+\centering
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/stgc_quad_cart.jpg}
+  \includegraphics[width=0.4\textwidth]{figures/stgc_quad_inlet_corner.jpg}
+  \caption{Individual sTGC quadruplet modules. The right image shows the short edge corner, and shows the 4 sTGC layers and the invidual gas inlets. The gas outlets and high voltage cables are at the long edge in the back of the photo.}
+  \label{fig:stgc_quad}
+\end{subfigure}
+
+\medskip
+
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=0.4\textwidth]{figures/stgc_wedge.jpg}
+  \includegraphics[width=0.4\textwidth]{figures/sector.jpg}
+  \caption{Left: An sTGC wedge. The white fibreglass frame outlines the individual quadruplet modules. Right: A completed sector, with layers sTGC wedge, MM wedge, MM wedge, sTGC wedge.}
+  \label{fig:wedge_and_sector}
+\end{subfigure}
+
+\medskip
+
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=0.8\textwidth]{figures/nsw_2021-05-27_landscape.jpeg}
+  \caption{The new small wheel. All sectors except one large sector at the top are installed, revealing two of the smaller sectors that are hidden under the large sectors.}
+  \label{fig:nsw}
+  \end{subfigure}
+\caption{Images breaking down some of the construction units of the NSWs.}
+\label{fig:nsw_breakdown}
 \end{figure}
 
 For the tracking and triggering goals, each chamber must have a position resolution of $\sim$\SI{100}{\micro\meter}. 
@@ -275,9 +307,9 @@ The cathode boards were prepared at a commercial industry. They are multilayer b
 
 Once the cathode boards were created, they were sent to TRIUMF in Vancouver, British Columbia to be sprayed with the graphite coating. After spraying, the coating was polished until the resistivity was between 90 and \SI{110}{\kilo\ohm}$/\msquare$, then wire support structures and frames were installed~\cite{nsw_tdr}. The completed boards were sent to Carleton university for construction into gas gaps and multiplets.
 
-First, anode wires are wound onto the the pad cathode boards using a rotating vacuum table. Then, the wires are soldered in place. Gluing is done with the cathode boards held in place by vacuum on a flat (within \SI{20}{\micro\meter}) granite table. To create a gas gap, a wired-pad board is held in place on a vacuum table and a strip board glued on top~\cite{nsw_tdr}. Any relative misalignment of the pad board with respect to the strip board is not significant since the pad does not provide precision coordinates. Half a layer of honeycomb spacer is glued on top of each singlet. Two brasses of the strip boards of two singlets are pushed against alignment pins and glued to create a doublet. In the same way, two doublets can be glued into a quadruplet. The position of the brasses are recorded in 3D using an x-ray gun~\cite{nsw_tdr}. Also, the alignment between strips visible outside the gas gap is checked with a microscope. Once a quadruplet is glued, adapator boards used to route the electrodes to the front end electronics are soldered on to the angled sides of the quadruplet~\cite{nsw_tdr}. 
+First, anode wires are wound onto the the pad cathode boards using a rotating vacuum table. Then, the wires are soldered in place. Gluing is done with the cathode boards held in place by vacuum on a flat (within \SI{20}{\micro\meter}) granite table. To create a gas gap, a wired-pad board is held in place on a vacuum table and a strip board glued on top~\cite{nsw_tdr}. Any relative misalignment of the pad board with respect to the strip board is not significant since the pad does not provide precision coordinates. Half a layer of honeycomb spacer is glued on top of each singlet. Two brasses of the strip boards of two singlets are pushed against alignment pins and glued to create a doublet. In the same way, two doublets can be glued into a quadruplet. The position of the brasses are recorded in 3D using an x-ray gun~\cite{nsw_tdr}. Also, the alignment between strips visible outside the gas gap is checked with a microscope~\cite{carlson_results_2019}. Once a quadruplet is glued, adapator boards used to route the electrodes to the front end electronics are soldered on to the angled sides of the quadruplet~\cite{nsw_tdr}. 
 
-Quality control tests of alignment, ability to hold high voltage, gas sealing etc. were undertaken at every stage in the construction process, the details of which can be found in~\cite{nsw_tdr}. The final set of quality control and characterization was done at McGill University in Montreal, Quebec. Completed quadruplets were tested for gas leaks, the noise of the electrodes measured, and finally characterized with cosmics rays. The details of cosmic ray testing are described in chapter~\cite{chap:cosmics}.
+Quality control tests of alignment, ability to hold high voltage, gas sealing etc. were undertaken at every stage in the construction process, the details of which can be found in~\cite{nsw_tdr}. The final set of quality control and characterization was done at McGill University in Montreal, Quebec. Completed quadruplets were tested for gas leaks, the noise of the electrodes measured, and finally characterized with cosmic rays. The details of cosmic ray testing are described in chapter~\ref{chap:cosmics}.
 
 % --------------------------------------------------
 \section{NSW alignment}
@@ -285,13 +317,13 @@ Quality control tests of alignment, ability to hold high voltage, gas sealing et
 
 Once the quadruplets have been tested with cosmics rays, they are sent to CERN to be further tested, assembled into wedges then sectors, then installed on the NSWs. 
 
-The idea of the NSW alignment system is presented in~\cite{nsw_tdr}, but the details have only been presented internally so far. The original goal of the alignment system was to provide the position in the precision coordinate with respect to one another of any three chambers traversable by a muon track with an accuracy of \SI{40}{\micro\meter}~\cite{nsw_tdr}. For sTGCs, this amounts to knowledge of the positions of each strip in the ATLAS coordinate system. 
+The idea of the NSW alignment system is presented in~\cite{nsw_tdr}, but the details have only been presented internally so far. The original goal of the alignment system was to provide the position with respect to one another of any three chambers traversable by a muon track with an accuracy of \SI{40}{\micro\meter} in the precision coordinate~\cite{nsw_tdr}. Likely for sTGCs, this will mean inputing the strip postions, or parameters to calculate the strip positions, into the ATLAS experiment's offline software, \package{Athena}.
 
 %TODO : 
 \textcolor{red}{What figures can I use to show the bars, the alignment jig, the platforms and the optical fibres?}.
-After the wedges are constructed, alignment platforms are installed on every sTGC quadruplet and optical fibres routed to them. They are positioned with the help of an alignment jig, which is like a frame that can be positioned on top of a wedge with cut outs for the alignment platforms. The jig is positioned with respect to the alignment pins like the brasses \textcolor{red}{[Benoit 2020-01-20, 2020-04-16 presentations]}.  Light from the optical fibres will be monitored in real time by cameras (BCAMs) mounted on the alignment bars of the new small wheel. The system will thus record the positions of the alignment platforms in the ATLAS coordinate system at any point during operation \textcolor{red}{Camila Pazos, 2021-02-01 and Chris Armstrong 2021-02-02 during muon weekb https://indico.cern.ch/event/983500/}. The final link in the sTGC alignment system requires knowing the position of the strips inside a chamber with respect to the alignment platforms.
+After the wedges are constructed, alignment platforms are installed on every sTGC quadruplet and optical fibres routed to them. They are positioned with the help of an alignment jig, which is like a frame that can be positioned on top of a wedge with cut outs indicating the correct position for the alignment platforms. The jig is positioned with respect to the brass inserts \textcolor{red}{[Benoit 2020-01-20, 2020-04-16 presentations]}.  Light from the optical fibres will be monitored in real time by cameras (BCAMs) mounted on the alignment bars of the new small wheel. The system will thus record the positions of the alignment platforms in the ATLAS coordinate system, accessible at any point during operation \textcolor{red}{Camila Pazos, 2021-02-01 and Chris Armstrong 2021-02-02 during muon weekb https://indico.cern.ch/event/983500/}. The final link in the sTGC alignment system requires knowing the position of the strips inside a chamber with respect to the alignment platforms.
 
-The design goal was to control the position of the strips in the chamber to within ~\SI{40}{\micro\meter} for the precision tracking goals and optimal triggering~\cite{nsw_tdr} --- then knowing the position of the brass inserts with respect to the alignment platforms would allow the strips to be positioned sufficiently. That is the alignment scheme shown in solid arrows in figure~\ref{fig:alignment_elements}. Due to time constraints, tolerances on the non-conformities in the etched strip pattern were loosened, with the condition that they would have to be corrected for in the software~\cite{carlson_results_2019}. Then, non-conformities in the brass inserts, misalignment of the pins the brass inserts were pushed against, and shifts of the strip layers while the glue was curing resulted in misalignments between the brass inserts and the strips layers that prevent using the brasses as an external reference of the position of the strips. The misalignments between Canadian sTGCs were shown to be random~\cite{carlson_results_2019}, so no one correction would suffice.
+The goal was to control the position of the strips in the chamber to within ~\SI{40}{\micro\meter} for precision tracking goals~\cite{nsw_tdr} --- then knowing the position of the brass inserts with respect to the alignment platforms would allow the strips to be positioned sufficiently. That is the alignment scheme shown in solid arrows in figure~\ref{fig:alignment_elements}. Due to time constraints, tolerances on the non-conformities in the etched strip pattern were loosened, with the condition that the strips positions would have to be corrected for in the software~\cite{carlson_results_2019}. Then, non-conformities in the brass inserts, misalignment of the pins the brass inserts were pushed against, and shifts of the strip layers while the glue was curing resulted in misalignments between the brass inserts and the strips layers that prevent using the brasses as an external reference of the position of the strips. The misalignments between Canadian sTGCs were shown to be random~\cite{carlson_results_2019}, so no one correction would suffice.
 
 \begin{figure}
     \centering
@@ -300,7 +332,7 @@ The design goal was to control the position of the strips in the chamber to with
     \label{fig:alignment_elements}
 \end{figure}
 
-A different method to get the position of the individual strips or local strip pattern with respect to the alignment platform is currently in its final stages. It uses the quadruplet characterization datasets (cosmic muon, CMM, and the yet unmentioned x-ray datasets) to skip having to reference the brass inserts altogether, represented as the dashed line in figure~\ref{fig:alignment_elements}. In chapter~\ref{chap:cosmics}, how cosmic muon data collection and processing is done at McGill University is presented. Chapter~\ref{chap:cosmics_for_alignment} and \textcolor{red}{CHAPTER XRAY} detail how measurements of local strip pattern offsets are measured with cosmic muon data and x-ray data. In chapter~\ref{chap:comparison}, cosmic muon and x-ray local strip pattern offsets are compared to validate the x-ray dataset. Finally, in chapter~\ref{chap:outlook}, the context of these results in the alignment scheme is presented.
+A different method to get the position of the individual strips with respect to the alignment platform is currently in its final stages. It uses the quadruplet characterization datasets~-- cosmic muon, CMM, and the yet unmentioned x-ray datasets~-- to calculate the offsets in the strip pattern in a local area (local strip pattern offsets). Effectively, the reference to the brass inserts is skipped, represented as the dashed line in figure~\ref{fig:alignment_elements}. The goal of this thesis is to validate the x-ray local strip pattern offsets with cosmic muon data. In chapter~\ref{chap:cosmics}, how cosmic muon data collection and processing is done at McGill University is presented. Chapter~\ref{chap:cosmics_for_alignment} and \textcolor{red}{CHAPTER XRAY} detail how measurements of local strip pattern offsets are measured with cosmic muon data and x-ray data. In chapter~\ref{chap:comparison}, cosmic muon and x-ray local strip pattern offsets are compared to validate the x-ray dataset. Finally, in chapter~\ref{chap:outlook}, the context of these results in the alignment scheme is presented.
 
 % Snippets
 %The main dataset was collected using x-rays as the probe. The x-ray data has been combined with the CMM data to create an alignment model that can be used to estimate the position of each strip. The goal of this work was to validate the measurements of strip pattern offsets done with the x-ray dataset with the cosmic muon data. Currently, only modules made in Canada have been analyzed in this way, but the method applies for other countries that were able to collect cosmic muon data on multiple quadruplet layers. 
