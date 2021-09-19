@@ -267,10 +267,7 @@ sTGCs are gas ionization chambers operated with a CO$_2$:n-pentane ratio of 55:4
 
 A 3-out-of-4 coincidence in the pad electrodes of a quadruplet will define a region of interest where the strip and wire electrodes should be readout. Then, a track segment with the required angular resolution can be constructed and provided as input to the L1 trigger~\cite{nsw_tdr}. For the next run of ATLAS (run-3), the L1 trigger will pass if the track segment from the small wheel matches a region of interest defined by the TGCs of the big wheel~\cite{tdaq_phase1_tdr}. The increased angular resolution and $\eta$ coverage of the quadruplets will be an improvement in the triggering scheme over the current SW TGCs~\cite{nsw_tdr}. After the phase-II upgrade of the trigger and data acquisition system scheduled for $\sim$2025, which includes upgrades to the big wheel's angular resolution, there will only be a trigger if the combined track points back to the interaction point, increasing the muon $p_T$ resolution~\cite{tdaq_phase2_tdr}.
 
-%TODO : YOU ARE HERE, first screen edit
-
-% Maybe put NSW alignment system next, then go into construction and misalignment. This paragraph can go after section on NSW alignment system.
-The original design goal was to position the strips within \SI{40}{\micro\meter} per detector plane. This was necessary to ensure that the position reconstruction would be unbiased when the quadruplets are installed in ATLAS, allowing the quadruplets to deliver the design angular resolution. The NSW alignment system will monitor the surface of the sTGC wedges (discussed \textcolor{red}{LATER}) so the internal alignment of the chambers had to be controlled during construction or quantified before installation. The main alignment feature of the strip cathode boards were brass inserts along one of their angled edges, near the long edge and short edge. These inserts accessible outside the gas gap throughout the construction process, and were meant to provide an external reference from which to measure the position of internal components of the chambers. The brass inserts on a quadruplet are visible in figure~\ref{fig:brasses}. The process of sTGC construction is highlighted in section~\ref{sec:stgc_construction}, with steps important to alignment highlighted.
+Each strip cathode board has two brass inserts, one near the long edge and one near the short edge, pictured in figure~\ref{fig:brasses}. The inserts were used to align the strip layers of a quadruplet during construction. They were supposed to control the position of the strips to within \SI{40}{\micro\meter} within nominal. The idea was that the NSW alignment system would monitor the position of points on the surface of an sTGC wedge (discussed in section~\ref{sec:alignment}) and that the combined external and internal alignment uncertainty on the strip positions would be acceptably small for the precision tracking goals~\cite{nsw_tdr}. Uncontrolled offsets of strip positions on an sTGC layer will bias the reconstructed hit position and hence the track, reducing accuracy of the momentum measurement. To understand the source of offsets in strip positions and misalignments between strip layers, pertinent details of the sTGC construction process are presented in the next section.
 
 % In addition, the sTGC quadruplets should be able to provide precision tracking within \SI{100}{\micro\meter} per plane in the event of a MM module failure.
 
@@ -288,7 +285,7 @@ The original design goal was to position the strips within \SI{40}{\micro\meter}
   \caption{Brass insert near short edge.}
   \label{fig:brass_bottom}
 \end{subfigure}
-\caption{The brass inserts sticking out from the gas volumes of an sTGC quadruplet (from a bird's eye view). These inserts were pressed against alignment pins when the individual sTGCs were being glued together.}
+\caption{The brass inserts sticking out from the gas volumes of an sTGC quadruplet. These inserts were pressed against alignment pins when the individual sTGCs were being glued together.}
 \label{fig:brasses}
 \end{figure}
 
@@ -297,10 +294,11 @@ The original design goal was to position the strips within \SI{40}{\micro\meter}
 % --------------------------------------------------
 \label{sec:stgc_construction}
 
-Five countries were responsible for producing the sTGC modules of varying geometries for the NSW: Canada, Chile, China, Israel and Russia. Canada was responsible for 1/4 of the required sTGCs, of three different geometries. The steps of the construction process in each country were similar. The process followed in Canada is detailed in this section.
+Five countries were responsible for producing the sTGC modules of varying geometries for the NSW: Canada, Chile, China, Israel and Russia. Canada was responsible for 1/4 of the required sTGCs, of three different quadruplet geometries. The steps of the construction process in each country were similar. The process followed in Canada is detailed in this section.
 
-The cathode boards were prepared at a commercial industry. They are multilayer boards made of FR-4, but the strip boards required precision machining to etch the strip pattern and install the brass inserts~\cite{nsw_tdr}. Two sources of misalignment resulted at board level: the placement and shape of the brass inserts could be imperfect and there could be non-conformities in the strip pattern. Carlson addressed and measured the non-conformities in the strip pattern of Canadian cathode boards in his thesis~\cite{carlson_results_2019}. A coordinate measuring machine (CMM) or FaroArm was used to measure non-conformities in the strip pattern, and the results are available on a QA/QC database. Non-conformities included an offset and rotation, plus some higher order deformations. It is common, however, for alignment models to only consider an offset and rotation. Tracking accuracy not affected by micrometer-level non-conformities in the pad pattern so it is not of concern.
-% Do I need to define elongation, non-parallelism?
+The cathode boards were prepared at Triangle Labs in Carson City, Nevada~\cite{carlson_results_2019}. They are multilayer boards made of FR-4, but the strip boards required precision machining to etch the strip pattern and install the brass inserts~\cite{nsw_tdr}. Two sources of misalignment resulted at board level: non-conformities in the placement and shape of the brass inserts and non-conformities in the strip pattern. Carlson addressed the non-conformities in the strip pattern of Canadian cathode boards in his thesis~\cite{carlson_results_2019}. A coordinate measuring machine (CMM) or FaroArm was used to digitize the etched strip pattern of each board. Four quality parameters describing non-conformities in the strip pattern were derived from the data and the results are available on a QA/QC database. The parameters were offset, angle (rotation), scale and non-parallelism, defined in ful in Carlson' thesis. Often, alignment models only consider an offset and rotation. 
+
+% YOU ARE HERE
 
 Once the cathode boards were created, they were sent to TRIUMF in Vancouver, British Columbia to be sprayed with the graphite coating. After spraying, the coating was polished until the resistivity was between 90 and \SI{110}{\kilo\ohm}$/\msquare$, then wire support structures and frames were installed~\cite{nsw_tdr}. The completed boards were sent to Carleton university for construction into gas gaps and multiplets.
 
@@ -311,6 +309,7 @@ Quality control tests of alignment, ability to hold high voltage, gas sealing et
 % --------------------------------------------------
 \section{NSW alignment}
 % --------------------------------------------------
+\label{sec:nsw_alignment}
 
 Once the quadruplets have been tested with cosmics rays, they are sent to CERN to be further tested, assembled into wedges then sectors, then installed on the NSWs. 
 
