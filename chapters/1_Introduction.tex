@@ -22,13 +22,11 @@
 \section{Introduction}
 % --------------------------------------------------
 
-THIS IS REALLY ROUGH. BASED ON ALESSANDRO'S IDEA OF SHOWING THE FULL INTRO OVERVIEW THEN DIVING INTO ALL THE NECESSARY DETAILS.
+The High-Lumnosity Large Hadron Collider (HL-LHC) project was approved to combat the plateau in statistial gain of recording particle collisions at the LHC at CERN~\cite{hl_lhc_tdr}. Being the most energetic particle accelerator, the LHC still offers unique physics opportunities for studying the Higgs and electroweak sectors of the standard model\cite{dainese_physics_2018}; if the study at the energy frontier is to continue, the LHC must go on. The HL-LHC upgrade aims to increase the luminosity of the LHC by up to a factor of 7 in the next 10 years, which ultimately increases the number of meaningful collisions. Naturally, various sub-systems of the experiments used to capture the outcomes of the collisions will require upgrades to handle higher collision rates and background radiation rates than they were designed for. 
 
-The High-Lumnosity Large Hadron Collider (HL-LHC) project was approved to combat the plateau in statistial gain of recording particle collisions at the LHC at CERN~\cite{hl_lhc_tdr}. Being the most energetic particle accelerator, the LHC still offers unique physics opportunities for studying the Higgs and electroweak sectors of the standard model; if the study of the standard model is to continue, the LHC must go on. The HL-LHC upgrade aims to increase the luminosity of the LHC by up to a factor of 7 in the next 10 years, which ultimately increases the number of meaningful collisions. Naturally, various sub-systems of the experiments used to capture the outcomes of the collisions will require upgrades to handle higher collision rates and background radiation rates than they were designed for. 
+The ATLAS experiment is one of the LHC's general-purpose particle detector arrays. The largest upgrade the ATLAS experiment will undergo is the replacement of the small wheels of the muon spectrometer with the so-called New Small Wheels (NSWs). Two different detector technologies will be installed: micromegas, and small-strip thin gap chambers (or sTGCs). In this work, the main dataset used to correct for the internal alignment of sTGC components (the x-ray dataset) is validated with characterization data collected on the sTGCs using cosmic muons. How the internal alignment fits into the overall alignment system is also detailed. 
 
-The ATLAS experiment is one of the LHC's general-purpose particle detector arrays. The largest upgrade the ATLAS experiment will undergo is the replacement of the small wheels of the muon spectrometer with the so-called New Small Wheels (NSWs). Two different detector technologies will be installed: micromegas, and small-strip thin gap chambers (or sTGCs). In this work, the dataset used to correct for the internal alignment of sTGC components is validated with characterization data collected on the sTGCs using cosmic muons. How the internal alignment fits into the overall alignment system is also detailed. 
-
-Information necessary to understand the ATLAS detector, the NSW upgrade, sTGCs and the NSW alignment system is presented in this chapter. 
+In this chapter, the experimental setup of the ATLAS experiment at the LHC is presented, and the NSW upgrade is motivated and detailed before later chapters explain how sTGC characterization datasets are being used for alignment, with a focus on the cosmic muon dataset.
 
 % --------------------------------------------------
 \section{The Large Hadron Collider}
@@ -36,7 +34,7 @@ Information necessary to understand the ATLAS detector, the NSW upgrade, sTGCs a
 
 % Include order for inst lum.
 % Include bunch crossing frequency
-The LHC is an accelerator \SI{27}{\kilo\meter} in circumference and located $\sim$\SI{100}{\meter} underground at CERN near Geneva, Switzerland~\cite{evans_lhc_2008}. It has two beam pipes that counter-circulate bunches of protons\footnote{the LHC also accelerates lead ions, but this paper only considers proton-proton collisions} before colliding the bunches in the center of one of four major experiments, such as the ATLAS experiment (discussed in section~\ref{sec:atlas}). There, the partons interact and many physics processes can occur. The LHC enables physicists to study particle physics at the energy frontier. In the previous run of the LHC (run 2), protons were collided with a center of mass energy of \SI{13}{\tera\electronvolt}. 
+The LHC is an accelerator \SI{27}{\kilo\meter} in circumference and located $\sim$\SI{100}{\meter} underground at CERN near Geneva, Switzerland~\cite{evans_lhc_2008}. It has two beam pipes that counter-circulate bunches of protons\footnote{the LHC also accelerates lead ions, but this paper only considers proton-proton collisions} before colliding the bunches in the center of one of four major experiments, such as the ATLAS experiment (discussed in section~\ref{sec:atlas}). There, the partons interact and many physics processes can occur. The LHC enables physicists to study particle physics at the energy frontier. In the previous run of the LHC (run-2), protons were collided with a center of mass energy of \SI{13}{\tera\electronvolt}. 
 
 % There are two main branches of study that can be pursued with the LHC and ATLAS. First, properties predicted by the standard model (SM) of particle physics can be measured. Else, physicists can search for evidence of processes predicted by theories beyond the standard model. Both the SM measurement and search analyses are based on measuring the number of times a given process occurs and comparing it to expectations. In this way, the number of proton-proton interactions created by the LHC directly affects the statistics available to do SM measurements and searches using the ATLAS experiment.
 
@@ -53,7 +51,7 @@ Predicting the number of proton-proton interactions requires defining a metric c
 \label{eqn:inst_lum}
 \end{equation}
 
-In equation~\ref{eqn:inst_lum}, $f$ is the frequency of the bunch crossings (\SI{25}{\nano\second}), $N_{1}$ and $N_{2}$ are the number of protons in each bunch ($\sim 10^{11}$ protons / bunch), and $\sigma_{x}$ and $\sigma_{y}$ are the RMS of the spatial distributions of the bunch; therefore, luminosity is a property of the accelerator and its operating parameters. The design luminosity of the LHC was $10^{34}$ cm$^{-2}$s$^{-1}$. Multiplying the luminosity by the cross section of a given process gives the expected rate for that process.
+In equation~\ref{eqn:inst_lum}, $f$ is the frequency of the bunch crossings (\SI{25}{\nano\second}), $N_{1}$ and $N_{2}$ are the number of protons in each bunch ($\sim 10^{11}$ protons / bunch), and $\sigma_{x}$ and $\sigma_{y}$ are the RMS of the spatial distributions of the bunch. Therefore, luminosity is a property of the accelerator and its operating parameters. The design luminosity of the LHC was $10^{34}$ cm$^{-2}$s$^{-1}$. The units of luminosity are an inverse area; multiplying the luminosity by the cross section of a given process gives the expected rate for that process.
 
 Integrating the \textit{instantaneous} luminosity (equation~\ref{eqn:inst_lum}) over a period of data collection gives the integrated luminosity,
 
@@ -62,9 +60,9 @@ L = \int \mathcal{L} \left( t \right) \,dt
 \label{eqn:int_lum}
 \end{equation}
 
-with units of an inverse cross section and related to the total number of interactions. In this way, the luminosity is the link between the accelerator and the statistical power of measurements to be made with the data collected. 
+which is related to the total number of interactions. In this way, the luminosity is the link between the accelerator and the statistical power of measurements to be made with the data collected. 
 
-So far, the LHC provided an integrated luminosity of \SI{30}{\per\femto\barn} in run 1 and \SI{190}{\per\femto\barn} in run 2, as shown in figure~\ref{fig:hl-lhc}. The HL-LHC upgrade~\cite{hl_lhc_tdr} \textcolor{red}{(this will be discussed earlier in the introduction)} was accepted because without increasing the luminosity of the LHC tenfold, running the accelerator will not provide significant statistical gain on measurements. Also, some systems will need repair and replacement to operate past $\sim$2020. The energy accessible at the LHC offers irreplaceable ability to study Higgs- and electroweak-sector physics~\cite{dainese_physics_2018}, so the European Strategy for Particle Physics made it a priority ``to fully exploit the physics potential of the LHC'' with ``a major luminosity upgrade''~\cite{european_strategy_for_particle_physics}. The goal is for the LHC to provide an integrated luminosity\SI{3000}{\per\femto\barn} in the 12 years following the upgrade. The luminosity actually achieved will depend on a combination of technological advances and upgrades in progress~\cite{hl_lhc_tdr} that affect the factors contributing to luminosity defined in equation~\ref{eqn:inst_lum}.
+So far, the LHC provided an integrated luminosity of \SI{30}{\per\femto\barn} in run-1 and \SI{190}{\per\femto\barn} in run-2, as shown in figure~\ref{fig:hl-lhc}. The HL-LHC upgrade~\cite{hl_lhc_tdr} was accepted because without increasing the luminosity of the LHC tenfold, running the accelerator will not provide significant statistical gain on measurements. Also, some systems will need repair and replacement to operate past $\sim$2020. The energy accessible at the LHC offers irreplaceable ability to study Higgs- and electroweak-sector physics~\cite{dainese_physics_2018}, so the European Strategy for Particle Physics made it a priority ``to fully exploit the physics potential of the LHC'' with ``a major luminosity upgrade''~\cite{european_strategy_for_particle_physics}. The goal is for the HL-LHC to provide an integrated luminosity of \SI{3000}{\per\femto\barn} in the 12 years following the upgrade. The luminosity actually achieved will depend on a combination of technological advances and upgrades in progress~\cite{hl_lhc_tdr} that affect the factors contributing to luminosity defined in equation~\ref{eqn:inst_lum}.
 
 
 \begin{figure}
@@ -88,7 +86,7 @@ So far, the LHC provided an integrated luminosity of \SI{30}{\per\femto\barn} in
 % --------------------------------------------------
 \label{sec:atlas}
 
-The ATLAS experiment~\cite{collaboration_atlas_2008} was designed to support all the physics goals of the LHC. It is \SI{44}{\meter} long and \SI{25}{\meter} in diameter, and weighs 7000 tones. It is an array of particle detector subsystems arranged concentrically around the beam pipe and centered around one of the LHC's interaction points (a place where the beams collide), as shown in figure~\ref{fig:atlas}. It is helpful to separate the subsystems of ATLAS into the so-called ``barrel'' and ``encap'' (or forward region), referring to the cylindrical shape.  % <- maybe move this sentence to muon spec section
+The ATLAS experiment~\cite{collaboration_atlas_2008} was designed to support all the physics goals of the LHC. It is \SI{44}{\meter} long and \SI{25}{\meter} in diameter, and weighs 7000 tones. It is an array of particle detector subsystems arranged concentrically around the beam pipe and centered around one of the LHC's interaction points (a place where the beams collide), as shown in figure~\ref{fig:atlas}. ATLAS is cylindrical because it aims to provide 4$\pi$ coverage aound the interaction point. It is helpful to separate the subsystems of ATLAS into the so-called ``barrel'' and ``endcap'' or ``forward'' regions.  % <- maybe move this sentence to muon spec section
 
 \begin{figure}
     \centering
@@ -97,9 +95,9 @@ The ATLAS experiment~\cite{collaboration_atlas_2008} was designed to support all
     \label{fig:atlas}
 \end{figure}
 
-For analysis, ATLAS is typically described in spherical coordinates. The azimuthal angle $\phi$ is measured around the beampipe and the polar angle $\theta$ is measured from the beam pipe. A more useful coordinate than $\theta$ is the pseudo-rapidity, $\eta = -\ln\tan\left(\theta/2\right)$, because it approaches the rapidity of a particle when its momentum is much greater than its mass and differences in rapidity are approximately invariant to a Lorentz boost parallel to the beam. The range of $\eta$ is 0 (perpendicular to the beam) to $\pm\inf$ (parallel to the beam). Typically, $\eta$ is the physically interesting coordinate because the $\phi$ coordinate follows the cylindrical symmetry.
+For analysis, ATLAS is typically described in spherical coordinates. The azimuthal angle $\phi$ is measured around the beampipe and the polar angle $\theta$ is measured from the beam pipe. A more useful coordinate than $\theta$ is the pseudo-rapidity, $\eta = -\ln\tan\left(\theta/2\right)$, because it approaches the rapidity of a particle when its momentum is much greater than its mass and differences in rapidity are approximately invariant to a Lorentz boost parallel to the beam. The range of $\eta$ is 0 (perpendicular to the beam) to $\pm\infty$ (parallel to the beam, or the z-direction). Typically, $\eta$ is the physically interesting coordinate because the $\phi$ coordinate follows the cylindrical symmetry of the beam.
 
-It is not actually the proton bunches that collide and generate physics processes, but their constituent partons. Since the partons may carry an unknown fraction of the momentum, ATLAS analyses are based on the sum of the transverse momentum and energy of outgoing particle being approximately zero, transverse meaning perpendicular to the beam. The goal of ATLAS is to reconstruct the 4-momentum of each collision product to understand what happened in each collision. A brief overview of the sub-systems of ATLAS is given, starting from the system closest to the beam and moving outwards. 
+It is not actually the proton bunches that collide and generate physics processes, but their constituent partons. Since the partons may carry an unknown fraction of the momentum, ATLAS analyses are based on the sum of the transverse momentum ($p_T$) and energy of outgoing particle being approximately zero (transverse meaning perpendicular to the beam). \textcolor{red}{The goal of ATLAS is to reconstruct the transverse momentum of each collision product to understand what happened in each collision. \textit{-> Do I have this right?}} A brief overview of the sub-systems of ATLAS is given, starting from the system closest to the beam and moving outwards. 
 
 \textbf{The inner detector}
 
@@ -114,7 +112,7 @@ The inner detector~\cite{atlas_inner_detector_tdr_1, atlas_inner_detector_tdr_2}
 
 \textbf{Calorimeters}
 
-Electromagnetic and hadronic sampling calorimeter units are used to record the energy of electrons, photons, jets and missing transverse energy (from neutrinos, for example). A combination of liquid-argon electromagnetic and hadronic calorimeters~\cite{atlas_lar_cal_tdr} and tile-scintillator hadronic calorimeters~\cite{atlas_tile_cal_tdr} cover the rapidity range $|\eta| < 4.9$, as shown in figure~\ref{fig:atlas_calorimeter}.
+Electromagnetic and hadronic sampling calorimeter units are used to record the energy of electrons, photons, jets and missing transverse energy (from neutrinos, for example). A combination of liquid-argon (LAr) electromagnetic and hadronic calorimeters~\cite{atlas_lar_cal_tdr} and tile-scintillator hadronic calorimeters~\cite{atlas_tile_cal_tdr} cover the rapidity range $|\eta| < 4.9$, as shown in figure~\ref{fig:atlas_calorimeter}.
 
 \begin{figure}
     \centering
@@ -127,17 +125,17 @@ The calorimeters cause incoming charged particles to shower and deposit their en
 
 \textbf{Triggering}
 
-It would be impossible to record all the data from bunch crossings every \SI{25}{\nano\second} at a rate of $\sim$\SI{40}{MHz}, so ATLAS has a multi-level trigger system to select events of interest and unambiguously assign them a to a bunch crossing. The Level-1 (L1) hardware trigger uses partial-granularity information from the muon spectrometer and calorimeter to trigger on high $p_T$ muons, electrons, jets, high missing transverse energy, and $\tau$ decaying to hadrons. The maximum L1 trigger rate ATLAS can accommodate is \SI{100}{kHz} with a latency of \SI{2.5}{\micro\second}~\cite{atlas_l1_trigger_tdr}. 
+It would be impossible to record all the data from bunch crossings every \SI{25}{\nano\second}, corresponding to a rate of $\sim$\SI{40}{MHz}, so ATLAS has a multi-level trigger system to select events of interest for permanent storage. The Level-1 (L1) hardware trigger uses partial-granularity information from the muon spectrometer and calorimeter to trigger on high $p_T$ muons, electrons, jets, high missing transverse energy, and $\tau$ decaying to hadrons. The maximum L1 trigger rate ATLAS can accommodate is \SI{100}{kHz} with a latency of \SI{2.5}{\micro\second}~\cite{atlas_l1_trigger_tdr}. 
 
 % The Level-1 (L1) hardware trigger uses the muon spectrometer's TGCs and RPCs to trigger on high $p_T$ muons and the calorimeter detector units to trigger on electrons, jets, high missing transverse energy, and $\tau$ decaying to hadrons, with a maximum trigger rate of \SI{100}{kHz} and latency of \SI{2.5}{\micro\second}. The L1 trigger only uses a fraction of the granularity offered by the detectors.
 
 The L1 trigger is used to define regions of interest that are fed into the software high level trigger (HLT), in which the full granularity of the muon spectrometer and calorimeter are used with information from the inner detector to reduce the trigger rate to 1 kHz. Events that pass the L1 and HLT trigger are recorded for use in offline analysis~\cite{atlas_hlt_trigger_tdr}.
 
-The ATLAS trigger system is described in the references above but the trigger rates quoted here are after the upgrades implemented for run 2, described in~\cite{martinez_run-2_2016}.
+The ATLAS trigger system is described in the references above but the trigger rates quoted here are after the upgrades implemented for run-2, described in~\cite{martinez_run-2_2016}.
 
 \textbf{The ATLAS muon spectrometer}
 
-Magnetic deflection by superconducting air-core toroid magnets is used to measure muon momentum and energy. In the barrel of ATLAS, eight coils bent into ``racetracks'' are arranged around the beampipe provide the magentic field. In the forward region, two end-cap toroids each with eight smaller racetrack-shaped coils arranged symmetrically around the beampipe are inserted in the ends of the barrel toroid. Figure~\ref{fig:atlas_muon_spectrometer} shows the toroid magnets and the different parts of the ATLAS muon spectrometer.
+Magnetic deflection by superconducting air-core toroid magnets is used to measure muon momentum and energy. In the barrel of ATLAS, eight coils bent into ``racetracks'' are arranged around the beampipe provide the magentic field. In the forward region, two end-cap toroids each with eight smaller racetrack-shaped coils arranged symmetrically around the beampipe are inserted in the ends of the barrel toroid~\cite{atlas_magnet_tdr}. Figure~\ref{fig:atlas_muon_spectrometer} shows the toroid magnets and the different parts of the ATLAS muon spectrometer.
 
 \begin{figure}
 \centering
@@ -159,14 +157,14 @@ Magnetic deflection by superconducting air-core toroid magnets is used to measur
 
 The muon spectrometer is separated into detectors used for precision offline tracking and for triggering. Monitored drift tubes (MDTs) and cathode strip chambers (CSCs) are used for precision tracking; resistive plate chambers (RPCs) are used for triggering in the barrel and thin-gap chambers (TGCs) are used for triggering in the endcaps. The positions of each type of chamber are sketched in figure~\ref{fig:atlas_muon_spectrometer_cut}. 
 
-Precision tracking is done offline for events passing the muon trigger. Each of the barrel and encap systems have three layers of MDT that record the position of the muon as it passes through each layer. Knowing the magentic field, the muon's momentum can then be extracted. For the design momentum resolution of $\Delta p_T / p_T < 1\times10^{-4}~p / GeV$ for $p_T < 300 GeV$ and a few percent for lower $p_T$ muons, the MDTs and CSCs required position resolution of \SI{50}{\micro\meter} each. Accordingly, an optical alignment system was designed to monitor and correct for chamber positions~\cite{atlas_muon_spectrometer_tdr, aefsky_optical_2008}. 
+Precision tracking is done offline for events passing the muon trigger. Each of the barrel and encap systems have three layers of MDTs that record the position of the muon as it passes through each layer. Knowing the magentic field, the muon's momentum can be extracted. For the design momentum resolution of $\Delta p_T / p_T <$ 1$\times$10$^{-4}~p$ / GeV for $p_T < 300 GeV$ and a few percent for lower $p_T$ muons, the MDTs and CSCs required position resolution of \SI{50}{\micro\meter} each. Accordingly, an optical alignment system was designed to monitor and correct for chamber positions~\cite{atlas_muon_spectrometer_tdr, aefsky_optical_2008}. 
 
 % ON MUON TRIGGERING IN THE ENDCAP
 % Decide how you want to do this based on the next section.
 % At least 2 TGC layers in coincidence comes from muon spectrometer TDR; coincidence with "forward inner" detectors (small wheel) comes from run 2 trigger upgrades paper, Martinez.
 % NSW TDR says there are TGC layers in the small wheel that are the forward inner detectors added to run 2 triggering.
 % \textcolor{red}{The run 2 L1 muon trigger was passed if TGC layers (two for low $p_T$ muons, three for high $p_T$ muons) of the big wheel fired in coincidence with a hit from the MDTs of the small wheel on the order of the bunch crossing time. The regions of interest defined by the TGCs were fed into the HLT, where MDT and TGC data could be combined for further cuts. The $p_T$ resolution of the L1 trigger is improved by the MDT tracking information. \textit{I'll decide how I want to do this after writing the motivation for the NSW}}
-In run 1, low (high) $p_T$ muons were triggered on at L1 if two (three) of the RPCs or TGCs layers fired in coincidence, for the barrel and encaps respectively~\cite{atlas_l1_trigger_tdr}. After run 1 it was discovered that up to 90\% of the triggers in the endcap were fake, caused by background particles generated in the material between the small wheel and the big wheel~\cite{nsw_tdr}. In run 1, only the TGC layers surrounding the big wheel were included in the trigger. To reduce the fake rate in run 2, the TGCs on the inside of the small wheel were also included. The added condition reduced the trigger rate by 50\% in the range 1.3 $< |\eta| <$ 1.9~\cite{martinez_run-2_2016}. The effectiveness of the solution was limited since the $|\eta|$-range of the small wheel TGC is limited to 1.0 $< |\eta| <$ 1.9 and the position resolution of the small wheel TGC doublet is coarse~\cite{nsw_tdr}.
+In run 1, low (high) $p_T$ muons were triggered on at L1 if two (three) of the RPCs or TGCs layers fired in coincidence, for the barrel and encaps respectively~\cite{atlas_l1_trigger_tdr}. After run 1 it was discovered that up to 90\% of the triggers in the endcap were fake, caused by background particles generated in the material between the small wheel and the big wheel~\cite{nsw_tdr}. In run 1, only the TGC layers surrounding the big wheel were included in the trigger. To reduce the fake rate in run 2, the TGCs on the inside of the small wheel were also included. The added condition reduced the trigger rate by 50\% in the range 1.3 $< |\eta| <$ 1.9~\cite{martinez_run-2_2016}. The effectiveness of the solution was limited since the $|\eta|$-range of the small wheel TGCs was limited to 1.0 $< |\eta| <$ 1.9 and the position resolution of the small wheel TGCs is coarse~\cite{nsw_tdr}.
 
 % In the barrel, three layers of MDTs are used for precision tracking, and resistive plate chambers (RPCs) are used for triggering. The endcaps of the muon spectrometer are composed of three wheels each, the small wheel (SW), big wheel, and outer wheel. All three wheels use MDTs for precision offline tracking, but cathode strip chambers (CSCs) are used in the forward region of the small wheel because they can better handle the increased background. Thin gap  chambers
 
@@ -182,22 +180,21 @@ In run 1, low (high) $p_T$ muons were triggered on at L1 if two (three) of the R
 \section{Motivation for the New Small Wheels (NSWs)}
 % --------------------------------------------------
 
-At the end of the HL-LHC upgrade, there could be up to a sevenfold increase in luminosity. Simultaneously, the background radiation rate increases linearly with luminosity, presenting problems for both the tracking and triggering capabilities of the muon spectrometer.
+At the end of the HL-LHC upgrade, there could be up to a sevenfold increase in luminosity~\cite{hl_lhc_tdr}. Simultaneously, the background radiation rate increases linearly with luminosity. The combined rate presents problems for both the tracking and triggering capabilities of the muon spectrometer~\cite{nsw_tdr}.
 
 In term of tracking, the efficiency of the MDTs decreases by 35\% (mostly due to long dead-times) already when exposed to the maximum hit rate at the current luminosity, 300 kHz.
-At a threefold increase in luminosity, which is predicted for run 3, most of the SW will be subjected to a hit rate well above 300 kHz. Losing muon hits in the small wheel will reduce the high $p_T$ muon momentum resolution. The decrease in resolution will affect the ability to search for high mass $Z'$, $W'$ and pseudo-scalar Higgs.
+At a threefold increase in luminosity, which is predicted for run 3, most of the SW will be subjected to a hit rate well above 300 kHz. Losing muon hits in the small wheel will reduce the high $p_T$ muon momentum resolution. The decrease in resolution will affect the ability to search for high mass $Z'$, $W'$ and pseudo-scalar Higgs~\cite{nsw_tdr}.
 
-Already, the forward muon trigger system copes with a very high fake rate, even when including TGC data from the SW in the trigger as in run 2. At the luminosity expected in run 3, 60 kHz of the maximum 100 kHz of the L1 trigger would be taken by the endcap muon spectrometer. A possible solution would be to raise the minimum $p_T$ threshold from \SI{20}{\giga\electronvolt} to \SI{40}{\giga\electronvolt}, but the ability to study several physics processes of interest depend on low $p_T$ muons.
+Already, the forward muon trigger system copes with a very high fake rate, even when including TGC data from the SW in the trigger as in run-2. At the luminosity expected in run 3, 60 kHz of the maximum 100 kHz of the L1 trigger would be taken by the endcap muon spectrometer. A possible solution would be to raise the minimum $p_T$ threshold from \SI{20}{\giga\electronvolt} to \SI{40}{\giga\electronvolt}, but the ability to study several physics processes of interest depend on low $p_T$ muons~\cite{nsw_tdr}
 
-%TODO : What position resolution is nominal now? 
-The NSW will solve both these problems. It will be covered with precision tracking chambers suitable for the expected hit rates and triggering chambers capable of 1 mrad angular resolution. The idea behind the triggering chambers is to match the small wheel track segment with the track segment from the big wheel to discard tracks not originating from the interaction point. Figure~\ref{fig:nsw_track_triggering} illustrates this point: the old trigger system would have triggered on all three tracks, while with the NSW the trigger system would only trigger on track A~\cite{nsw_tdr}.
+The NSW will solve both these problems. It will be covered with precision tracking chambers suitable for the expected hit rates and triggering chambers capable of \SI{1}{mrad} angular resolution. The idea behind the triggering chambers is to match the small wheel track segment with the track segment from the big wheel to discard tracks not originating from the interaction point. Figure~\ref{fig:nsw_track_triggering} illustrates this point: the old trigger system would have triggered on all three tracks, while with the NSW the trigger system would only trigger on track A~\cite{nsw_tdr}.
 
 % Currently, the small wheel is made of thin-gap chambers, which record hits. They have the known problem that particles generated in the material of the end-cap toroid magnet that hit the small wheel cannot be distinguished from muons from the interaction point. For example, in figure~\ref{fig:nsw_track_triggering}, all three tracks would be triggered on.
 
 \begin{figure}
     \centering
     \includegraphics[width = 0.9\textwidth]{figures/perez-codina_NSW_tracks.jpg}
-    \caption{A schematic of a quarter cross section of the ATLAS detector, with the collision/interaction point (IP) in the bottom left corner. Three possible tracks are labelled. Ideally, track A would be triggered upon while track B and C discarded. With the small wheel, only the big wheel provides the trigger so all three tracks would be recorded. With the new small wheel, only track A would be recorded~\cite{nsw_tdr}.}
+    \caption{A schematic of a quarter cross section of the ATLAS detector, with the collision/interaction point (IP) in the bottom left corner. Three possible tracks are labelled. Ideally, track A would be triggered upon while track B and C discarded. With the small wheel, all three tracks would be recorded. With the new small wheel, only track A would be recorded~\cite{nsw_tdr}.}
     \label{fig:nsw_track_triggering}
 \end{figure}
 
@@ -205,13 +202,13 @@ The NSW will solve both these problems. It will be covered with precision tracki
 \section{Design of the NSWs}
 % --------------------------------------------------
 
-The NSWs are covered with two detector technologies: micromegas (MM) and small-strip thin gap chambers (sTGCs). MMs are the primary tracking detectors and sTGCs are the primary triggering detectors, but for redundancy sake both are designed to do either. As such, both sets of detectors are to have better than $\sim$\SI{100}{\micro\meter} per plane. Four layered chambers of each type create quadruplet modules. Quadruplets of different sizes are assembled into wedges. Two sTGC wedges and two MM wedges are layered to create sectors (with the sTGC wedges on the outside). Sectors covered the wheel, as shown in figure~\ref{fig:nsw_diagram}. Practically, two different wedge sizes, small and large, were required to completely cover the wheel.
-\begin{figure}
-    \centering
-    \includegraphics[width = 0.9\textwidth]{figures/nsw_diagram.png}
-    \caption{Drawing of the new small wheel, and diagrams of the individual small and large wedges. Each colour represents a different sTGC module size.}
-    \label{fig:nsw_diagram}
-\end{figure}
+The NSWs are covered with two detector technologies: micromegas (MM) and small-strip thin gap chambers (sTGCs). MMs are the primary tracking detectors and sTGCs are the primary triggering detectors, but for redundancy sake both are designed to do either. As such, both sets of detectors are to have position resolution better than $\sim$\SI{100}{\micro\meter} per plane. \textcolor{red}{\textit{Is quoting 100 um ok? Originally in the TDR, it was smaller, but given how detector construction has played out I think this is the new working goal}}. Four chambers of each type are glued together to create quadruplet modules. Quadruplets of different sizes are assembled into wedges. Two sTGC wedges and two MM wedges are layered to create sectors (with the sTGC wedges on the outside). Different stages of the constrcution process are shown in figure~\ref{fig:nsw_breakdown}.% \textcolor{red}{\textit{for if you use computer generated NSW diagram}} Sectors covered the wheel, as shown in figure~\ref{fig:nsw_diagram}. Practically, two different wedge sizes, small and large, were required to completely cover the wheel.
+% \begin{figure}
+%    \centering
+%    \includegraphics[width = 0.9\textwidth]{figures/nsw_diagram.png}
+%    \caption{Drawing of the new small wheel, and diagrams of the individual small and large wedges. Each colour represents a different sTGC module size.}
+%    \label{fig:nsw_diagram}
+% \end{figure}
 
 \begin{figure}
 \centering
@@ -219,58 +216,58 @@ The NSWs are covered with two detector technologies: micromegas (MM) and small-s
   \centering
   \includegraphics[width=0.4\textwidth]{figures/stgc_quad_cart.jpg}
   \includegraphics[width=0.4\textwidth]{figures/stgc_quad_inlet_corner.jpg}
-  \caption{Individual sTGC quadruplet modules. The right image shows the short edge corner, and shows the 4 sTGC layers and the invidual gas inlets. The gas outlets and high voltage cables are at the long edge in the back of the photo.}
+  \caption{An sTGC quadruplet module. The left image highlights the trapezoidal shape. The right image shows the short edge corner, highlighting the four sTGC layers and each layer's gas inlet. The gas outlets and high voltage cables are at the long edge in the back of the photo. The green printed circuit board along the sides are the adaptor boards where the front end electronics are attached.}
   \label{fig:stgc_quad}
 \end{subfigure}
 
-\medskip
+\smallskip
 
 \begin{subfigure}{\textwidth}
   \centering
   \includegraphics[width=0.4\textwidth]{figures/stgc_wedge.jpg}
   \includegraphics[width=0.4\textwidth]{figures/sector.jpg}
-  \caption{Left: An sTGC wedge. The white fibreglass frame outlines the individual quadruplet modules. Right: A completed sector, with layers sTGC wedge, MM wedge, MM wedge, sTGC wedge.}
+  \caption{Left: An sTGC wedge. The white frame outlines the individual quadruplet modules. Right: A completed sector, with two sTGC wedges on the outside and two MM wedges on the inside.}
   \label{fig:wedge_and_sector}
 \end{subfigure}
 
-\medskip
+\smallskip
 
 \begin{subfigure}{\textwidth}
   \centering
   \includegraphics[width=0.8\textwidth]{figures/nsw_2021-05-27_landscape.jpeg}
-  \caption{The new small wheel. All sectors except one large sector at the top are installed, revealing two of the smaller sectors that are hidden under the large sectors.}
+  \caption{The new small wheel. All sectors except one large sector at the top are installed, revealing two of the smaller sectors that are normally hidden under the large sectors and support bars. The NSWs are \SI{10}{m} in diameter. }
   \label{fig:nsw}
   \end{subfigure}
 \caption{Images breaking down some of the construction units of the NSWs.}
 \label{fig:nsw_breakdown}
 \end{figure}
 
-For the tracking and triggering goals, each chamber must have a position resolution of $\sim$\SI{100}{\micro\meter}. 
+% For the tracking and triggering goals, each chamber must have a position resolution of $\sim$\SI{100}{\micro\meter}. 
 
-%TODO : Pivot vs confirm?
+%TODO : Pivot vs confirm? You don't mention the difference anywhere.
 
 % --------------------------------------------------
 \section{Micromegas}
 % --------------------------------------------------
 
-Micromegas have three components: a drift plane, a gas gap, a mesh, and readout strips, as shown in figure~\ref{fig:micromega}. High voltage is applied to the readout strips. An ionization event in the gas causes electrons to drift towards the mesh. Once they arrived, they are amplified by the strong field and the avalanche is picked up by the readout electrodes. The small distance between the readout electrodes and the mesh, \SI{128}{\micro\meter}, means that positive ions are evacuated in $\sim$\SI{100}{\nano\second}, making micromegas a good choice for high rate environments~\cite{nsw_tdr}. The small pitch of the readout electrodes, \SI{0.425}{mm} provide spatial resolution better than \SI{100}{\micro\meter}~\cite{stelzer_new_2016}.
+Micromegas have three components: a drift plane, a gas gap, a mesh, and readout strips, as shown in figure~\ref{fig:micromega}. High voltage is applied to the readout strips. An ionization event in the gas causes electrons to drift towards the mesh. Once they arrived, they are amplified by the strong field and the avalanche is picked up by the readout electrodes. The small distance between the readout electrodes and the mesh, \SI{128}{\micro\meter}, means that positive ions are evacuated in $\sim$\SI{100}{\nano\second}, making micromegas a good choice for high rate environments~\cite{nsw_tdr}. The small pitch of the readout electrodes, \SI{0.425}{mm}, provides spatial resolution much better than \SI{100}{\micro\meter}~\cite{stelzer_new_2016}. MM quadruplets will be used for offline precision tracking~\cite{nsw_tdr}.
 
 \begin{figure}
     \centering
     \includegraphics[width = 0.9\textwidth]{figures/micromegas.png}
-    \caption{Sketch the micromega operating principle. Positive high voltage is applied to the readout electrodes, which creates a strong field between the mesh and the readout electrodes, and a weaker field between the mesh and the drift cathode. Amplification takes place between the readout electrodes and the mesh. }
+    \caption{Sketch the micromega operating principle. Positive high voltage is applied to the readout electrodes, which creates a strong field between the mesh and the readout electrodes, and a weaker field between the mesh and the drift cathode. Amplification takes place between the readout electrodes and the mesh. Figure from~\cite{nsw_tdr}}
     \label{fig:micromega}
 \end{figure}
-
-Four micromega modules will be layered to form a quadruplet, then two quadruplets of different sizes form a wedge. The muon position provided by each of the four layers will provide the NSW precision tracking information~\cite{nsw_tdr}.
 
 % --------------------------------------------------
 \section{Small-strip thin gap chambers}
 % --------------------------------------------------
 
-sTGCs are gas ionization chambers operated with a CO$_2$:n-pentane ratio of 55:45. Gold-plated tungsten wires of \SI{50}{\micro\meter} in diameter are suspended in the plane with \SI{1.8}{mm} is suspended between two cathode planes made of FR-4, \SI{1.4}{mm} each away. One cathode board is segmented into pads of varying area (around \SI{300}{cm^2}), and the other segmented into strips of \SI{3.2}{mm} pitch, perpendicular to the wires. High voltage is applied to the wires and the cathode planes are grounded. When a muon passes through, the gas is ionized and the electric field in the gas gap causes an ionization avalanche~\cite{townsend_electricity_1915}. The motion of the ions and electrons are picked up on the nearby wire, strip and pad electrodes. The hatching of the strips and wires establishes a coordinate system from which to extract the coordinate of the muon as it passes through the layer. Signal is readout from groups of successive wires, so the position resolution in the direction perpendicular to the wires is $\sim$\SI{10}{mm}. The resolution in this direction does not matter since it will give the symmetric azimuthal coordinate in ATLAS. Good resolution on the $\eta$ coordinate is important, which is the direction perpendicular to the strips. The average single chamber position resolution in the strip coordinate was \SI{45}{\micro\meter} measured for perpendicular muon tracks in a test beam~\cite{abusleme_performance_2016}~--- well within design specifications. When four sTGCs are glued together into a quadruplet the design angular resolution of ~\SI{1}{mrad} in the strip coordinate is achievable~\cite{nsw_tdr, perez-codina_small-strip_2016}.
+sTGCs are gas ionization chambers operated with a CO$_2$:n-pentane ratio of 55:45. Gold-plated tungsten wires, \SI{50}{\micro\meter} in diameter and with \SI{1.8}{mm} pitch, are suspended between two cathode planes made of FR-4, each \SI{1.4}{mm} away. One cathode board is segmented into pads of varying area (around \SI{300}{cm^2} each), and the other segmented into strips of \SI{3.2}{mm} pitch, perpendicular to the wires. High voltage is applied to the wires and the cathode planes are grounded. When a muon passes through, the gas is ionized and the electric field in the gas gap causes an ionization avalanche~\cite{townsend_electricity_1915}. The motion of the ions and electrons are picked up on the nearby wire, strip and pad electrodes. The hatching of the strips and wires establishes a coordinate system from which to extract the coordinate of the muon as it passes through the layer. Signal is readout from groups of successive wires, so the position resolution in the direction perpendicular to the wires is $\sim$\SI{10}{mm}. The resolution in this direction does not matter since it will give the symmetric azimuthal coordinate in ATLAS. Good resolution on the $\eta$ coordinate, perpendicular to the strips, is important. The average single chamber position resolution in the strip coordinate was \SI{45}{\micro\meter} for perpendicular muon tracks as measured in a test beam~\cite{abusleme_performance_2016}~--- well within design specifications. When four sTGCs are glued together into a quadruplet the design angular resolution of \SI{1}{mrad} in the strip coordinate is achievable~\cite{nsw_tdr, perez-codina_small-strip_2016}.
 
-A 3-out-of-4 coincidence in the pad electrodes of a quadruplet will define a region of interest where the strip and wire electrodes should be readout~\cite{nsw_tdr}. Then, a track segment with the required angular resolution can be constructed and provided as input to the L1 trigger~\cite{tdaq_phase1_tdr}. For run 3, the L1 trigger will pass if the track segment from the small wheel matches a region of interest defined by the TGCs of the big wheel. The increased angular resolution and $\eta$ coverage of the quadruplets will be an improvement in the triggering scheme over the current SW TGCs. After the phase II upgrade of the trigger and data acquisition system, which includes upgrades to the big wheel's angular resolution, there will only be a trigger if the combined track points back to the interaction point, increasing the muon $p_T$ resolution~\cite{tdaq_phase2_tdr}.
+A 3-out-of-4 coincidence in the pad electrodes of a quadruplet will define a region of interest where the strip and wire electrodes should be readout. Then, a track segment with the required angular resolution can be constructed and provided as input to the L1 trigger~\cite{nsw_tdr}. For the next run of ATLAS (run-3), the L1 trigger will pass if the track segment from the small wheel matches a region of interest defined by the TGCs of the big wheel~\cite{tdaq_phase1_tdr}. The increased angular resolution and $\eta$ coverage of the quadruplets will be an improvement in the triggering scheme over the current SW TGCs~\cite{nsw_tdr}. After the phase-II upgrade of the trigger and data acquisition system scheduled for $\sim$2025, which includes upgrades to the big wheel's angular resolution, there will only be a trigger if the combined track points back to the interaction point, increasing the muon $p_T$ resolution~\cite{tdaq_phase2_tdr}.
+
+%TODO : YOU ARE HERE, first screen edit
 
 % Maybe put NSW alignment system next, then go into construction and misalignment. This paragraph can go after section on NSW alignment system.
 The original design goal was to position the strips within \SI{40}{\micro\meter} per detector plane. This was necessary to ensure that the position reconstruction would be unbiased when the quadruplets are installed in ATLAS, allowing the quadruplets to deliver the design angular resolution. The NSW alignment system will monitor the surface of the sTGC wedges (discussed \textcolor{red}{LATER}) so the internal alignment of the chambers had to be controlled during construction or quantified before installation. The main alignment feature of the strip cathode boards were brass inserts along one of their angled edges, near the long edge and short edge. These inserts accessible outside the gas gap throughout the construction process, and were meant to provide an external reference from which to measure the position of internal components of the chambers. The brass inserts on a quadruplet are visible in figure~\ref{fig:brasses}. The process of sTGC construction is highlighted in section~\ref{sec:stgc_construction}, with steps important to alignment highlighted.
