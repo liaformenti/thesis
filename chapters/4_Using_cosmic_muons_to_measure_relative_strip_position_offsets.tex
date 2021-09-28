@@ -6,7 +6,8 @@
 \label{chap:cosmics}
 % Edit count: Lia - 0, Brigitte - 0
 
-At McGill, among other quality and functionality tests, each Canadian-made quadruplet was characterized with cosmic muons. In this chapter, the cosmic muon experimental setup and how the data was analyzed to provide relative strip position offsets is presented. The analysis method was motivated by the how it could be compared to data collected with the x-ray method, as presented in chapter~\ref{chap:xray}, but also stands alone as a characterization of the alignment between strips of different layers.
+%TODO : cosmic rays?
+At McGill, among other quality and functionality tests, each Canadian-made quadruplet was characterized with cosmic rays. In this chapter, the experimental setup and how the data was analyzed to provide relative strip position offsets is presented. The analysis method was motivated by the how it could be compared to data collected with the x-ray method, as presented in chapter~\ref{chap:xray}, but also stands alone as a characterization of the alignment between strips of different layers.
 
 % --------------------------------------------------
 \section{Experimental setup}
@@ -37,22 +38,19 @@ The quadruplets were held at 3.1~kV for approximately 2 hours to collect data fr
 % --------------------------------------------------
 \section{Data preparation}
 % --------------------------------------------------
-Corrupted data was removed while the raw data was being recorded in a binary file. The binary file could be decoded into a usable ROOT tree offline. 
+Corrupted data is removed while the raw data is being recorded in a binary file. The binary file is decoded into a usable \package{ROOT}~\cite{ROOT_paper} tree offline. 
 
-A hit is defined as a signal recorded from a channel that was above threshold or (in the case of strips) neighbour triggered.  In addition to hits from muons, the quadruplets recorded noise from the electronics and $\delta$-rays. Particularly, the edge strips are very noisy, so hits on a layer that include the edge strips are cut. All electrodes have a pedestal, which was
+A hit is defined as a signal recorded from a channel that was above threshold or (in the case of strips) neighbour triggered. In addition to hits from muons, the quadruplets record noise from the electronics and $\delta$-rays. Therefore, cuts are applied to reduce the number of noise hits. The edge strips are very noisy, so all strip hits on layers with strip hits on either edge channel are cut. A default pedestal value is subtracted from the recorded signal peak amplitude of each electrode for a more realistic estimate of the signal amplitude. Also, events that only have hits on pad electrodes (no strips or wires) were cut because the large area of the pads made them susceptible to noise.
 
-Also, events that only have hits on pad electrodes (no strips or wires) are cut. 
-
-YOU ARE HERE
 % --------------------------------------------------
-\section{Clustering}
+\subsection{Clustering and tracking}
 % --------------------------------------------------
 
-Many of the high-level characterization metrics required rebuilding muon tracks. For events passing quality cuts~\cite{lefebvre_tgc_analysis}, the x- and y-coordinates of the ionization avalanche on each layer were extracted from the signal on the wires and strips respectively for each event, as is sketched in figure~\ref{fig:mwpc_coords}. In this work, $x$ was the coordinate perpendicular to the wires and $y$ was the coordinate perpendicular to the strips, as is drawn in figure~\ref{fig:mwpc_coords}.
+Many of the high-level characterization metrics required rebuilding muon tracks. For events passing quality cuts, the $x$- and $y$-coordinates of the ionization avalanche on each layer were extracted from the signal on the wires and strips respectively for each event, as is sketched in figure~\ref{fig:mwpc_coords}. In this work, $x$ was the coordinate perpendicular to the wires and $y$ was the coordinate perpendicular to the strips, as is drawn in figure~\ref{fig:mwpc_coords}.
 
-The x-coordinate was taken as the center of the wire group with the maximum PDO, since the wire groups' pitch (\SI{36}{\milli\meter}) was larger than the typical charge spreading. Assuming that the true x-position of the hit was uniformly distributed over the width of the wire group, the uncertainty in the x-position was given by $\frac{36~mm}{\sqrt{12}} = 10~mm$~\cite{Sauli:117989}.
+The $x$-coordinate was taken as the center of the wire group with the maximum PDO, since the wire groups' pitch (\SI{36}{\milli\meter}) was larger than the typical charge spreading. Assuming that the true $x$-position of the hit is sampled from a uniform distribution over the width of the wire group, the uncertainty in the x-position was given by $\frac{36~mm}{\sqrt{12}} = 10~mm$~\cite{Sauli:117989}.
 
-The y-coordinate was taken as the Gaussian mean of the PDO distribution across groups of contiguous strips. The process of grouping contiguous strips with signal above threshold\footnote{Note that during cosmic ray testing, the hardware was configured to also record the PDO of strips adjacent to a strip above threshold.} was called clustering, and the resulting group was called a cluster. Figure~\ref{fig:mwpc_coords} sketches the clustering process and a sample cluster is shown in figure~\ref{fig:sample_cluster}. Typically, clusters were built of 3-5 strips. The thickness of the graphite coating over the cathode boards determined how many strips picked up the ionization image charge. Larger clusters were more likely caused by $\delta$-rays since they spread the cloud of ionization. 
+The $y$-coordinate was taken as the Gaussian mean of the PDO distribution across groups of contiguous strips. The process of grouping contiguous strips recorded in an event was called clustering, and the resulting group was called a cluster. Figure~\ref{fig:mwpc_coords} sketches the clustering process and a sample cluster is shown in figure~\ref{fig:sample_cluster}. Typically, clusters were built of 3-5 strips. The thickness of the graphite coating over the cathode boards determined how many strips picked up the ionization image charge. Larger clusters were more likely caused by $\delta$-rays since they spread the cloud of ionization. 
 
 \begin{figure}
     \centering
@@ -68,29 +66,34 @@ The y-coordinate was taken as the Gaussian mean of the PDO distribution across g
     \label{fig:sample_cluster}
 \end{figure}
 
+Clusters are cut from the analysis if there are two clusters on one layer's set of strips (indicative of noise), if the cluster size is lesser than three (which should not happen for real events thanks to neighbour triggering), and if the cluster size is greater than 25.
+
 The uncertainty in the y-coordinate could have been taken as the fitted cluster mean's statistical uncertainty; however, after comparing the difference in cluster means for different fitting algorithms in appendix~\ref{sec:appendix_clustering_cluster_fit}, \SI{60}{\micro\meter} of uncertainty was assigned.
 
 The coordinates of the avalanches' on all layers were used to reconstruct tracks in x and y respectively. Most tracks passing quality cuts were probably cosmic muons, but of course some $\delta$-rays and noise contributed. The tracks were then used to calculate characterization metrics like electrode efficiency and spatial resolution, the details of which are discussed in~\cite{lefebvre_thesis}.
 
-%TODO : Figure out the correct citation for quality cuts. Is Benoit's thesis ok or should you just point people to the software? 
-%TODO : Should I be citing sections as opposed to the whole thesis? I feel like I'll keep citing different sections of thesis.
-%TODO : Include hit and track map? - yes if Brigitte says you need a num_entries plot in chapter 3. You didn't include it because you never mention wire supports in TH2 analysis. But if you want to add num entries for clarity, include cluster map here. Cluster map > raw hits because less cuts and gets across the idea that x is just hit or no hit while y comes from clustering. 
-
-Three methods were used to characterize each quadruplet's alignment: the CMM method, cosmic ray tracing and x-ray profile reconstruction. For present purposes, the CMM method was described sufficiently in the introduction. The x-ray method is detailed in chapter~\ref{chap:xray}. How cosmic ray tracing was used for alignment studies, with the goal of independently validating the x-ray method, is the main focus of this chapter and this thesis. 
+%TODO : Do I need to mention that clusters are written to tracks tree then that is the input for my analysis to calculate relative local offsets? 
+%TODO : Include hit and track map? - yes if Brigitte says you need a num_entries plot in chapter 3. You didn't include it because you never mention wire supports in TH2 analysis. But if you want to add num entries for clarity, include cluster map here. Cluster map > raw hits because less cuts and gets across the idea that x is just hit or no hit while y comes from clustering.  
 
 % Edit count: Lia - 2, Brigitte - 0
+
+YOU ARE HERE
+
+%TODO : Read over this section and fix references to misalignment
 % --------------------------------------------------
-\section{Measuring local offsets in strip pattern using cosmics data}
+\section{Measuring relative local offsets}
 % --------------------------------------------------
 
-Misalignments can be modeled as passive transformations. Ideally, a misalignment model would be chosen and the parameters (for example, a global offset and rotation for each layer) calculated. To understand the potential of cosmic muon data, it is useful to define a local offset. For each area of a strip layer, the local offset is the shift of the strip pattern in that area with respect to the nominal geometry.  Local offsets systematically change the strip that is hit by a muon passing through the area. The \package{tgc\_analysis/CosmicsAnalysis} software assumes the nominal geometry, so the recorded muon y-position ($y$) is shifted opposite to the local offset ($d_{local}$),
+The offset of a strip from its nominal position can be modeled as a passive transformation. For each area of a strip layer, the local offset is the shift of the strip pattern in that area with respect to the nominal geometry.  Local offsets systematically change the strip that is hit by a muon passing through the area. The \package{tgc\_analysis/CosmicsAnalysis} software assumes the nominal geometry, so the recorded muon y-position ($y$) is shifted opposite to the local offset ($d_{local}$),
 % Maybe useful sentence?: The local offset is a result of the non-conformities in the strip pattern etching and inter-layer misalignments.
 \begin{equation}
     y = y_{nom} - d_{local},
     \label{eqn:local_translation}
 \end{equation}
 % Maybe useful sentence?: The true position of individual cosmic muons is not known, and in the analysis the four detector planes float with respect to a software-implemented origin that is not associated with a fixed physical location.
-where $y_{nom}$ is the position of the muon that would have been recorded if there was no local offset. Equation~\ref{eqn:local_translation} ignores other factors that could affect the cluster position (like position resolution). The local offset is unknown and there was no external reference to measure $y_{nom}$. Therefore, only relative alignment parameters can be extracted. 
+where $y_{nom}$ is the position of the muon that would have been recorded if there was no local offset. Equation~\ref{eqn:local_translation} ignores other factors that could affect the cluster position (like position resolution). With cosmics data, the local offset is unknown and there was no external reference to measure $y_{nom}$. Therefore, only relative alignment parameters can be extracted. 
+
+% Potential BREAK for Motivation section at beginning ^
 
 The minimal relative coordinate system uses two reference or fixed layers~\cite{lefebvre_thesis}. The hits on the two fixed layers were used to create tracks that can be interpolated or extrapolated (polated) to the other two layers. The residual of track $i$, $\Delta_i$ is defined as,
 \begin{equation}
