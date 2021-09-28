@@ -38,6 +38,7 @@ The quadruplets were held at 3.1~kV for approximately 2 hours to collect data fr
 % --------------------------------------------------
 \section{Data preparation}
 % --------------------------------------------------
+\subsection{Cuts on electrode hits}
 Corrupted data is removed while the raw data is being recorded in a binary file. The binary file is decoded into a usable \package{ROOT}~\cite{ROOT_paper} tree offline. 
 
 A hit is defined as a signal recorded from a channel that was above threshold or (in the case of strips) neighbour triggered. In addition to hits from muons, the quadruplets record noise from the electronics and $\delta$-rays. Therefore, cuts are applied to reduce the number of noise hits. The edge strips are very noisy, so all strip hits on layers with strip hits on either edge channel are cut. A default pedestal value is subtracted from the recorded signal peak amplitude of each electrode for a more realistic estimate of the signal amplitude. Also, events that only have hits on pad electrodes (no strips or wires) were cut because the large area of the pads made them susceptible to noise.
@@ -77,8 +78,6 @@ The coordinates of the avalanches' on all layers were used to reconstruct tracks
 
 % Edit count: Lia - 2, Brigitte - 0
 
-YOU ARE HERE
-
 %TODO : Read over this section and fix references to misalignment
 % --------------------------------------------------
 \section{Measuring relative local offsets}
@@ -91,17 +90,17 @@ The offset of a strip from its nominal position can be modeled as a passive tran
     \label{eqn:local_translation}
 \end{equation}
 % Maybe useful sentence?: The true position of individual cosmic muons is not known, and in the analysis the four detector planes float with respect to a software-implemented origin that is not associated with a fixed physical location.
-where $y_{nom}$ is the position of the muon that would have been recorded if there was no local offset. Equation~\ref{eqn:local_translation} ignores other factors that could affect the cluster position (like position resolution). With cosmics data, the local offset is unknown and there was no external reference to measure $y_{nom}$. Therefore, only relative alignment parameters can be extracted. 
+where $y_{nom}$ is the position of the muon that would have been recorded if there was no local offset. Equation~\ref{eqn:local_translation} ignores other factors that could affect the cluster position (like position resolution). With cosmics data, the local offset is unknown and there was no external reference to measure $y_{nom}$. Therefore, only relative local offsets could be calculated in the following way. 
 
 % Potential BREAK for Motivation section at beginning ^
 
-The minimal relative coordinate system uses two reference or fixed layers~\cite{lefebvre_thesis}. The hits on the two fixed layers were used to create tracks that can be interpolated or extrapolated (polated) to the other two layers. The residual of track $i$, $\Delta_i$ is defined as,
+The minimal relative coordinate system uses two reference or fixed layers~\cite{lefebvre_thesis}. The hits on the two fixed layers were used to create tracks that can be interpolated or extrapolated (polated) to the other two layers. The set of two fixed layers and the layer of interest are referred to as a tracking combination. The residual of track $i$, $\Delta_i$ is defined as,
 \begin{equation}
     \Delta_i = y_{i,hit} - y_{i,track},
     \label{eqn:residual}
 \end{equation}
 
-where $y_{i,hit}$ is the recorded hit position and $y_{i,track}$ is the polated track position built from hits on the two reference layers. Track residuals are affected by the local offset in the area of each layer's hit. As an example, in figure~\ref{fig:fake_event_display}, the residual on layer 2 perhaps indicates that layer 2 is offset with respect to layers 1 and 4 in the area of the track. Of course, a single track residual says nothing of the real relative local offset because of the limited spatial resolution of the detectors and fake tracks caused by noise or delta rays. However, the mean of residuals for all tracks in a region will be shifted systematically by the local offsets between layers~\cite{lefebvre_thesis}. For a perfectly aligned quadruplet, the mean of residuals should be zero in all regions and for all reference frames, unlike the example regions in figure~\ref{fig:res_dist}.
+where $y_{i,hit}$ is the recorded hit position and $y_{i,track}$ is the polated track position built from hits on the two reference layers. Track residuals are affected by the relative local offset in the area of each layer's hit. As an example, in figure~\ref{fig:fake_event_display}, the residual on layer 2 perhaps indicates that layer 2 is offset with respect to layers 1 and 4 in the area of the track. Of course, a single track residual says nothing of the real relative local offset because of the limited spatial resolution of the detectors and fake tracks caused by noise or delta rays. However, the mean of residuals for all tracks in a region will be shifted systematically by the local offsets between layers~\cite{lefebvre_thesis}. For a quadruplet with nominal geometry, the mean of residuals should be zero in all regions and for all reference frames, unlike the example regions in figure~\ref{fig:res_dist}.
 \begin{figure}
     \centering
     \includegraphics[width = 0.9\textwidth]{figures/figure_fake_event_display.pdf}
@@ -127,19 +126,19 @@ where $y_{i,hit}$ is the recorded hit position and $y_{i,track}$ is the polated 
 \label{fig:res_dist}
 \end{figure}
 
-The residual distributions were wider for tracking combinations where the extrapolation lever arm was largest. In general, residual means calculated with geometrically less favourable tracking combinations have larger statistical and systematic uncertainties. The bin size of \SI{200}{\micro\meter} for the distributions shown in figure~\ref{fig:res_dist} was chosen based on the uncertainty on residuals calculated from tracks on layer 4 (1) built from hits on layers 1 and 2 (3 and 4) given a cluster y-position uncertainty of \SI{60}{\micro\meter} (appendix~\ref{sec:appendix_clustering_track_residuals}), since these tracks yield residuals with the largest uncertainties.
+The residual distributions were wider for tracking combinations where the extrapolation lever arm was largest, as in the example distributions shown in figure~\ref{fig:res_dist}. In general, residual means calculated with geometrically less favourable tracking combinations have larger statistical and systematic uncertainties. The bin size of \SI{200}{\micro\meter} for the distributions shown in figure~\ref{fig:res_dist} was chosen based on the uncertainty on residuals calculated from tracks on layer 4 (1) built from hits on layers 1 and 2 (3 and 4) given a cluster y-position uncertainty of \SI{60}{\micro\meter} (appendix~\ref{sec:appendix_clustering_track_residuals}), since these tracks yield residuals with the largest uncertainties.
 
 A gaussian fit was used to extract the mean of the residual distributions. Theoretically, a double gaussian distribution is more apt, but for this analysis the gaussian fit was sufficient, as discussed in appendix~\ref{appendix:systematics_res_fit_fcn}.
 
-The area of the region of interest was \SI{100}{\milli\meter} by \SI{100}{\milli\meter}. The size balanced the amount of tracks falling in the region of interest to give sufficient statistics to the local residual distributions, while being smaller than the order on which misalignments were expected to effect the local offsets significantly. "Significantly" in this context was defined based on the distance in $x$ that a large but possible rotation of \SI{1000}{\micro\radian} would change the local offset by more than \SI{50}{\micro\meter}, which is half the required position resolution of the sTGCs~\cite{nsw_tdr}.
+The area of the region of interest was \SI{100}{\milli\meter} by \SI{100}{\milli\meter}. The size balanced the amount of tracks falling in the region of interest to give sufficient statistics to the local residual distributions, while being smaller than the order on which global layer misalignments were expected to effect the local offsets significantly. A base  misalignment model of a layer includes a global offset and rotation of the strip positions with respect to nominal, discussed further in chapter~\ref{chap:outlook}. "Significantly" in this context was defined based on the distance in $x$ that a large but possible rotation of \SI{1000}{\micro\radian} would change the local offset by more than \SI{50}{\micro\meter}~-- half the required position resolution of the sTGCs~\cite{nsw_tdr}.
 
-It is only possible to calculate relative local offsets with cosmics data because there was no external reference to measure positions on all layers with respect to. As an example, assuming that the residual on layer 2 in figure~\ref{fig:fake_event_display} is representative of the relative local offset, the residual on layer 2 could be caused by layer 2 being misaligned from nominal, but it could also be caused by layers 1 and 4 being misaligned from nominal while layer 2 is in its expected position! Any number of combinations of local offsets on layers 1, 2 and 4 could produce the residual on layer 2. The value of relative local offset measurements will be shown and discussed throughout this work.
+It is only possible to calculate relative local offsets with cosmics data because there was no external reference to measure positions on all layers with respect to. As an example, assuming that the residual on layer 2 in figure~\ref{fig:fake_event_display} is representative of the relative local offset, the residual on layer 2 could be caused by the strips on layer 2 being misaligned from nominal, but it could also be caused by strips on layers 1 and 4 being misaligned from nominal while the strips on layer 2 are in their nominal positions! Any number of combinations of local offsets on layers 1, 2 and 4 could produce the residual on layer 2. The value of relative local offset measurements will be shown and discussed throughout this work.
 
 % --------------------------------------------------
 \section{Visualizing relative misalignments between layers}
 % --------------------------------------------------
 
-The mean of residuals was extracted for regions across entire quadruplet layers for every tracking combination to get a picture of the relative misalignments between layers. 
+The mean of residuals was extracted for regions across entire quadruplet layers for every tracking combination to get a picture of the how relative misalignments between strip layers change over the layers' surface. 
 
 \begin{figure}
 \centering
@@ -160,8 +159,9 @@ The mean of residuals was extracted for regions across entire quadruplet layers 
 \label{fig:res_mean_th2}
 \end{figure}
 
-Figure~\ref{fig:res_mean_th2} contains the mean of residuals on layers 2 and 4 with tracking reference layers 1 and 3. Many of the residual means are non-zero, and change smoothly over the layer, indicating that there are relative misalignments. Given that the residual mean changes with $x$ in figure~\ref{fig:res_mean_th2_L2_F13}, there is likely a rotation of layer 2 with respect to layers 1 and 3, combined with an offset of the entire layer. For layer 4 in figure~\ref{fig:res_mean_th2_L4_F13}, perhaps there is a scaling~\cite{carlson_results_2019} of the strip pattern with respect to layers 1 and 3. The interpretation of the patterns in the residual means depends on the choice of misalignment model.
+Figure~\ref{fig:res_mean_th2} contains the mean of residuals on layers 2 and 4 with tracking reference layers 1 and 3. Many of the residual means are non-zero, and change smoothly over the layer, indicating that there are relative local offsets stemming from misalignments over larger areas. Given that the residual mean changes with $x$ in figure~\ref{fig:res_mean_th2_L2_F13}, there is likely a rotation of layer 2 with respect to layers 1 and 3, combined with an offset of the entire layer. For layer 4 in figure~\ref{fig:res_mean_th2_L4_F13}, perhaps there is a scaling~\cite{carlson_results_2019} of the strip pattern with respect to layers 1 and 3. The interpretation of the patterns in the residual means depends on the choice of misalignment model.
 
+%TODO : How to introduce the idea of global misalignments and misalignment models smoothly?
 % --------------------------------------------------
 \section{Systematic uncertainty in cosmic residual means}
 % --------------------------------------------------
