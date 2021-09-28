@@ -46,7 +46,7 @@ A hit is defined as a signal recorded from a channel that was above threshold or
 % --------------------------------------------------
 \subsection{Clustering and tracking}
 % --------------------------------------------------
-
+%TODO : Fix mention of PDO
 Many of the high-level characterization metrics required rebuilding muon tracks. For events passing quality cuts, the $x$- and $y$-coordinates of the ionization avalanche on each layer were extracted from the signal on the wires and strips respectively for each event, as is sketched in figure~\ref{fig:mwpc_coords}. In this work, $x$ was the coordinate perpendicular to the wires and $y$ was the coordinate perpendicular to the strips, as is drawn in figure~\ref{fig:mwpc_coords}.
 
 The $x$-coordinate was taken as the center of the wire group with the maximum PDO, since the wire groups' pitch (\SI{36}{\milli\meter}) was larger than the typical charge spreading. Assuming that the true $x$-position of the hit is sampled from a uniform distribution over the width of the wire group, the uncertainty in the x-position was given by $\frac{36~mm}{\sqrt{12}} = 10~mm$~\cite{Sauli:117989}.
@@ -67,7 +67,7 @@ The $y$-coordinate was taken as the Gaussian mean of the PDO distribution across
     \label{fig:sample_cluster}
 \end{figure}
 
-Clusters are cut from the analysis if there are two clusters on one layer's set of strips (indicative of noise), if the cluster size is lesser than three (which should not happen for real events thanks to neighbour triggering), and if the cluster size is greater than 25.
+Events are cut from the analysis if there are two clusters on one layer's set of strips (indicative of noise). Clusters are cut if the cluster size is lesser than three (which should not happen for real events thanks to neighbour triggering), and if the cluster size is greater than 25.
 
 The uncertainty in the y-coordinate could have been taken as the fitted cluster mean's statistical uncertainty; however, after comparing the difference in cluster means for different fitting algorithms in appendix~\ref{sec:appendix_clustering_cluster_fit}, \SI{60}{\micro\meter} of uncertainty was assigned.
 
