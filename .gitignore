@@ -3,7 +3,6 @@
 *.aux
 *.blg
 *glo*
-thesis.pdf
 learningLatex/*.pdf
 *.log
 *.ist
