@@ -2,24 +2,21 @@
 % CHAPTER 2: The LHC and ATLAS Experiment %
 % ==================================================
 
-\chapter{The LHC and ATLAS experiment}
+\chapter{High energy particle physics at the LHC and ATLAS experiment}
 \label{chap:lhc_atlas}
 % Edit count: Lia - 1, Brigitte - 0
 
 %TODO : Write physics motivation as section 2.1 and adjust this chapter intro
-The LHC and ATLAS experiment are introduced here to provide context for the New Small Wheel upgrade. \textcolor{red}{Adjust this based on new physics motivation section}
 
-% --------------------------------------------------
-\section{Physics Motivation}
-% --------------------------------------------------
-
-The LHC, ATLAS, and the upgrades they are undergoing are all motivated by the study of the Standard Model (SM) of particle physics and the open questions the SM does not address. Particle physics aims to study the indivisible constituents of matter. Understanding the fundamental building blocks and how they interact informs our understanding of the evolution of the Universe from the Big Bang to the forms of matter we recognize today~-- from atoms to the large scale structure of the universe. The reader is referred to~\cite{griffiths_introduction_2011, peskin_introduction_1995, zyla_review_2020} for more information on particle physics and the SM than is presented here.
+The LHC, ATLAS, and the upgrades they are undergoing are all motivated by the study of the Standard Model (SM) of particle physics and the open questions the SM does not address. Particle physics aims to study the indivisible constituents of matter. Understanding the fundamental building blocks and how they interact informs our understanding of the evolution of the Universe from the Big Bang to the forms of matter we recognize today~-- from atoms to the large scale structure of the universe. The reader is referred to~\cite{griffiths_introduction_2011, peskin_introduction_1995, zyla_review_2020} for more information on particle physics and the SM than is presented here. The LHC and ATLAS experiment are also introduced here to provide context for the NSW upgrade.
 
 \textcolor{red}{Do I need to place the background texts I cite in the in-text citations? I've listed where I've personally gotten each piece of information, but info about the SM and BSM might be so basic as to not required a citation. Comments?}
 
-\subsection{The Standard Model}
+% --------------------------------------------------
+\section{The Standard Model}
+% --------------------------------------------------
 
-The SM describes all the fundamental particles and their interactions [GRIFFITHS]. It is a collection of quantum field theories that is able to explain the existence of all the particles discovered in the past century and predict, to incredible precision, how they interact [PESKIN]. In fact, when it was being developed in the 1960s-1970s, it began motivating the search for yet undiscovered particles with accelerators, like the Higgs Boson~\cite{brianti_large_1984}. 
+The SM describes all the fundamental particles and their interactions [GRIFFITHS]. It is a collection of quantum field theories that is able to explain the existence of all the particles discovered in the past century and predict how they interact to incredible precision [PESKIN]. In fact, when it was being developed in the 1960s-1970s, it began motivating the search for yet undiscovered particles with accelerators, like the Higgs Boson~\cite{brianti_large_1984}. 
 
 \begin{figure}
     \centering
@@ -28,40 +25,45 @@ The SM describes all the fundamental particles and their interactions [GRIFFITHS
     \label{fig:standard_model}
 \end{figure}
 
-The standard model (represented in figure~\ref{fig:standard_model}) consists of six quarks, six leptons, and five force-particles (and all their anti-particles). The force-carrying bosons are exchanged between interacting particles to produce what is perceived as: the strong force mediated by gluons; the electromagnetic force mediated by photons; and the weak force mediated by the charge W- and neutral Z-bosons [GRIFFITHS]. The SM actually presents a theory of the electromagnetic and weak force as one force stemming from the same phenomena: the unified electroweak force [PESKIN]. 
+The standard model (represented in figure~\ref{fig:standard_model}) consists of six quarks, six leptons, and five force-particles (and all their anti-particles). The force-carrying bosons are exchanged between interacting particles to produce what is perceived as: the strong force mediated by gluons; the electromagnetic force mediated by photons; and the weak force mediated by the charged W-bosons and neutral Z-boson [GRIFFITHS]. The SM actually presents a theory of the electromagnetic and weak force as one force stemming from the same phenomena: the unified electroweak force [PESKIN]. The Higgs boson field interacts with the particles mediating the unified electroweak force in such a way as to distinguish the weak and electromagnetic forces from each other and give all particles (except neutrinos) a mass. This is referred to as electroweak symmetry breaking [PESKIN]. 
 
-Quarks are fermions that are sensitive to all forces, but notably are the only particles sensitive to the strong force [GRIFFITHS]. Protons and neutrons are made up of superpositions of quarks and gluons, and the strong force is responsible for their existence and mutual attraction into nuclei [NUCLEAR]. Leptons are particles not sensitive to the strong force. They can be further subdivided into charged leptons~-- including the electron that orbits nuclei and is responsible for chemistry~--, and neutrinos~-- neutral almost massless particles that only interact through the weak force [GRIFFITHS]. The final piece of the standard model is the Higgs boson, whose interaction provides a mechanism for the particles to have mass [GRIFFITHS, PESKIN].
+Quarks are fermions that are sensitive to all forces, but notably are the only particles sensitive to the strong force [GRIFFITHS]. Protons and neutrons are made up of quarks and gluons, and the strong force is responsible for their existence and mutual attraction into nuclei [NUCLEAR]. Leptons are particles not sensitive to the strong force. Charged leptons include the electron, which is responsible for the chemistry once part of atoms. Neutrinos are neutral, almost massless particles that only interact through the weak force [GRIFFITHS]. 
 
-Common matter is made up of the lightest constituents of the standard model: up and down quarks, electrons and photons. The other particles are or were generated in high-energy environments then decay eventually to the lightest constituents. Such high energy environments include the Big Bang [BIG ORANGE BOOK], astrophysical sources, and accelerators [REV PART PHYS, GRIFFITHS]. The presence of the particles of the standard model at the beginning of the Universe means that their interactions and decays are fundamental for the study of the origin of the Universe [BIG ORANGE BOOK]. Many high energy astrophysical sources, like supernovae, generate particles that rain down on Earth as cosmic rays~\cite{boezio_chemical_2012} [BOEZIO, REV PART PHYS, GRIFFITHS]. Finally, accelerators were built to create controlled high energy environments where the fundamental particles can be produced, detected and subsequently studied [GRIFFITHS, REV PART PHYS].
+Common matter is made up of the lightest constituents of the standard model: up and down quarks, electrons and photons. The other particles are or were generated in high-energy environments and decay eventually to the lightest constituents. Such high energy environments include the Big Bang [BIG ORANGE BOOK], astrophysical sources, and accelerators [REV PART PHYS, GRIFFITHS]. The presence of the particles of the standard model at the beginning of the Universe means that their interactions and decays are fundamental for the study of the origin of the Universe [BIG ORANGE BOOK]. Many high energy astrophysical sources, like supernovae, generate particles that rain down on Earth as cosmic rays~\cite{boezio_chemical_2012} [BOEZIO, REV PART PHYS, GRIFFITHS]. Finally, accelerators were built to create controlled high energy environments where the fundamental particles can be produced, detected and subsequently studied [GRIFFITHS, REV PART PHYS].
 
-\subsection{Beyond the Standard Model}
+% --------------------------------------------------
+\section{Beyond the Standard Model}
+% --------------------------------------------------
 
-Many open questions in particle physics remain that the standard model provides no explanation for.
+Many open questions in particle physics remain that the SM provides no explanation for.
 
-First, the fundamental force of gravity is not included in the standard model. One might expect a force particle to exist that mediates the gravitational force, but the weak strength of the gravitational force means the graviton will elude detection for a very long time. Moreover, there is no theory of gravity that does not require one of dark energy or dark matter [REV PART PHYS]. The universe is expanding at a rate irreconcilable with the known energy density of the Universe [BIG ORANGE BOOK] and no SM explaination of dark matter can be found [Munoz?]. 
+First, the fundamental force of gravity is not included in the standard model. One might expect a force particle to exist that mediates the gravitational force, but the weak strength of the gravitational force means the graviton will elude detection for a very long time. Moreover, there is no theory of gravity that does not require one of dark energy or dark matter [REV PART PHYS]. The universe is expanding at a rate irreconcilable with the known energy density of the Universe, and the nature of this "dark energy" is unknown [BIG ORANGE BOOK]. Dark matter is the name given to mass whose effect on galaxies and our Universe is measurable through gravity, but for which there is no SM explanation [Munoz?]. 
 
-Second, neutrinos in the standard model are massless; they do not interact with the Higgs field. However, in YEAR neutrino oscillations were measured, which can only occur if neutrinos do have mass. 
+Second, neutrinos in the standard model are massless; they do not interact with the Higgs field. However, in YEAR neutrino oscillations were measured, which can only occur if neutrinos do have mass [CITE]. 
 
 Third, the unification of the electromagnetic and weak force begs the question of if there is a Grand Unified Theory that includes the strong force. 
 
 Theories beyond the standard model (BSM) aim to answer these questions. Often, BSM theories predict new particles. For example, super symmetry (SUSY) predicts that each SM particle has a heavier super symmetric partner. SUSY would explain the origin of dark matter with weakly interacting massive particles and BLANK. Ideally, a BSM theory predicts a measurable signature that can be search for at accelerators or elsewhere.
 
-\subsection{Studying high energy particle physics with accelerators}
+% --------------------------------------------------
+\section{Studying high energy particle physics with accelerators}
+% --------------------------------------------------
 
 Accelerators of increasingly high energy have a long history of enabling the discovery of new particles [GRIFFITHS]. Only calling on one example, one of the main goals when the Large Hadron Collider and the ATLAS experiment were proposed was to detect the long-predicted Higgs boson particle~-- a triumph accomplished in YEAR. Being the last particle of the Standard Model to be discovered, the discovery marked the completion of the standard model as it is known today.
 
-Since then, measurements of the cross section of particle physics processes have been enabled by the LHC that test our understanding of the standard model and provide hints of where to look for new physics. % A summary of the cross sections measurements done at the ATLAS experiment is shown in figure~\ref{fig:atlas_cross_sections}.
-%\begin{figure}
-%    \centering
-%    \includegraphics[width = \textwidth]{figures/atlas_cross_sections.png}
-%    \caption{Cross sections of select SM physics interactions measured using the ATLAS experiment at the LHC. The comparison with theoretical predictions is also shown~\cite{atlas_public_web_sm}.}
-%    \label{fig:atlas_cross_sections}
-%\end{figure}
-Given the precision to which SM parameters like cross sections have been measured (SEE FIG CROSS SECTIONS IN ATLAS SECTION AS EXAMPLE), any discrepancy between theory and experiment could be a portal to new physics tackling the biggest questions in particle physics today. 
+Since then, measurements of the cross section of particle physics processes have been enabled by the LHC that test our understanding of the standard model and provide hints of where to look for new physics. A summary of the cross sections measurements done at the ATLAS experiment is shown in figure~\ref{fig:atlas_cross_sections}.
+\begin{figure}
+    \centering
+    \includegraphics[width = \textwidth]{figures/atlas_cross_sections.png}
+    \caption{Cross sections of select SM physics interactions measured using the ATLAS experiment at the LHC. The comparison with theoretical predictions is also shown~\cite{atlas_public_web_sm}.}
+    \label{fig:atlas_cross_sections}
+\end{figure}
+
+Given the precision to which SM parameters like cross sections have been measured, any discrepancy between theory and experiment could be a portal to new physics tackling the biggest questions in particle physics today. 
 
 Accelerators and detectors can also be used to search for signatures of BSM theories. The controlled, high rate environment enables the search for rare processes that would be impossible to discern in other environments. If the signature is not found, exclusion limits can be set. [EXAMPLE OF FAMOUS ATLAS SEARCH].
 
-Overall, accelerators play a key role in making precision measurements, defining directions for searches for new physics, and seeing exclusion limits on BSM theories.
+Overall, accelerators play a key role in making precision measurements, searching for rare processes predicted by the SM, and testing BSM theories.
 
 % --------------------------------------------------
 \section{The Large Hadron Collider}
@@ -105,8 +107,11 @@ So far, the LHC provided an integrated luminosity of \SI{28.26}{\per\femto\barn}
     \label{fig:hl-lhc}
 \end{figure}
 
-The increase in statistics the HL-LHC will provide with improve measurements of standard model parameters and improve sensitivity of searches for BSM physics~\cite{dainese_physics_2018}. An Higgs couplings will be measured at the percent level and sensitivity to SM predicted Higgs decays will increase. Also, the sensitivity to several exotic Higgs decays to BSM particles will be improved. Many of the products of exotic Higgs decays are dark matter candidates or otherwise could extend the scope of the SM.
+The increase in statistics the HL-LHC will improve measurements of standard model parameters and improve searches for unobserved phenomena~\cite{dainese_physics_2018}. A particular measurement that will benefit from the increased statistics is of the triple-Higgs coupling. Measuring the coupling measures the shape of the Higgs potential responsible for electroweak symmetry breaking. Any discrepancy with the SM prediction will show that there must be other sources of electroweak symmetry breaking~-- if there is such another source, it could be an avenue to study the other questions the SM does not address. Also, the sensitivity to several exotic Higgs decays to BSM particles will be improved. Many of the products of exotic Higgs decays are dark matter candidates or otherwise could extend the scope of the SM.
 
+% Higgs couplings to particles will all be measured to the percent level at the HL-LHC and sensitivity to SM predicted Higgs decays will increase. Also, the sensitivity to several exotic Higgs decays to BSM particles will be improved. Many of the products of exotic Higgs decays are dark matter candidates or otherwise could extend the scope of the SM. The LHC is the only accelerator energetic enough to directly produce Higgs bosons, so it is the only tool able to probe questions about the Higgs.
+
+% A particular measurement of interest is of the triple-Higgs coupling. Measuring the coupling measures the shape of the Higgs potential responsible for electroweak symmetry breaking. Any discrepancy with the SM prediction will show that there must be other sources of electroweak symmetry breaking, and hence currently unpredictable particles. Given that the LHC is the only accelerator where the Higgs can be produced directly, it is the only place on Earth where the coupling could be measured.
 %The estimated number of interactions of a given type per bunch crossing is given by equation~\ref{eqn:num_interactions}.
 %\begin{equation}
 %\mu = \sigma \delta t\mathcal{L}
