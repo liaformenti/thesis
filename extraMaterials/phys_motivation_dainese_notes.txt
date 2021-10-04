@@ -1,0 +1,25 @@
+A couple examples of measurements and searches of interest are listed here. Higgs couplings (which give the W, Z, quark and charged lepton mass) will be measured at the percent level and most electroweak boson interactions are expected to be discovered (observed with 5$\sigma$ significance). Any deviation in these precision measurements from SM predictions will inform directions for studing BSM theories. The search sensitivity for several exotic Higgs decays and top quarks flavour-changing neutral currents (FCNCs) will improve. Many products of exotic Higgs decays are dark matter candidates, and top quark F
+
+The LHC is the only accelerator in the world that can directly produce the Higgs, and the increased statistics will bring precision measurements of Higgs couplings, responsible for giving the fundamental particles mass, to the percent level. Sensivity to several exotic Higgs decays (that may provide hints as to the nature of dark matter
+
+Things I could say based on Dainese:
+- Higgs to 2 muons: discovery, better Higgs coupling measurements
+
+*Higgs couplings measured to percent level, increased stats particularly needed for complex final states like ttH
+*Precision measurements in Higgs sector constrain BSM
+
+*Search for exotic Higgs decays (DM)
+
+- Good mass range on extra Higgs from precision coupling measurements
+
+*Better electroweak multi-boson measurements as precision tests; thanks to stats, better instrumentation and better forward acceptance.
+*Electroweak mixing angle determination (conflicting experimental results)
+
+- Reduce uncertainty on W mass
+
+*Top FCNCs are BSM probes and searches are limited by statistics
+
+*Improved PDFs from EW gauge boson and top quark final states aided by better forward coverage
+*Better sensitivity to EW super symmetry states (sleptons, gluinos, squarks)
+- VBF for DM
+- Extending the mass range for Z' searches

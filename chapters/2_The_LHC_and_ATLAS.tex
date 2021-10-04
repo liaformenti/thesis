@@ -13,16 +13,18 @@ The LHC and ATLAS experiment are introduced here to provide context for the New 
 \section{Physics Motivation}
 % --------------------------------------------------
 
-The LHC, ATLAS, and the upgrades they are undergoing are all motivated by the study of the standard model (SM) of particle physics and the open questions the standard model does not address. Particle physics aims to study the fundamental constituents of matter. By understanding the building blocks and how they interact, the hope is that we can inform our understanding of the evolution from the Big Bang to the forms of matter we know to exist today, from atoms to the large scale structures of the universe. The reader is referred to~\cite{griffiths_introduction_2011, peskin_introduction_1995, zyla_review_2020} for background on particle physics and the standard model. 
+The LHC, ATLAS, and the upgrades they are undergoing are all motivated by the study of the Standard Model (SM) of particle physics and the open questions the SM does not address. Particle physics aims to study the indivisible constituents of matter. Understanding the fundamental building blocks and how they interact informs our understanding of the evolution of the Universe from the Big Bang to the forms of matter we recognize today~-- from atoms to the large scale structure of the universe. The reader is referred to~\cite{griffiths_introduction_2011, peskin_introduction_1995, zyla_review_2020} for more information on particle physics and the SM than is presented here.
 
-\subsection{The standard model}
+\textcolor{red}{Do I need to place the background texts I cite in the in-text citations? I've listed where I've personally gotten each piece of information, but info about the SM and BSM might be so basic as to not required a citation. Comments?}
 
-The standard model describes all the fundamental particles and their interactions [GRIFFITHS]. It is a collection of quantum field theories that is able to explain the existence of all the particles discovered in the past century and predict, to incredible precision, how they interact [PESKIN]. In fact, when it was being developed in the 1960s-1970s, it began motivating the search for yet undiscovered particles with accelerators, like the Higgs Boson~\cite{brianti_large_1984}. 
+\subsection{The Standard Model}
+
+The SM describes all the fundamental particles and their interactions [GRIFFITHS]. It is a collection of quantum field theories that is able to explain the existence of all the particles discovered in the past century and predict, to incredible precision, how they interact [PESKIN]. In fact, when it was being developed in the 1960s-1970s, it began motivating the search for yet undiscovered particles with accelerators, like the Higgs Boson~\cite{brianti_large_1984}. 
 
 \begin{figure}
     \centering
     \includegraphics[width = \textwidth]{figures/standardmodel_galbraith_carsten.png}
-    \caption{Representation of the standard model of particle physics, highlighting the three main categories of particles (quarks, leptons and mediators)~\cite{galbraith_ux_2013}.}
+    \caption{Representation of the standard model of particle physics, highlighting the three main categories of particles (quarks, leptons and force-particles) and the force-particles they interact with~\cite{galbraith_ux_2013}.}
     \label{fig:standard_model}
 \end{figure}
 
@@ -96,39 +98,14 @@ which is related to the total number of interactions. In this way, the luminosit
 
 So far, the LHC provided an integrated luminosity of \SI{28.26}{\per\femto\barn} in run-1~\cite{atlas_luminosity_run1} and \SI{156}{\per\femto\barn} in run-2~\cite{atlas_luminosity_run2}, as shown in figure~\ref{fig:hl-lhc}. The HL-LHC upgrade~\cite{hl_lhc_tdr} was accepted because without increasing the luminosity of the LHC tenfold, running the accelerator will not provide significant statistical gain on measurements. Also, some systems will need repair and replacement to operate past $\sim$2020. The LHC will be the most energetic accelerator in the world for years to come and is the only accelerator capable of directly producing the Higgs boson and top quarks, so the European Strategy for Particle Physics made it a priority ``to fully exploit the physics potential of the LHC'' with ``a major luminosity upgrade''~\cite{european_strategy_for_particle_physics}. The goal is for the HL-LHC to provide an integrated luminosity of \SI{3000}{\per\femto\barn} in the 12 years following the upgrade. The luminosity actually achieved will depend on a combination of technological advances and upgrades in progress that affect the factors contributing to luminosity defined in equation~\ref{eqn:inst_lum}~\cite{hl_lhc_tdr}.
 
-The increase in statistics the HL-LHC will provide with improve measurements of standard model parameters and improve sensitivity of searches for BSM physics~\cite{dainese_physics_2018}. A couple examples of measurements and searches of interest are listed here. Higgs couplings (which give the W, Z, quark and charged lepton mass) will be measured at the percent level and most electroweak boson interactions are expected to be discovered (observed with 5$\sigma$ significance). Any deviation in these precision measurements from SM predictions will inform directions for studing BSM theories. The search sensitivity for several exotic Higgs decays and top quarks flavour-changing neutral currents (FCNCs) will improve. Many products of exotic Higgs decays are dark matter candidates, and top quark F
-
-The LHC is the only accelerator in the world that can directly produce the Higgs, and the increased statistics will bring precision measurements of Higgs couplings, responsible for giving the fundamental particles mass, to the percent level. Sensivity to several exotic Higgs decays (that may provide hints as to the nature of dark matter
-
-Things I could say based on Dainese:
-- Higgs to 2 muons: discovery, better Higgs coupling measurements
-
-*Higgs couplings measured to percent level, increased stats particularly needed for complex final states like ttH
-*Precision measurements in Higgs sector constrain BSM
-
-*Search for exotic Higgs decays (DM)
-
-- Good mass range on extra Higgs from precision coupling measurements
-
-*Better electroweak multi-boson measurements as precision tests; thanks to stats, better instrumentation and better forward acceptance.
-*Electroweak mixing angle determination (conflicting experimental results)
-
-- Reduce uncertainty on W mass
-
-*Top FCNCs are BSM probes and searches are limited by statistics
-
-*Improved PDFs from EW gauge boson and top quark final states aided by better forward coverage
-*Better sensitivity to EW super symmetry states (sleptons, gluinos, squarks)
-- VBF for DM
-- Extending the mass range for Z' searches
-
-
 \begin{figure}
     \centering
     \includegraphics[width = \textwidth]{figures/HL-LHC-updated-January-2021_small.jpg}
     \caption{LHC/HL-LHC plan~\cite{hl-lhc_plan_picture_website}. The integrated luminosity collected and projected for each run of the LHC is shown in red below the timeline and the center of mass energy of the collisions is shown in red above the timeline. The top blue arrow labels the run number. ``LS'' stands for ``long shutdown'' and indicates periods where the accelerator is not operating. During the shutdowns, upgrades to the LHC and the experiments are being installed. This timeline was last updated in January, 2021, and reflects changes in the schedule due to the ongoing pandemic. }
     \label{fig:hl-lhc}
 \end{figure}
+
+The increase in statistics the HL-LHC will provide with improve measurements of standard model parameters and improve sensitivity of searches for BSM physics~\cite{dainese_physics_2018}. An Higgs couplings will be measured at the percent level and sensitivity to SM predicted Higgs decays will increase. Also, the sensitivity to several exotic Higgs decays to BSM particles will be improved. Many of the products of exotic Higgs decays are dark matter candidates or otherwise could extend the scope of the SM.
 
 %The estimated number of interactions of a given type per bunch crossing is given by equation~\ref{eqn:num_interactions}.
 %\begin{equation}
