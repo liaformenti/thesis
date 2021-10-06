@@ -8,17 +8,17 @@
 
 %TODO : Write physics motivation as section 2.1 and adjust this chapter intro
 
-The LHC, ATLAS, and the upgrades they are undergoing are all motivated by the study of the Standard Model (SM) of particle physics and the open questions the SM does not address. Particle physics aims to study the indivisible constituents of matter. Understanding the fundamental building blocks and how they interact informs our understanding of the evolution of the Universe from the Big Bang to the forms of matter we recognize today~-- from atoms to the large scale structure of the universe. In this chapter, the study of particle physics using accelerators is introduced, before moving on to the LHC, HL-LHC and the ATLAS experiment to contextualize the NSW upgrade. The connection to physics questions of interest will be highlighted at each stage. 
+The LHC, ATLAS, and the upgrades they are undergoing are all motivated by the study of the Standard Model (SM) of particle physics and the open questions the SM does not address. Particle physics aims to study the indivisible constituents of matter. Understanding the fundamental building blocks and how they interact informs our understanding of the evolution of the Universe from the Big Bang to the forms of matter we recognize today. This chapter provides context for the NSW upgrade. The study of particle physics using accelerators is introduced, before moving on to the LHC, HL-LHC and the ATLAS experiment. The connection to physics questions of interest will be highlighted at each stage. 
 
 The information on particle physics and the SM presented here is rather general; the reader is referred to~\cite{griffiths_introduction_2011, peskin_introduction_1995, zyla_review_2020} for more information. 
 
-\textcolor{red}{Do I need to place the background texts I cite in the in-text citations? I've listed where I've personally gotten each piece of information, but info about the SM and BSM might be so basic as to not required a citation. Comments?}
+\textcolor{red}{\textit{Do I need to place the background texts I cite in the in-text citations? I've listed where I've personally gotten each piece of information, but info about the SM and BSM might be so basic as to not required a citation. Comments?}}
 
 % --------------------------------------------------
 \section{The Standard Model}
 % --------------------------------------------------
 
-The SM describes all the fundamental particles and their interactions\iffalse[GRIFFITHS]\fi. It is a collection of quantum field theories able to explain the existence of all the particles discovered in the past century and predict how they interact to incredible precision\iffalse[PESKIN]\fi. In fact, when it was being developed in the 1960s-1970s, it began motivating the search for yet undiscovered particles with accelerators, like the Higgs Boson~\cite{brianti_large_1984}. 
+The SM describes all the fundamental particles and their interactions\iffalse[GRIFFITHS]\fi. It is a collection of quantum field theories able to explain the existence of all the particles discovered in the past century and predict how they interact to incredible precision\iffalse[PESKIN]\fi. In fact, when it was being developed in the 1960s-1970s, it began motivating the search for yet undiscovered particles with accelerators, like the Higgs Boson~\cite{brianti_large_1984}. % Could also mention the tau neutrino here if need be
 
 \begin{figure}
     \centering
@@ -27,11 +27,11 @@ The SM describes all the fundamental particles and their interactions\iffalse[GR
     \label{fig:standard_model}
 \end{figure}
 
-The standard model, represented in figure~\ref{fig:standard_model}, consists of six quarks, six leptons, and five force-particles (and all their anti-particles). The force-carrying bosons are exchanged between interacting particles to produce what is perceived as: the strong force mediated by gluons; the electromagnetic force mediated by photons; and the weak force mediated by the charged W-bosons and neutral Z-boson\iffalse[GRIFFITHS]\fi. The SM actually presents a theory of the electromagnetic and weak force as one force stemming from the same phenomenon: the unified electroweak force\iffalse[PESKIN]\fi. The Higgs boson field interacts with the particles mediating the unified electroweak force in such a way as to distinguish the weak and electromagnetic forces from each other and give all particles (except neutrinos) a mass. This is referred to as electroweak symmetry breaking\iffalse[PESKIN]\fi. 
+The standard model, represented in figure~\ref{fig:standard_model}, consists of six quarks, six leptons, and five force-particles (and all their anti-particles). The force-carrying bosons are exchanged between interacting particles to produce what is perceived as: the strong force mediated by gluons; the electromagnetic force mediated by photons; and the weak force mediated by the charged W-bosons and neutral Z-boson\iffalse[GRIFFITHS]\fi. The SM actually presents a theory of the electromagnetic and weak force as one force stemming from the same phenomenon: the unified electroweak force\iffalse[PESKIN]\fi. The Higgs boson field interacts with the particles mediating the unified electroweak force in such a way as to distinguish the weak and electromagnetic forces from each other and give all particles (except neutrinos) a mass. This is called electroweak symmetry breaking\iffalse[PESKIN]\fi. 
 
 Quarks are fermions that are sensitive to all forces; notably they are the only particles sensitive to the strong force\iffalse[GRIFFITHS]\fi. Protons and neutrons are made up of quarks and gluons, and the strong force is responsible for their existence and mutual attraction into nuclei~\cite{bertulani_nuclear_2007}. Leptons are particles not sensitive to the strong force. Charged leptons include the electron, which once part of atoms is responsible for chemistry. Neutrinos are neutral, almost massless particles that only interact through the weak force\iffalse[GRIFFITHS]\fi. 
 
-Common matter is made up of the lightest constituents of the standard model: up and down quarks, electrons and photons. The other particles are or were generated in high-energy environments and decay eventually to the lightest constituents. Such high energy environments include the Big Bang~\cite{carroll_introduction_2007}, astrophysical sources, and accelerators\iffalse[REV PART PHYS, GRIFFITHS]\fi. The presence of the particles of the standard model at the beginning of the Universe means that their interactions and decays are fundamental for the study of the origin of the Universe~\cite{carroll_introduction_2007}. Many high energy astrophysical sources, like supernovae, generate particles that rain down on Earth as cosmic rays~\cite{boezio_chemical_2012}\iffalse[BOEZIO, REV PART PHYS, GRIFFITHS]\fi. Finally, accelerators were built to create controlled high energy environments where the fundamental particles can be produced, detected and subsequently studied\iffalse[GRIFFITHS, REV PART PHYS]\fi.
+Common matter is made up of the lightest constituents of the SM: up and down quarks, electrons and photons. The other particles are or were generated in high-energy environments and decay eventually to the lightest constituents. Such high energy environments include the Big Bang~\cite{carroll_introduction_2007}, astrophysical sources, and accelerators\iffalse[REV PART PHYS, GRIFFITHS]\fi. The presence of the particles of the standard model at the beginning of the Universe means that their interactions and decays are fundamental for the study of the origin of the Universe~\cite{carroll_introduction_2007}. Many high energy astrophysical sources, like supernovae, generate particles that rain down on Earth as cosmic rays~\cite{boezio_chemical_2012}\iffalse[BOEZIO, REV PART PHYS, GRIFFITHS]\fi. Accelerators were built to create controlled high energy environments where the production and decay of fundamental particles could be manufactured, detected and studied\iffalse[GRIFFITHS, REV PART PHYS]\fi.
 
 % --------------------------------------------------
 \section{Beyond the Standard Model}
@@ -39,21 +39,22 @@ Common matter is made up of the lightest constituents of the standard model: up 
 
 The SM provides no explaination for several open questions in particle physics.
 
-First, the fundamental force of gravity is not included in the SM. One might expect a force particle to exist that mediates the gravitational force, but the weak strength of the gravitational force means the graviton will elude detection for a very long time. Moreover, there is no theory of gravity that does not require dark energy or dark matter~\cite{zyla_review_2020}. The universe is expanding at a rate irreconcilable with the known energy density of the Universe, and the nature of this "dark energy" is unknown~\cite{carroll_introduction_2007}. Dark matter is the name given to mass in the universe whose gravity is measurable, but for which there is no SM explanation~\cite{munoz_dark_2004}.
+First, the fundamental force of gravity is not included in the SM. One might expect a force-particle to exist that mediates the gravitational force, but the strength of gravity is so weak that the graviton will elude detection for a long time. Moreover, there is no theory of gravity that does not require dark energy or dark matter~\cite{zyla_review_2020}. The universe is expanding at a rate irreconcilable with the known energy density of the Universe, and the nature of this "dark energy" is unknown~\cite{carroll_introduction_2007}. Similarly, dark matter is the name given to mass in the universe whose gravity is measurable, but for which there is no SM explanation~\cite{munoz_dark_2004}.
 
-Second, neutrinos in the standard model are massless; they do not interact with the Higgs field [PESKIN]. However, in 2013 neutrino oscillations were confirmed, which can only occur if neutrinos do have mass~\cite{aharmim_combined_2013}. \textcolor{red}{check citation}
+Second, neutrinos in the SM are massless; they do not interact with the Higgs field. However, in 2013 neutrino oscillations were confirmed, which can only occur if neutrinos do have mass~\cite{aharmim_combined_2013}.
 
-Third, the unification of the electromagnetic and weak force begs the question of if there is a Grand Unified Theory that includes the strong force~\cite{georgi_unity_1974}. 
+Third, the unification of the electromagnetic and weak force begs the question of if there is a Grand Unified Theory (GUT) that includes the strong force and emcopasses the SM in a more complete theory~\cite{georgi_unity_1974}. 
 
-Theories beyond the standard model (BSM) aim to answer these questions. Often, BSM theories predict new particles. For example, super symmetry (SUSY) predicts that each SM particle has a heavier super symmetric partner. SUSY would explain the origin of dark matter with weakly interacting massive particles and solve the so-called "naturalness" problem in the SM at energies above the tera-electronvolt scale~\cite{jungman_supersymmetric_1996}. Ideally, a BSM theory predicts a measurable signature that can be searched for at accelerators or elsewhere.
+Theories beyond the standard model (BSM) aim to answer these questions. Often, BSM theories predict new particles. For example, super-symmetry (SUSY) predicts that each SM particle has a heavier super-symmetric partner. SUSY would explain the origin of dark matter with weakly interacting massive particles, would solve the so-called "naturalness" problem in the SM at energies above the tera-electronvolt scale, and is often a part of GUTs~\cite{jungman_supersymmetric_1996}. Ideally, a BSM theory predicts a measurable signature that can be searched for at accelerators or elsewhere.
 
 % --------------------------------------------------
 \section{Studying high energy particle physics with accelerators}
 % --------------------------------------------------
 
-Accelerators of increasingly high energy have a long history of enabling the discovery of new particles\iffalse[GRIFFITHS]\fi. Only calling on one example, one of the main goals when the Large Hadron Collider, the ATLAS experiment and the CMS experiment were proposed was to detect the long-predicted Higgs boson particle~-- a triumph accomplished in 2012~\cite{the_atlas_collaboration_observation_2012, the_cms_collaboration_observation_2012}. Being the last particle of the Standard Model to be discovered, the discovery marked the completion of the standard model as it is known today.
+Accelerators of increasingly high energy have a long history of enabling the discovery of new particles\iffalse[GRIFFITHS]\fi. Only calling on one example, one of the main goals when the Large Hadron Collider, the ATLAS experiment and the CMS experiment were proposed was to detect the long-predicted Higgs boson particle~-- a triumph accomplished in 2012~\cite{the_atlas_collaboration_observation_2012, the_cms_collaboration_observation_2012}. Being the last particle of the SM to be discovered, the discovery marked the completion of the SM as it is known today.
 
-Since then, measurements of the cross section of particle physics processes have been enabled by the LHC that test our understanding of the standard model and provide hints of where to look for new physics. A summary of the cross sections measurements done at the ATLAS experiment is shown in figure~\ref{fig:atlas_cross_sections}.
+Since then, measurements of the cross section of particle physics processes have been enabled by the LHC that test our understanding of the SM and provide hints of where to look for new physics. A summary of the cross sections measurements done at the ATLAS experiment is shown in figure~\ref{fig:atlas_cross_sections}. Given the precision to which the SM predicts cross sections and the precision to which many can be measured, any discrepancy between theory and experiment could be an indication of new physics. New physics must exist! The questions the SM does not address require it.
+
 \begin{figure}
     \centering
     \includegraphics[width = \textwidth]{figures/atlas_cross_sections.png}
@@ -61,13 +62,11 @@ Since then, measurements of the cross section of particle physics processes have
     \label{fig:atlas_cross_sections}
 \end{figure}
 
-Given the precision to which SM parameters like cross sections have been measured, any discrepancy between theory and experiment could be a portal to new physics tackling the biggest questions in particle physics today. 
+Accelerators and detectors can also be used to search for signatures of rare processes predicted by the SM and BSM theories. The controlled, high rate environment enables the search for signatures that would be impossible to discern in other environments. If the signature is not found, exclusion limits can be set~\cite{lista_statistical_2017}.
 
-Accelerators and detectors can also be used to search for signatures of rare processes predicted by the SM and BSM theories. The controlled, high rate environment enables searches that would be impossible to discern in other environments. If the signature is not found, exclusion limits can be set~\cite{lista_statistical_2017}.
+Through measurements and searches, accelerators play a key role in making precision measurements, searching for rare processes predicted by the SM, and testing BSM theories.
 
-Overall, accelerators play a key role in making precision measurements, searching for rare processes predicted by the SM, and testing BSM theories.
-
-\textcolor{red}{Is there a good citation for search vs measurement?}
+\textcolor{red}{\textit{Is there a good citation for the defintion of search vs measurement?}}
 
 % --------------------------------------------------
 \section{The Large Hadron Collider}
@@ -79,19 +78,23 @@ The LHC is an accelerator \SI{27}{\kilo\meter} in circumference and located $\si
 
 % There are two main branches of study that can be pursued with the LHC and ATLAS. First, properties predicted by the standard model (SM) of particle physics can be measured. Else, physicists can search for evidence of processes predicted by theories beyond the standard model. Both the SM measurement and search analyses are based on measuring the number of times a given process occurs and comparing it to expectations. In this way, the number of proton-proton interactions created by the LHC directly affects the statistics available to do SM measurements and searches using the ATLAS experiment.
 
-The number of proton-proton interactions generated by the LHC directly affects the statistics available to make fundamental measurements of cross sections, event rates, etc. 
+% --------------------------------------------------
+\section{Luminosity}
+% --------------------------------------------------
+
+The number of proton-proton interactions generated by the LHC directly affects the statistics available to make fundamental measurements of cross sections, SM parameters, etc. 
 %IF YOU DON'T NEED TO DEFINE LUMINOSITY
 % The number of interactions is quantified by luminosity, a property of the accelerator and its operating conditions~\cite{zyla_review_2020}. When the instantaneous luminosity is integrated over a data collection period and multiplied by the cross section of a given process, the result is the expected number of times that process occurs (so luminosity has units of inverse cross section). Since luminosity is derived from the accelerator parameters, it is the link between the machine and the statistical power of potential measurements. 
 % IF YOU NEED TO DEFINE LUMINOSITY
 % THIS SECTION IS NOT CITED, probably cite wiht zyla_review_2020
-Predicting the number of proton-proton interactions requires defining a metric called luminosity~\cite{zyla_review_2020}. It is the number of particles an accelerator can send through a given area per unit time. It is calculated from the measurable quantities in equation~\ref{eqn:inst_lum}.
+Predicting the number of proton-proton interactions requires defining a metric called luminosity~\cite{zyla_review_2020}. It is the number of particles an accelerator can send through a given area per unit time. It is calculated from the measurable quantities in equation~\ref{eqn:inst_lum}:
 
 \begin{equation}
 \mathcal{L} = \frac{f N_{1} N_{2} }{4 \pi \sigma_{x} \sigma_{y}}
 \label{eqn:inst_lum}
 \end{equation}
 
-In equation~\ref{eqn:inst_lum}, $f$ is the frequency of the bunch crossings (\SI{25}{\nano\second}), $N_{1}$ and $N_{2}$ are the number of protons in each bunch ($\sim 10^{11}$ protons / bunch), and $\sigma_{x}$ and $\sigma_{y}$ are the RMS of the spatial distributions of the bunch. Therefore, luminosity is a property of the accelerator and its operating parameters. The design luminosity of the LHC was $10^{34}$ cm$^{-2}$s$^{-1}$. The units of luminosity are an inverse area; multiplying the luminosity by the cross section of a given process gives the expected rate for that process.
+$f$ is the frequency of the bunch crossings (\SI{25}{\nano\second}), $N_{1}$ and $N_{2}$ are the number of protons in each bunch ($\sim 10^{11}$ protons / bunch), and $\sigma_{x}$ and $\sigma_{y}$ are the RMS of the spatial distributions of the bunch. Therefore, luminosity is a property of accelerator beams, which are set by the capabilities of the accelerator. The design luminosity of the LHC was $10^{34}$ cm$^{-2}$s$^{-1}$. The units of luminosity are an inverse area; multiplying the luminosity by the cross section of a given process gives the expected rate for that process.
 
 Integrating the \textit{instantaneous} luminosity (equation~\ref{eqn:inst_lum}) over a period of data collection gives the integrated luminosity,
 
@@ -100,13 +103,13 @@ L = \int \mathcal{L} \left( t \right) \,dt
 \label{eqn:int_lum}
 \end{equation}
 
-which is related to the total number of interactions. In this way, the luminosity is the link between the accelerator and the statistical power of measurements to be made with the data collected. Spo far, the LHC provided an integrated luminosity of \SI{28.26}{\per\femto\barn} in run-1~\cite{atlas_luminosity_run1} and \SI{156}{\per\femto\barn} in run-2~\cite{atlas_luminosity_run2}.
+which is related to the total number of interactions. In this way, the luminosity is the link between the accelerator and the statistical power of measurements to be made with the data collected. So far, the LHC provided an integrated luminosity of \SI{28.26}{\per\femto\barn} in run-1~\cite{atlas_luminosity_run1} and \SI{156}{\per\femto\barn} in run-2~\cite{atlas_luminosity_run2}.
 
 % --------------------------------------------------
 \section{The High-luminosity LHC}
 % --------------------------------------------------
 
-The HL-LHC upgrade~\cite{hl_lhc_tdr} was accepted because without increasing the luminosity of the LHC tenfold, running the accelerator will not provide significant statistical gain on measurements. Also, some systems will need repair and replacement to operate past $\sim$2020. The LHC will be the most energetic accelerator in the world for years to come and is the only accelerator capable of directly producing the Higgs boson and top quarks, so the European Strategy for Particle Physics made it a priority ``to fully exploit the physics potential of the LHC'' with ``a major luminosity upgrade''~\cite{european_strategy_for_particle_physics}. The goal is for the HL-LHC to provide an integrated luminosity of \SI{3000}{\per\femto\barn} in the 12 years following the upgrade. The luminosity actually achieved will depend on a combination of technological advances and upgrades in progress that affect the factors contributing to luminosity defined in equation~\ref{eqn:inst_lum}~\cite{hl_lhc_tdr}.
+The HL-LHC upgrade~\cite{hl_lhc_tdr} was accepted because without increasing the luminosity of the LHC tenfold, running the accelerator will not provide significant statistical gain on measurements. Also, some systems will need repair and replacement to operate past $\sim$2020. The LHC will be the most energetic accelerator in the world for years to come and is the only accelerator capable of directly producing the Higgs boson (and top quarks), so the European Strategy for Particle Physics made it a priority ``to fully exploit the physics potential of the LHC'' with ``a major luminosity upgrade''~\cite{european_strategy_for_particle_physics}. The goal is for the HL-LHC to provide an integrated luminosity of \SI{3000}{\per\femto\barn} in the 12 years following the upgrade. The luminosity actually achieved will depend on a combination of technological advances and upgrades in progress that affect the factors contributing to luminosity defined in equation~\ref{eqn:inst_lum}~\cite{hl_lhc_tdr}.
 
 \begin{figure}
     \centering
