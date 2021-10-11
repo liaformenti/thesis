@@ -8,27 +8,58 @@
 \label{chap:comparison}
 % Edit count: Lia - 1, Brigitte - 0
 
-The goal was to validate the local offsets extracted from the x-ray data with cosmics data. The complication was that the x-ray dataset provided absolute local offsets while the cosmics dataset provided relative local offsets, which could not be compared directly. The solution was to use the x-ray local offsets to calculate a relative local offset. The x-ray relative local offset is the x-ray residual reconstructed from an abstract track using the beam profile centers on each layer as the track hits. The cosmics relative local offset was taken as the Gaussian mean of muon track residuals in a \SI{100}{mm} by \SI{100}{mm} area, referred to the as the mean cosmics residual. Relative local offsets of each type calculated using the same reference layers are compared for each area where x-ray data is available. The  results of the comparison are presented here.
+The goal was to validate the local offsets extracted from the x-ray data with cosmics data. The complication was that the x-ray dataset provided absolute local offsets while the cosmics dataset provided relative local offsets, which could not be compared directly. The solution was to use the x-ray local offsets to calculate relative local offsets. The x-ray relative local offset is the x-ray residual reconstructed from an abstract track using the beam profile centers on each layer as the track hits. The cosmics relative local offset was taken as the Gaussian mean of muon track residuals in a \SI{100}{mm} by \SI{100}{mm} area, referred to the as the mean cosmics residual. Relative local offsets of each type calculated using the same reference layers are compared for each area where x-ray data is available. The  results of the comparison are presented here.
 
 % --------------------------------------------------
-% \section{Method for comparing x-ray and cosmics data}
+% \section{Evaluating}
 % --------------------------------------------------
-%MOVED TO END OF CHAP5, SECTION{MEASURING RELATIVE LOCAL OFFSETS}
+
 
 %---------------------------------------------------
 \section{Assessing correlation}
 %---------------------------------------------------
 \label{sec:assessing_correlation}
-Scatter plots of the x-ray and mean cosmics residuals for two sample quadruplets, referred to as quadruplet 1 and quadruplet 2, in figures~\ref{fig:correlation} and \ref{fig:no_correlation} reveal the degree of correlation between the datasets. 
+
+The 2D visualizations of the mean cosmics and x-ray residuals for tracks on layer 2 with reference layers 1 and 3 on quadruplet-1 and quadruplet-2 are shown in figure~\ref{fig:res_compare_th2}. Figure~\ref{fig:res_compare_th2} is a superposition of figures~\ref{fig:res_mean_th2} and \ref{fig:xray_res_th2}.
+
+\newpage
+\thispagestyle{empty}
+\newgeometry{top=0.5in,bottom=0.5in}
+\begin{figure}
+\centering
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/QL2P11_compare_residuals_th2_layer2_fixedlayers13.pdf}
+  \caption{Mean cosmics and x-ray residuals of tracks on layer 2, reference layers 1 and 3, for quadruplet-1.}
+  \label{fig:res_compare_th2_ql2p11}
+\end{subfigure}%
+\vspace*{\floatsep}
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/QL2P08_compare_residuals_th2_layer2_fixedlayers13.pdf}
+  \caption{Mean cosmics and x-ray residuals of tracks on layer 2, reference layers 1 and 3, for quadruplet-2.}
+  \label{fig:res_compare_th2_ql2p8}
+\end{subfigure}
+\caption{The mean cosmics residuals are shown using colour. The x-ray residuals available at nominal gun positions are drawn as arrows and the value of the residual annotated. The length of the arrows is 500 times the value of the x-ray residual. These plots are a superposition of figures~\ref{fig:res_mean_th2} and \ref{fig:xray_res_th2}.}
+\label{fig:res_compare_th2}
+\end{figure}
+\newpage
+\restoregeometry
+
+Figure~\ref{fig:res_compare_th2_ql2p11} shows that for quadruplet-1 the x-ray residuals are of the same sign and order as the mean cosmics residuals, as can be seen by comparing the the annotated value of the x-ray residual to the mean cosmics residual represented by colour; quadruplet-1's mean cosmics and x-ray residuals are correlated to some degree. For quadruplet-2, the x-ray residuals are of the right order compared to the mean cosmics residuals, but the correlation is less apparent. While x-ray residuals do not reveal a pattern across the layer's surface, the mean cosmics residuals show a structure to the relative local offsets since they vary smoothly over the surface of layer 2. 
+
+The comparison of mean cosmics and x-ray residuals was done for several quadruplets for all tracking combinations (not just layer 2 residuals calculated with fixed layers 1 and 3 like in figure~\ref{fig:res_compare_th2}). Scatter plots of the x-ray and mean cosmics residuals on quadruplet-1 and -2 for all tracking combinations shown in figures~\ref{fig:correlation} and \ref{fig:no_correlation} reveal the degree of correlation between the datasets. In the correlation plots, each rectangle is centered on the value of a mean cosmics and x-ray residual pair calculated with a given tracking combination for every gun position where data is available; the height and width of the squares are the uncertainty in the mean cosmics and x-ray residuals respectively. Note that in the scatter plots, the regions of interest where cosmics tracks are included in the calculation of mean of residuals are exactly centered on the nominal x-ray beam position, unlike in figure~\ref{fig:res_compare_th2}.
+
+% YOU ARE HERE
 
 \begin{figure}
     \centering
     \includegraphics[width = \textwidth]{figures/figure_QL2P11_3100V_2021-08-05_QL2P11_local_cosmic_and_xray_data_correlation_plot.pdf}
-    \caption{Correlation plot between x-ray and mean cosmics residuals for all tracking combinations for quadruplet 1. Each rectangle is centered on an x-ray and mean cosmics residual pair calculated at a given gun position and for a certain tracking combination. The width of the rectangles in $x$ and $y$ are the uncertainty in the x-ray and mean cosmics residual respectively. A printer-friendly version of this plot is available in appendix~\ref{appendix:print}.}
+    \caption{Correlation plot between x-ray and mean cosmics residuals for all tracking combinations for quadruplet-1. Each rectangle is centered on an x-ray and mean cosmics residual pair calculated at a given gun position and for a certain tracking combination. The width of the rectangles in $x$ and $y$ are the uncertainty in the x-ray and mean cosmics residual respectively. A printer-friendly version of this plot is available in appendix~\ref{appendix:print}.}
     \label{fig:correlation}
 \end{figure}
 
-First, the fitted slope and offset in figure~\ref{fig:correlation} show that the two quadruplet 1 datasets are correlated. The magnitude of the uncertainties in the x-ray residuals is large. The large uncertainty set a limit on the sensitivity of the analysis, for if the absolute value of the x-ray residuals of a quadruplet were smaller than the x-ray residual uncertainties, no conclusion about the correlation could be drawn, like for quadruplet 2 (figure~\ref{fig:no_correlation}). 
+The fitted slope and offset in figure~\ref{fig:correlation} show that the two quadruplet-1 datasets are correlated. The large uncertainty on the x-ray residuals set a limit on the sensitivity of the analysis, for if the absolute value of the x-ray residuals of a quadruplet were smaller than the x-ray residual uncertainties, no conclusion about the correlation could be drawn, like for quadruplet-2 (figure~\ref{fig:no_correlation}). This result is reflected in the small x-ray residuals shown in figure~\ref{fig:res_compare_th2_ql2p8} that do not reveal a pattern in the relative local offsets across the surface of layer 2. However, figure~\ref{fig:no_correlation} shows that the x-ray and mean cosmics residuals are centered around zero, as is expected for a quadruplet with small relative misalignments between layers.
 
 \begin{figure}
     \centering
@@ -37,15 +68,23 @@ First, the fitted slope and offset in figure~\ref{fig:correlation} show that the
     \label{fig:no_correlation}
 \end{figure}
 
-Several quadruplets were tested for each quadruplet construction geometry built in Canada. Each quadruplet fell into one of the two categories: residuals large enough to see a correlation, or residuals too small to see a correlation. Since the x-ray and mean cosmics residuals were measures of the relative local offsets between the layer of a quadruplet and the two reference layers, quadruplets with the most relative misalignment had the largest range of residuals. the correlation plots were an easy visual way to identify quadruplets with large relative misalignments.
-
-Residuals calculated with all tracking combinations are included in figures~\ref{fig:correlation} and \ref{fig:no_correlation}. There are three patterns in the residuals on the scatter plot explained by geometry. First, for both datasets the uncertainty in the extrapolated track residuals were larger than the interpolated track residuals because of the extrapolation lever arm. For the x-ray residuals, the effect of the lever arm on the uncertainty was direct since the residual was calculated from a single abstract track; for the mean cosmics residuals it was the widening of the residual distribution due to the extrapolation lever arm increasing the uncertainty in the fitted mean of residuals. Second, residuals calculated through extrapolation tend to be larger because the extrapolation lever arm can produce more extreme values of the track position on the layer of interest. Third, the points in figure~\ref{fig:correlation} are geometrically correlated (e.g. they seem to be roughly mirrored around the origin). This is expected since the residuals calculated using a given set of three layers should be geometrically correlated by the local offsets on the fixed layers and the layer of interest (the $d_{local, i}$ on each layer as defined in equation~\ref{eqn:local_translation}). 
+There are three patterns in the residuals on the scatter plot explained by geometry. First, for both datasets the uncertainty in the extrapolated track residuals were larger than the interpolated track residuals because of the extrapolation lever arm. For the x-ray residuals, the effect of the lever arm on the uncertainty was direct since the residual was calculated from a single abstract track; for the mean cosmics residuals it was the widening of the residual distribution due to the extrapolation lever arm that increased the uncertainty in the fitted mean of residuals. Second, residuals calculated through extrapolation tend to be larger because the extrapolation lever arm can produce more extreme values of the track position on the layer of interest. Third, the points in figure~\ref{fig:correlation} are geometrically correlated (e.g. they seem to be roughly mirrored around the origin). This is expected since the residuals calculated using a given set of three layers should be geometrically correlated by the local offsets on the fixed layers and the layer of interest (the $d_{local, i}$ on each layer as defined in equation~\ref{eqn:local_translation}). 
 
 % --------------------------------------------------
 \section{Discussion}
 % --------------------------------------------------
-The most important limit on measuring the degree of correlation between the x-ray and cosmics residuals was the uncertainty on the x-ray residuals, which stemmed from the systematic uncertainty in the x-ray beam profile centers~\cite{lefebvre_precision_2020}. The method was limited primarily by the sTGCs' poor x-ray position resolution.
 
-The analysis of certain quadruplets was also limited by the availability of data. Sometimes, less than three layers were surveyed for a given x-ray gun position so no residuals could be calculated. Too few x-ray residuals prevented the analysis from detecting a significant correlation, should it even be measurable. Often, the analysis of smaller quadruplets (placed innermost on the wheel) suffered as a result because they had fewer alignment platforms, and hence gun positions, on their surfaces. The analysis was also limited to certain quadruplets. The wedges constructed the earliest (typically small wedges) were surveyed when the method was still being designed and so have limited x-ray residuals calculated from beam profiles of lower quality. In addition, not all cosmic muon test sites had enough front end electronics to collect data on three layers simultaneously, which is the minimum required to be able to calculate residuals.
+%TODO : Originally in local offsets section of x-ray chapter
+% The main advantage of the x-ray dataset over the cosmics dataset is that absolute local offsets are measurable thanks to the reference frame provided by the alignment platforms. However, the systematic uncertainty on the x-ray offsets is large: \SI{120}{\micro\meter} was accepted by the collaboration. In addition, local offset measurements were limited to the positions of the alignment platforms: only 10 - 20 positions were surveyed for each wedge. Therefore, validating the x-ray measurements and seeing how they can be improved is important because of the uncertainty in the local offsets and incompleteness of the dataset. The x-ray local offsets were shown to be correlated with the local offsets calculated from the CMM data, but the CMM data does not include the effect of inter-layer misalignments the degree of correlation measurable was limited. Cosmics data is affected by inter-layer misalignments.
 
-Nonetheless, the comparison of x-ray and cosmics residuals was really to confirm the x-ray method's ability to measure local offsets with an independent dataset. The x-ray absolute local offsets allow the calculation of relative local offsets that can be correlated to the cosmics relative local offsets. Therefore, the analysis of quadruplets with relative local offsets large enough to detect a correlation validates the x-ray method's ability to measure local offsets. The potential of using relative local offsets calculated from cosmics data to study relative alignment between sTGC layers stands on its own. It is especially compelling considering how much smaller the uncertainties in the relative local offsets are compared to the x-ray data.
+Several quadruplets were tested for each quadruplet construction geometry built in Canada. Each quadruplet fell into one of the two categories: residuals large enough to see a correlation, or residuals too small to see a correlation. Since the x-ray and mean cosmics residuals were measures of the relative local offsets between the layer of a quadruplet and the two reference layers, quadruplets with the most relative misalignment had the largest range of residuals. the correlation plots were an easy visual way to identify quadruplets with large relative misalignments.
+
+The analysis of certain quadruplets was limited by the availability of data. Sometimes, less than three layers were surveyed for a given x-ray gun position so no residuals could be calculated. Too few x-ray residuals prevented the analysis from detecting a significant correlation, should it even be measurable. Often, the analysis of smaller quadruplets (placed innermost on the wheel) suffered as a result because they had fewer alignment platforms, and hence gun positions, on their surfaces. The analysis was also limited to certain quadruplets. The wedges constructed the earliest (typically small wedges) were surveyed when the x-ray method was still being designed and so have limited x-ray residuals calculated from beam profiles of lower quality. In addition, not all cosmic muon test sites had enough front end electronics to collect data on three layers simultaneously, which is the minimum required to be able to calculate residuals.
+
+Nonetheless, the comparison of x-ray and cosmics residuals was really to confirm the x-ray method's ability to measure local offsets with an independent dataset. The x-ray absolute local offsets allow the calculation of relative local offsets that have been correlated to the cosmics relative local offsets. Therefore, the analysis of quadruplets with relative local offsets large enough to detect a correlation validates the x-ray method's ability to measure local offsets. The potential of using relative local offsets calculated from cosmics data to study relative alignment between sTGC layers stands on its own. It is especially compelling considering how much smaller the uncertainties in the relative local offsets are compared to the x-ray data and how must more information can be gleaned from the mean cosmics residuals across a layer. 
+
+The most important limit on measuring the degree of correlation between the x-ray and cosmics residuals was the uncertainty on the x-ray residuals, which stemmed from the systematic uncertainty in the x-ray beam profile centers~\cite{lefebvre_precision_2020}. The x-ray method was limited primarily by the systematic uncertainties in the relative alignment of the platforms and the gun, especially the gun angle. %TODO : mention this in x-ray chapter.
+
+Combined with the limited number of positions x-ray data could be taken, the consequence is that the x-ray method is less suited to characterizing relative misalignment between layers than cosmics data. For example, in figure~\ref{fig:res_compare_th2_ql2p8} the x-ray residuals do not reveal a pattern in relative local offsets across the surface of the layer but the mean cosmics residuals do. The x-ray residuals in that figure are smaller than their uncertainty so from the x-ray data you could not conclude if layer two is misaligned relative to layers 1 and 3. However, most the mean cosmics residuals in that figure have a value larger than their uncertainty (around \SI{0.03}{\milli\meter}) so they do suggest relative misalignment of layer 2 with respect to layers 1 and 3. 
+
+The advantage of the x-ray dataset over the cosmics dataset is that absolute local offsets are measurable thanks to the reference frame provided by the alignment platforms, which is what is required to measure the position of strips in the ATLAS coordinate system to statisfy the NSW's precision tracking goals. The strengths of the cosmics data set~-- the spread over entire layers and the smaller uncertainties~--  not only made the validation possible but address the limitations of the x-ray dataset.
