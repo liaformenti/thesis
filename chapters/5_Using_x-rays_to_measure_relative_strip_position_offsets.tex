@@ -69,11 +69,36 @@ Since the local offsets for x-rays and cosmics data are measured in different co
 % --------------------------------------------------
 \section{Measuring relative local offsets}
 % --------------------------------------------------
-The measured x-ray beam profile centers were systematically affected by local offsets in the same way as the mean cosmics residuals, as modeled by equation \ref{eqn:local_translation}. Therefore, if a 2-layer track is built from the beam profile centers on each layer and the residual calculated on a third layer, that residual should match the local mean cosmics residual. 
+The measured x-ray beam profile centers were systematically affected by local offsets in the same way as the mean cosmics residuals, as modeled by equation \ref{eqn:local_translation}. Therefore, if a 2-layer track is built from the beam profile centers on each layer and the residual calculated on a third layer, that residual should match the local mean cosmics residual. The residual is the difference the beam profile center on the layer of interest and the polated track position from the beam profile centers recorded on the two fixed layers. The beam profile center on the layer of interest acts as $y_{hit, i}$ and the polated track position acts as $y_{track, i}$ in equation~\ref{eqn:residual}.
 
-The track is not real. A beam profile center is actually the Gaussian mean of all selected mean cluster positions recorded during the x-ray data taking period, not a single hit of a track. Building an ``abstract'' track was necessary because the x-rays cause signal in the chamber via the photoeffect so there were not individual ``x-ray tracks'' to record. In fact the x-ray data could be collected separately for each layer. Nonetheless, since the effect of local offsets on the beam profile centers was the same as their effect on the recorded cosmics cluster positions the difference in algorithm between x-ray and cosmics analysis was allowed. 
+%TODO : Maybe move this paragraph to the end of this section
+The built track is not a real track. A beam profile center is actually the Gaussian mean of all selected mean cluster positions recorded during the x-ray data taking period, not a single hit of a track. Building an ``abstract'' track was necessary because the x-rays cause signal in the chamber via the photoeffect so there were not individual ``x-ray tracks'' to record. In fact the x-ray data could be collected separately for each layer. Nonetheless, since the effect of local offsets on the beam profile centers was the same as their effect on the recorded cosmics cluster positions the difference in algorithm between x-ray and cosmics analysis was allowed. 
 
-For each x-ray survey position, the x-ray residual was calculated for all possible tracking combinations (which required an x-ray beam profile on at least three layers). The position of the x-ray residuals are shown as black dots over figure~\ref{fig:res_mean_th2_L2_F13} and \ref{fig:res_mean_th2_L4_F13}. Note that the mean of cosmics residuals around the x-ray points were calculated in bins exactly centered on the nominal x-ray gun position, unlike in figure~\ref{fig:res_mean_th2}.\textcolor{red}{I think I want to put copies of the figures I reference here, but with the x-ray residual values labeled. Thoughts Brigitte? It feels like this section needs a "result" plot or table}
+For each x-ray survey position, the x-ray residual was calculated for all possible tracking combinations (which required an x-ray beam profile on at least three layers). The x-ray residuals on layer 2 calculated from the beam profile centers recorded on layers 1 and 3 are shown in figure~\ref{fig:xray_res_th2} for quadruplet-1 and quadruplet-2. The arrows originate from the expected position of the beam profile center assuming a nominal geometry, and the lengths are proportional to the calculated x-ray residuals. The tip of the arrow represents where the recorded hit was with respect to where it should have been recorded nominally. For quadruplet-1, a offset at all x-ray survey positions is clear. 
 
-The uncertainty on the x-ray residuals was the error propagated through the tracking, taking an uncertainty of \SI{120}{\micro\meter} on each beam profile center. The uncertainty on the x-ray residuals ranged from \SI{0.1}{mm} to \SI{0.4}{mm} for the most to least geometrically favourable tracking combination. The x-ray residual uncertainties are significantly larger than the uncertainties on the relative local offsets calculated with cosmics data.
+\newpage
+\thispagestyle{empty}
+\newgeometry{top=0.5in,bottom=0.5in}
+\begin{figure}
+\centering
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/QL2P11_xray_residuals_layer2_fixedlayers13.pdf}
+  \caption{X-ray residuals on layer 2, reference layers 1 and 3, for quadruplet-1.}
+  \label{fig:xray_res_th2_ql2p11}
+\end{subfigure}%
+\vspace*{\floatsep}
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{figures/QL2P08_xray_residuals_layer2_fixedlayers13.pdf}
+  \caption{X-ray residuals on layer 2, reference layers 1 and 3, for quadruplet-2.}
+  \label{fig:xray_res_th2_ql2p8}
+\end{subfigure}
+\caption{Representation of the x-ray residuals on layer 2 available for quadruplet-1 and -2. The x-ray track is built from the beam profile centers recorded on layers 1 and 3. The length of the arrows is 500 times the actual x-ray residuals, annotated beside each point. The uncertainty on the x-ray residuals is \SI{0.15}{mm}.}
+\label{fig:xray_res_th2}
+\end{figure}
+\newpage
+\restoregeometry
+
+The uncertainty on the x-ray residuals was the error propagated through the tracking, taking an uncertainty of \SI{120}{\micro\meter} on each beam profile center. The uncertainty on the x-ray residuals ranged from \SI{0.15}{mm} to \SI{0.4}{mm} for the most to least geometrically-favourable tracking combination. There is no discernable pattern to the x-ray residuals on quadruplet-2 because they are smaller than the uncertainty. The x-ray residual uncertainties are significantly larger than the uncertainties on the relative local offsets calculated with cosmics data.
 %TODO : Should I present the x-ray residuals somehow? Eg. repeat figure res_mean_th2 but with x-ray residuals written on top? <-- This is my favourite option so far
