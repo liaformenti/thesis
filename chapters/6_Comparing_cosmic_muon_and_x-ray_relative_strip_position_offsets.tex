@@ -20,7 +20,7 @@ The goal was to validate the local offsets extracted from the x-ray data with co
 %---------------------------------------------------
 \label{sec:assessing_correlation}
 
-The 2D visualizations of the mean cosmics and x-ray residuals for tracks on layer 2 with reference layers 1 and 3 on quadruplet-1 and quadruplet-2 are shown in figure~\ref{fig:res_compare_th2}. Figure~\ref{fig:res_compare_th2} is a superposition of figures~\ref{fig:res_mean_th2} and \ref{fig:xray_res_th2}.
+The 2D visualizations of the mean cosmics and x-ray residuals for tracks on layer 2 with reference layers 1 and 3 on QL2.P.11 and QL2.P.8 are shown in figure~\ref{fig:res_compare_th2}. Figure~\ref{fig:res_compare_th2} is a superposition of figures~\ref{fig:res_mean_th2} and \ref{fig:xray_res_th2}.
 
 \newpage
 \thispagestyle{empty}
@@ -30,14 +30,14 @@ The 2D visualizations of the mean cosmics and x-ray residuals for tracks on laye
 \begin{subfigure}{\textwidth}
   \centering
   \includegraphics[width=\linewidth]{figures/QL2P11_compare_residuals_th2_layer2_fixedlayers13.pdf}
-  \caption{Quadruplet-1 residuals of tracks on layer 2, reference layers 1 and 3.}
+  \caption{QL2.P.11 residuals of tracks on layer 2, reference layers 1 and 3.}
   \label{fig:res_compare_th2_ql2p11}
 \end{subfigure}%
 \vspace*{\floatsep}
 \begin{subfigure}{\textwidth}
   \centering
   \includegraphics[width=\linewidth]{figures/QL2P08_compare_residuals_th2_layer2_fixedlayers13.pdf}
-  \caption{Quadruplet-2 residuals of tracks on layer 2, reference layers 1 and 3.}
+  \caption{QL2.P.8 residuals of tracks on layer 2, reference layers 1 and 3.}
   \label{fig:res_compare_th2_ql2p8}
 \end{subfigure}
 \caption{The mean cosmics residuals are shown using colour. The x-ray residuals available at nominal gun positions are drawn as arrows and the value of the residual annotated in millimeters with uncertainty $\pm$\SI{0.15}{mm}. The length of the arrows is 500 times the value of the x-ray residual, scaled for visibility. These plots are a superposition of figures~\ref{fig:res_mean_th2} and \ref{fig:xray_res_th2}.}
@@ -46,20 +46,20 @@ The 2D visualizations of the mean cosmics and x-ray residuals for tracks on laye
 \newpage
 \restoregeometry
 
-Figure~\ref{fig:res_compare_th2_ql2p11} shows that for quadruplet-1 the x-ray residuals are of the same sign and order as the mean cosmics residuals, as can be seen by comparing the the annotated value of the x-ray residual to the mean cosmics residual represented by colour; quadruplet-1's mean cosmics and x-ray residuals are correlated to some degree. For quadruplet-2, the x-ray residuals are of the right order compared to the mean cosmics residuals, but the correlation is less apparent. While x-ray residuals do not reveal a pattern across the layer's surface, the mean cosmics residuals show a structure to the relative local offsets since they vary smoothly over the surface of layer 2. 
+Figure~\ref{fig:res_compare_th2_ql2p11} shows that for QL2.P.11 the x-ray residuals are of the same sign and order as the mean cosmics residuals, as can be seen by comparing the the annotated value of the x-ray residual to the mean cosmics residual represented by colour; QL2.P.11's mean cosmics and x-ray residuals are correlated to some degree. For QL2.P.8, the x-ray residuals are of the right order compared to the mean cosmics residuals, but the correlation is less apparent. While x-ray residuals do not reveal a pattern across the layer's surface, the mean cosmics residuals show a structure to the relative local offsets since they vary smoothly over the surface of layer 2. 
 
-The comparison of mean cosmics and x-ray residuals was done for several quadruplets for all tracking combinations (not just layer 2 residuals calculated with fixed layers 1 and 3 like in figure~\ref{fig:res_compare_th2}). Scatter plots of the x-ray and mean cosmics residuals on quadruplet-1 and -2 for all tracking combinations shown in figures~\ref{fig:correlation} and \ref{fig:no_correlation} reveal the degree of correlation between the datasets. In the correlation plots, each rectangle is centered on the value of a mean cosmics and x-ray residual pair calculated with a given tracking combination for every gun position where data is available; the height and width of the squares are the uncertainty in the mean cosmics and x-ray residuals respectively. Note that in the scatter plots, the regions of interest where cosmics tracks are included in the calculation of mean of residuals are exactly centered on the nominal x-ray beam position, unlike in figure~\ref{fig:res_compare_th2}.
+The comparison of mean cosmics and x-ray residuals was done for several quadruplets for all tracking combinations (not just layer 2 residuals calculated with fixed layers 1 and 3 like in figure~\ref{fig:res_compare_th2}). Scatter plots of the x-ray and mean cosmics residuals on QL2.P.11 and -2 for all tracking combinations shown in figures~\ref{fig:correlation} and \ref{fig:no_correlation} reveal the degree of correlation between the datasets. In the correlation plots, each rectangle is centered on the value of a mean cosmics and x-ray residual pair calculated with a given tracking combination for every gun position where data is available; the height and width of the squares are the uncertainty in the mean cosmics and x-ray residuals respectively. Note that in the scatter plots, the regions of interest where cosmics tracks are included in the calculation of mean of residuals are exactly centered on the nominal x-ray beam position, unlike in figure~\ref{fig:res_compare_th2}.
 
 % YOU ARE HERE
 
 \begin{figure}
     \centering
     \includegraphics[width = \textwidth]{figures/figure_QL2P11_3100V_2021-08-05_QL2P11_local_cosmic_and_xray_data_correlation_plot.pdf}
-    \caption{Correlation plot between x-ray and mean cosmics residuals for all tracking combinations for quadruplet-1. Each rectangle is centered on an x-ray and mean cosmics residual pair calculated at a given gun position and for a certain tracking combination. The width of the rectangles in $x$ and $y$ are the uncertainty in the x-ray and mean cosmics residual respectively. A printer-friendly version of this plot is available in appendix~\ref{appendix:print}.}
+    \caption{Correlation plot between x-ray and mean cosmics residuals for all tracking combinations for QL2.P.11. Each rectangle is centered on an x-ray and mean cosmics residual pair calculated at a given gun position and for a certain tracking combination. The width of the rectangles in $x$ and $y$ are the uncertainty in the x-ray and mean cosmics residual respectively. A printer-friendly version of this plot is available in appendix~\ref{appendix:print}.}
     \label{fig:correlation}
 \end{figure}
 
-The fitted slope and offset in figure~\ref{fig:correlation} show that the two quadruplet-1 datasets are correlated. The large uncertainty on the x-ray residuals set a limit on the sensitivity of the analysis, for if the absolute value of the x-ray residuals of a quadruplet were smaller than the x-ray residual uncertainties, no conclusion about the correlation could be drawn, like for quadruplet-2 (figure~\ref{fig:no_correlation}). This result is reflected in the small x-ray residuals shown in figure~\ref{fig:res_compare_th2_ql2p8} that do not reveal a pattern in the relative local offsets across the surface of layer 2. However, figure~\ref{fig:no_correlation} shows that the x-ray and mean cosmics residuals are centered around zero, as is expected for a quadruplet with small relative misalignments between layers.
+The fitted slope and offset in figure~\ref{fig:correlation} show that the two QL2.P.11 datasets are correlated. The large uncertainty on the x-ray residuals set a limit on the sensitivity of the analysis, for if the absolute value of the x-ray residuals of a quadruplet were smaller than the x-ray residual uncertainties, no conclusion about the correlation could be drawn, like for QL2.P.8 (figure~\ref{fig:no_correlation}). This result is reflected in the small x-ray residuals shown in figure~\ref{fig:res_compare_th2_ql2p8} that do not reveal a pattern in the relative local offsets across the surface of layer 2. However, figure~\ref{fig:no_correlation} shows that the x-ray and mean cosmics residuals are centered around zero, as is expected for a quadruplet with small relative misalignments between layers.
 
 \begin{figure}
     \centering
@@ -82,6 +82,6 @@ The analysis of certain quadruplets was limited by the availability of data. Som
 
 Nonetheless, the comparison of x-ray and cosmics residuals was really to confirm the x-ray method's ability to measure local offsets with an independent dataset. The x-ray local offsets allow the calculation of relative local offsets that have been correlated to the cosmics relative local offsets. Therefore, the analysis of quadruplets with relative local offsets large enough to detect a correlation validates the x-ray method's ability to measure local offsets. 
 
-The potential of using relative local offsets calculated from cosmics data to study relative alignment between sTGC layers stands on its own. For example, although the x-ray relative local offsets of quadruplet-2 in figure~\ref{fig:res_compare_th2_ql2p8} do not reveal a pattern, the variation in the cosmics relative local offsets do. Identifying the pattern is possible because mean cosmics residuals can be calculated across the entire area and are sensitive to smaller relative local offsets since their uncertainty is significantly smaller. 
+The potential of using relative local offsets calculated from cosmics data to study relative alignment between sTGC layers stands on its own. For example, although the x-ray relative local offsets of QL2.P.8 in figure~\ref{fig:res_compare_th2_ql2p8} do not reveal a pattern, the variation in the cosmics relative local offsets do. Identifying the pattern is possible because mean cosmics residuals can be calculated across the entire area and are sensitive to smaller relative local offsets since their uncertainty is significantly smaller. 
 
 The advantage of the x-ray dataset over the cosmics dataset is that absolute local offsets are measurable thanks to the reference frame provided by the alignment platforms. This is required to measure the position of strips in the ATLAS coordinate system to satisfy the NSWs' precision tracking goals. The x-ray local offsets are being used to build an alignment model of strips in each quadruplet. It is compelling to imagine using the cosmics relative local offsets to improve the model considering their precision and ability to capture effects across the entire area of the quadruplet.

@@ -126,7 +126,7 @@ where $y_{track, i}$ is the polated track position. Track residuals are affected
   \caption{Tracks on layer 4, reference layers 1 and 3.}
   \label{fig:res_dist_L4_F13}
 \end{subfigure}
-\caption{Residual distribution in the region $x\in\left[197, 297\right],  y\in\left[594.6, 694.6\right]$~mm (\SI{100}{mm} by \SI{100}{mm} area) for two different tracking combinations. }
+\caption{Residual distribution in the region $x\in\left[197, 297\right],  y\in\left[594.6, 694.6\right]$~mm (\SI{100}{mm} by \SI{100}{mm} area) for two different tracking combinations. Data from quadruplet QL2.P.11.}
 \label{fig:res_dist}
 \end{figure}
 
@@ -143,7 +143,7 @@ The area of the region of interest was \SI{100}{\milli\meter} by \SI{100}{\milli
 \section{Visualizing relative alignment between layers}
 % --------------------------------------------------
 
-The mean of residuals was plotted across entire strip layers for every tracking combination to get a picture of the how relative local offsets change over the layers' surface. Figure~\ref{fig:res_mean_th2} shows the mean of residuals on layer 2 with reference layers 1 and 3 for two different quadruplets, referred to as quadruplet-1 and quadruplet-2, for \SI{100}{mm} by \SI{100}{mm} areas across the surface of layer 2. To understand these plots, realize that the Gaussian mean of the distribution in figure~\ref{fig:res_dist_L2_F13} is the entry in area bin $x\in\left[197, 297\right],  y\in\left[594.6, 694.6\right]$~mm in figure~\ref{fig:res_mean_th2_ql2p11}.
+The mean of residuals was plotted across entire strip layers for every tracking combination to get a picture of the how relative local offsets change over the layers' surface. Figure~\ref{fig:res_mean_th2} shows the mean of residuals on layer 2 with reference layers 1 and 3 for two different quadruplets, referred to as QL2.P.11 and QL2.P.8, for \SI{100}{mm} by \SI{100}{mm} areas across the surface of layer 2. To understand these plots, realize that the Gaussian mean of the distribution in figure~\ref{fig:res_dist_L2_F13} is the entry in area bin $x\in\left[197, 297\right],  y\in\left[594.6, 694.6\right]$~mm in figure~\ref{fig:res_mean_th2_ql2p11}.
 
 \newpage
 \thispagestyle{empty}
@@ -153,14 +153,14 @@ The mean of residuals was plotted across entire strip layers for every tracking 
 \begin{subfigure}{\textwidth}
   \centering
   \includegraphics[width=\linewidth]{figures/figure_QL2P11_3100V_2021-08-05_th2_means_layer2_fixedlayers13.pdf}
-  \caption{Mean of residuals of tracks on layer 2, reference layers 1 and 3, for quadruplet-1.}
+  \caption{Mean of residuals of tracks on layer 2, reference layers 1 and 3, for QL2.P.11.}
   \label{fig:res_mean_th2_ql2p11}
 \end{subfigure}%
 \vspace*{\floatsep}
 \begin{subfigure}{\textwidth}
   \centering
   \includegraphics[width=\linewidth]{figures/figure_QL2P08_3100V_2021-08-03_th2_means_layer2_fixedlayers13.pdf}
-  \caption{Mean of residuals of tracks on layer 2, reference layers 1 and 3, for quadruplet-2.}
+  \caption{Mean of residuals of tracks on layer 2, reference layers 1 and 3, for QL2.P.8.}
   \label{fig:res_mean_th2_ql2p8}
 \end{subfigure}
 \caption{Mean of residuals in each \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bin over the area of the layer 2 cathode board. The entry in $x\in\left[197, 297\right],  y\in\left[594.6, 694.6\right]$~mm of figure~\ref{fig:res_mean_th2_ql2p11} corresponds to the fitted Gaussian means in figures~\ref{fig:res_dist_L2_F13}. The mean of residuals is an estimate of the local offset of layer 2 with respect to layers 1 and 3.}
@@ -169,7 +169,7 @@ The mean of residuals was plotted across entire strip layers for every tracking 
 \newpage
 \restoregeometry
 
-Many of the residual means are non-zero and change smoothly over the layer, indicating that there are relative local offsets stemming from misalignments between entire strip layers. Given that the residual mean changes with $x$ in figure~\ref{fig:res_mean_th2_ql2p11}, there is likely a rotation of layer 2 with respect to layers 1 and 3 on quadruplet-1, combined with an offset of the entire layer. The residual means are smaller in figure~\ref{fig:res_mean_th2_ql2p8} indicating that quadruplet-2 is less misaligned overall than quadruplet-1; however the relative local offsets range between $\pm$\SI{200}{\micro\meter} so they are still significant considering the order on which the chambers must be sensitive to position, $\sim$\SI{100}{\micro\meter}.
+Many of the residual means are non-zero and change smoothly over the layer, indicating that there are relative local offsets stemming from misalignments between entire strip layers. Given that the residual mean changes with $x$ in figure~\ref{fig:res_mean_th2_ql2p11}, there is likely a rotation of layer 2 with respect to layers 1 and 3 on QL2.P.11, combined with an offset of the entire layer. The residual means are smaller in figure~\ref{fig:res_mean_th2_ql2p8} indicating that QL2.P.8 is less misaligned overall than QL2.P.11; however the relative local offsets range between $\pm$\SI{200}{\micro\meter} so they are still significant considering the order on which the chambers must be sensitive to position, $\sim$\SI{100}{\micro\meter}.
 
 % --------------------------------------------------
 \section{Systematic uncertainty}
