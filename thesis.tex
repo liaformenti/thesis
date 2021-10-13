@@ -59,6 +59,9 @@
 %TODO : Remove for final version
 \usepackage{lineno}
 \linenumbers
+% Uncomment to relax hbox fill standards in bib (removes error on Galbraith entry)
+% \usepackage{etoolbox}
+% \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 
 % My latex commands
 \newcommand{\package}[1]{\texttt{#1}} % package names in bold text
