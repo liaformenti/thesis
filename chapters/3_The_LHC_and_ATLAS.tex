@@ -44,7 +44,7 @@ which is related to the total number of interactions. In this way, the luminosit
 % --------------------------------------------------
 At the end of the LHC program in 2025, the statistical gain on measurements in running the LHC further will become marginal. The HL-LHC~\cite{hl_lhc_tdr} project consists of the upgrade of LHC infrastructure to achieve a nearly ten fold increase in instantaneous luminosity, thereby improving measurement statistics as well. Also, some systems will need repair and replacement to operate past $\sim$2020. The LHC will continue to be the most energetic accelerator in the world for years to come and is the only accelerator with enough energy to directly produce the Higgs boson and top quarks. Therefore, the European Strategy for Particle Physics made it a priority ``to fully exploit the physics potential of the LHC'' with ``a major luminosity upgrade''~\cite{european_strategy_for_particle_physics}. The goal is for the HL-LHC to provide an integrated luminosity of \SI{3000}{\per\femto\barn} in the 12 years following the upgrade. The luminosity actually achieved will depend on a combination of technological advances and upgrades in progress that affect the factors contributing to luminosity defined in equation~\ref{eqn:inst_lum}~\cite{hl_lhc_tdr}. Figure~\ref{fig:hl-lhc} shows the projected schedule of the HL-LHC upgrades and operation~\cite{hl-lhc_plan_picture_website}.
 
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width = \textwidth]{figures/HL-LHC-updated-January-2021_small.jpg}
     \caption{The LHC/HL-LHC timeline~\cite{hl-lhc_plan_picture_website}. The integrated luminosities collected and projected for each run of the LHC are shown in blue boxes below the timeline and the center of mass energy of the collisions is shown in red above the timeline. The top blue arrow labels the run number. The acronym ``LS'' stands for ``long shutdown'' and indicates periods where the accelerator is not operating. During the shutdowns, upgrades to the LHC and the experiments are taking place. This timeline was last updated in January, 2021, and reflects changes in the schedule due to the ongoing pandemic. }
@@ -72,9 +72,9 @@ One of the most anticipated measurements at the HL-LHC is the value of the tripl
 
 The ATLAS experiment~\cite{collaboration_atlas_2008} was designed to support all the physics goals of the LHC. It is \SI{44}{\meter} long and \SI{25}{\meter} in diameter, and weighs 7000 tonnes. The ATLAS experiment is centered around one of the LHC's interaction points (a place where the beams collide). As shown schematically in figure~\ref{fig:atlas}, ATLAS consists of an array of particle detector subsystems arranged concentrically around the beam pipe.  The ATLAS experiment is cylindrical because it aims to provide 4$\pi$ coverage around the interaction point. In reference to the cylindrical geometry of the experiment, it is helpful to separate the subsystems of ATLAS into the so-called ``barrel'' and ``endcap''/``forward'' regions.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width = \textwidth]{figures/atlas_diagram.png}
+    \includegraphics[width = 0.7\textwidth]{figures/atlas_diagram.png}
     \caption{Schematic diagram of the ATLAS experiment, with the various detector subsystems labelled~\cite{collaboration_atlas_2008}.}
     \label{fig:atlas}
 \end{figure}
@@ -86,30 +86,31 @@ The ATLAS experiment provides identification and kinematic measurements for each
 \paragraph*{The inner detector} \hfill \break
 The inner detector~\cite{atlas_inner_detector_tdr_1, atlas_inner_detector_tdr_2} (figure~\ref{fig:atlas_inner_detector}) is for precise measurements of charged particle trajectories, measurement of primary and secondary interaction vertices and assistance in the identification of electrons. A \SI{2}{\tesla} solenoid with field parallel to the beam bends the trajectory of outgoing charged particles. A measurement of the bending radius of each charged particle provides information about its momentum. The innermost part of the inner tracker is made of high-resolution semiconductor pixel and strip detectors while the outermost part is made of straw-tubes. The straw tubes are used in the trajectory measurements but they are also interspersed with material designed to enhance the creation of transition radiation. Transition radiation occurs when a highly relativistic charged particle traverses a material boundary~\cite{grupen_particle_2008}. The amount of transition radiation emitted by a charged particle is detected by the straw-tubes and is used to identify electrons. 
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width = 0.5\textwidth]{figures/atlas_inner_detector.jpg}
+    \includegraphics[width = 0.65\textwidth]{figures/atlas_inner_detector.jpg}
     \caption{Schematic diagram of the ATLAS experiment's inner detector, with the different segments and the technology used labeled~\cite{collaboration_atlas_2008}.}
     \label{fig:atlas_inner_detector}
 \end{figure}
 
 % YOU ARE HERE
 \paragraph*{Calorimetry system} \hfill \break
-Electromagnetic and hadronic sampling calorimeter units are used to record the energy of electrons, photons and jets\footnote{When quarks or gluons are expelled in a high energy collsion, they create collimated groups of hadrons because they carry a charge called ``colour'', and nature only allows ``colourless'' combinations to exist~\cite{grupen_particle_2008}.}. A combination of liquid-argon (LAr) electromagnetic and hadronic calorimeters~\cite{atlas_lar_cal_tdr} and tile-scintillator hadronic calorimeters~\cite{atlas_tile_cal_tdr} cover the rapidity range $|\eta| < 4.9$, as shown in figure~\ref{fig:atlas_calorimeter}.
+Electromagnetic and hadronic sampling calorimeter units are used to record the energy of electrons, photons and jets\footnote{When quarks or gluons are expelled in a high energy collsion, they create collimated groups of hadrons called jets because they carry a charge called ``colour'', and nature only allows ``colourless'' combinations to exist~\cite{grupen_particle_2008}.}. A combination of liquid-argon (LAr) electromagnetic and hadronic calorimeters~\cite{atlas_lar_cal_tdr} and tile-scintillator hadronic calorimeters~\cite{atlas_tile_cal_tdr} cover the rapidity range $|\eta| < 4.9$, as shown in figure~\ref{fig:atlas_calorimeter}.
 
-\begin{figure}
+Sampling calorimeters have alternating layers of dense material and material that can measure the amount of ionization by charged particles. The dense material causes incoming charged particles to shower into lower energy particles and deposit their energy in the sensitive volume. Only muons and neutrinos are known to pass the calorimeters to the muon spectrometer without being absorbed. 
+
+\begin{figure}[h]
     \centering
-    \includegraphics[width = 0.5\textwidth]{figures/atlas_calorimeter.png}
+    \includegraphics[width = 0.7\textwidth]{figures/atlas_calorimeter.png}
     \caption{Schematic diagram of the ATLAS calorimeter system, with the different segments and the technology used labeled~\cite{collaboration_atlas_2008}.}
     \label{fig:atlas_calorimeter}
 \end{figure}
 
-Sampling calorimeters have alternating layers of dense material and material that can measure the amount of ionization by charged particles. The dense material causes incoming charged particles to shower into lower energy particles and deposit their energy in the sensitive volume. Only muons and neutrinos are known to pass the calorimeters to the muon spectrometer without being absorbed. 
-
 \paragraph*{Muon spectrometer} \hfill \break
 The muon spectrometer~\cite{atlas_muon_spectrometer_tdr} consists of multiple layers of tracking chambers embedded in a 2 T magnetic field generated by an air-core superconducting toroid magnet system. Figure~\ref{fig:atlas_muon_spectrometer_3D} shows a schematic diagram of the layout of the different chambers and of the toroid magnets~\cite{collaboration_atlas_2008}. The trajectory of a muon is reconstructed from the information recorded by the different types and layers of tracking chambers. The amount of bending in the magnetic field provides a measure of the muon's momentum. In the barrel section of ATLAS, the toroidal magnetic field is created by eight coils bent into the shape of a  "race-track"  and symmetrically arranged around the beampipe.  In the forward region, two end-cap toriods, each with eight smaller racetrack-shaped coils arranged symmetrically around the beam pipe are inserted in the ends of the barrel toroid~\cite{atlas_magnet_tdr}.
 
-\begin{figure}
+% Originally figure was here with no placement specifiers
+\begin{figure}[h]
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -128,7 +129,6 @@ The muon spectrometer~\cite{atlas_muon_spectrometer_tdr} consists of multiple la
 \end{figure}
 
 The muon spectrometer is separated into detectors used for precision offline tracking and for triggering purposes. Three layers of monitored drift tubes (MDTs) or cathode strip chambers (CSCs) are used for tracking. The position of the muon track in each of the three layers allows reconstruction of the bent trajectory of a muon and hence its momentum. To satisfy the muon spectrometer target momentum resolution of $\Delta p_T / p_T <$~1$\times$10$^{-4}~p$~/~GeV for $p_T <$~300~GeV and a few percent for lower $p_T$ muons, the MDTs and CSCs were designed to achieve a spatial resolution of \SI{50}{\micro\meter} each. Accordingly, an optical alignment system was designed to monitor and correct for chamber positions~\cite{atlas_muon_spectrometer_tdr, aefsky_optical_2008}. 
-
 % Precision tracking is done offline for events passing the muon trigger. Each of the barrel and encap systems have three layers of MDTs that record the position of the muon as it passes through each layer. Knowing the magentic field, the muon's momentum can be extracted. For the design momentum resolution of $\Delta p_T / p_T <$ 1$\times$10$^{-4}~p$ / GeV for $p_T < 300 GeV$ and a few percent for lower $p_T$ muons, the MDTs and CSCs required position resolution of \SI{50}{\micro\meter} each. Accordingly, an optical alignment system was designed to monitor and correct for chamber positions~\cite{atlas_muon_spectrometer_tdr, aefsky_optical_2008}. 
 
 % ON MUON TRIGGERING IN THE ENDCAP

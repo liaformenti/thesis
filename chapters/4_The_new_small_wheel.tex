@@ -25,19 +25,6 @@ The NSWs will address both of these problems. They will be made of precision tra
     \label{fig:nsw_track_triggering}
 \end{figure}
 
-% --------------------------------------------------
-\section{Design of the NSWs}
-% --------------------------------------------------
-
-The NSWs are made with two detector technologies: micromegas and small-strip thin gap chambers. Eight layers of each cover the entire area of the wheel. Micromegas are designed to be the primary precision tracking detectors and sTGCs the primary triggering detectors, but both technologies offer full redundancy by being capable of providing both precision measurements and trigger information. Both types of detectors were designed to achieve spatial resolution better than $\sim$\SI{100}{\micro\meter} per layer. Four chambers are glued together to create quadruplet modules of each detector type. Quadruplets of different sizes, most shaped as trapezoids, are assembled into wedges. Two sTGC wedges and two micromegas wedges are layered to create sectors (with the sTGC wedges on the outside)~\cite{nsw_tdr}. Different stages of the construction process are shown in figure~\ref{fig:nsw_breakdown}. At the time of writing, the assembly of the NSWs has just been completed. The first NSW has been lowered into the ATLAS cavern and is being commissioned and the second will be lowered shortly. 
-
-% \textcolor{red}{\textit{for if you use computer generated NSW diagram}} Sectors covered the wheel, as shown in figure~\ref{fig:nsw_diagram}. Practically, two different wedge sizes, small and large, were required to completely cover the wheel.
-% \begin{figure}
-%    \centering
-%    \includegraphics[width = 0.9\textwidth]{figures/nsw_diagram.png}
-%    \caption{Drawing of the new small wheel, and diagrams of the individual small and large wedges. Each colour represents a different sTGC module size.}
-%    \label{fig:nsw_diagram}
-% \end{figure}
 \newpage
 \thispagestyle{empty}
 \newgeometry{top=0.5in,bottom=0.5in}
@@ -76,6 +63,21 @@ The NSWs are made with two detector technologies: micromegas and small-strip thi
 \restoregeometry
 
 % --------------------------------------------------
+\section{Design of the NSWs}
+% --------------------------------------------------
+
+The NSWs are made with two detector technologies: micromegas and small-strip thin gap chambers. Eight layers of each cover the entire area of the wheel. Micromegas are designed to be the primary precision tracking detectors and sTGCs the primary triggering detectors, but both technologies offer full redundancy by being capable of providing both precision measurements and trigger information. Both types of detectors were designed to achieve spatial resolution better than $\sim$\SI{100}{\micro\meter} per layer. Four chambers are glued together to create quadruplet modules of each detector type. Quadruplets of different sizes, most shaped as trapezoids, are assembled into wedges. Two sTGC wedges and two micromegas wedges are layered to create sectors (with the sTGC wedges on the outside)~\cite{nsw_tdr}. Different stages of the construction process are shown in figure~\ref{fig:nsw_breakdown}. At the time of writing, the assembly of the NSWs has just been completed. The first NSW has been lowered into the ATLAS cavern and is being commissioned and the second will be lowered shortly. 
+
+% \textcolor{red}{\textit{for if you use computer generated NSW diagram}} Sectors covered the wheel, as shown in figure~\ref{fig:nsw_diagram}. Practically, two different wedge sizes, small and large, were required to completely cover the wheel.
+% \begin{figure}
+%    \centering
+%    \includegraphics[width = 0.9\textwidth]{figures/nsw_diagram.png}
+%    \caption{Drawing of the new small wheel, and diagrams of the individual small and large wedges. Each colour represents a different sTGC module size.}
+%    \label{fig:nsw_diagram}
+% \end{figure}
+% ORIGINAL FULL PAGE NSW SPREAD POSITION
+
+% --------------------------------------------------
 % \section{Micromegas}
 % --------------------------------------------------
 
@@ -92,7 +94,7 @@ The NSWs are made with two detector technologies: micromegas and small-strip thi
 \section{Small-strip thin gap chambers}
 % --------------------------------------------------
 
-\begin{figure}
+\begin{figure}[t]
     \centering
     \includegraphics[width = 0.9\textwidth]{figures/stgc_internals.png}
     \caption{Interal structure of an sTGC, zoomed into the area under a pad. High voltage is applied to wires suspended in the gas volume to create an electric field. A passing muon causes an ionization avalache that is picked up by the wire, strip and pad electrodes~\cite{lefebvre_precision_2020}.}
@@ -171,9 +173,9 @@ The quadruplet construction process had two steps where strip positions could be
 
 The idea of the NSW alignment system is presented in~\cite{nsw_tdr}, but the details have only been presented internally so far. After the wedges are constructed, alignment platforms are installed on every sTGC quadruplet and optical fibres routed to them, as shown in figure~\ref{fig:alignment_platforms}. Light from the optical fibres will be monitored in real time by cameras (BCAMs) mounted on the alignment bars of the NSWs. The system will thus record the positions of the alignment platforms in the ATLAS coordinate system and any changes over time. % The final link in the sTGC alignment system requires knowing the position of the strips inside a chamber with respect to the alignment platforms.
 
-\begin{figure}
+\begin{figure}[h]
     \centering
-    \includegraphics[width = 0.9\textwidth]{figures/alignment_platforms_lefebvre.png}
+    \includegraphics[width = 0.75\textwidth]{figures/alignment_platforms_lefebvre.png}
     \caption{A sTGC wedge with alignment platforms (silver) installed on the quadruplet. Optical fibres (orange) are routed to the alignment platforms. Cameras on the frames of the NSWs will record light from the optical fibres to monitor in real-time the position the alignment platforms in the ATLAS coordinate system.}
     \label{fig:alignment_platforms}
 \end{figure}

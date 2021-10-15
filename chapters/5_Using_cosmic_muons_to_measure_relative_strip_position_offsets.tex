@@ -18,14 +18,14 @@ The Earth is being constantly bombarded by particles from the sun, galactic sour
 \section{Experimental setup}
 % --------------------------------------------------
 
-Cosmic muon characterization of sTGC quadruplet modules was done with a hodoscope, a complete description of which can be found in~\cite{lefebvre_thesis}. The quadruplet was placed in the center of the test bench. Above and below it was a layer of scintillator-PMT arrays, as shown in figure~\ref{fig:hodoscope}. When a cosmic muon passed within the acceptance of the hodoscope, at least one scintillator from the top array and at least one from the bottom array fired in coincidence. A trigger signal was formed using NIM modules from the coincidence of signals from the top and bottom arrays of scintillator detectors. The trigger signal was passed \iffalse through a KC705\footnote{Xilinx, Xilinx Kintex-7 FPGA KC705 Evaluation Kit, EK-K7-KC705-G, 2018} which sent it \fi to the front-end electronics attached to the adaptor boards of each layer of the quadruplet.
-
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width = 0.9\textwidth]{figures/figure_test_bench.png}
     \caption{Cosmic muon hodoscope at McGill University with a sTGC quadruplet module in the test bench.}
     \label{fig:hodoscope}
 \end{figure}
+
+Cosmic muon characterization of sTGC quadruplet modules was done with a hodoscope, a complete description of which can be found in~\cite{lefebvre_thesis}. The quadruplet was placed in the center of the test bench. Above and below it was a layer of scintillator-PMT arrays, as shown in figure~\ref{fig:hodoscope}. When a cosmic muon passed within the acceptance of the hodoscope, at least one scintillator from the top array and at least one from the bottom array fired in coincidence. A trigger signal was formed using NIM modules from the coincidence of signals from the top and bottom arrays of scintillator detectors. The trigger signal was passed \iffalse through a KC705\footnote{Xilinx, Xilinx Kintex-7 FPGA KC705 Evaluation Kit, EK-K7-KC705-G, 2018} which sent it \fi to the front-end electronics attached to the adaptor boards of each layer of the quadruplet.
 
 Operating the chambers also required gas and high voltage. A gas mixture of pentane-CO$_{2}$ in the appropriate proportions was prepared and delivered to each sTGC with a gas system designed and made at McGill University~\cite{keyes_development_2017}. Since pentane is flammable, the gas system was designed with safety top of mind. The gas system was controlled by a slow control program, also made in-laboratory~\cite{keyes_development_2017}. To prepare the quadruplets for operation, CO$_{2}$ was flushed through them overnight to remove potential impurities within each chamber's gas volume. Then, the equivalent of approximately five sTGC gas volumes of the pentane-CO$_{2}$ operating gas mixture was flushed through to ensure a uniform gas mixture inside the sTGC; the procedure takes approximately four hours. High voltage was provided by commercial CAEN high voltage boards~\cite{keyes_development_2017}. 
 
@@ -57,8 +57,6 @@ For events passing the quality selection cuts defined in section~\ref{subsec:hit
 
 The $x$-coordinate of the muon position is taken as the center of the wire group with the maximum peak signal amplitude, since the wire groups' pitch (\SI{36}{\milli\meter}) is larger than the typical extent of the ionization charge generated inside a sTGC. Assuming that the true $x$-position of the hit is sampled from a uniform distribution over the width of the wire group, the uncertainty in the x-position is approximately $\frac{36}{\sqrt{12}}$~mm~=~10~mm~\cite{Sauli:117989}.
 
-The $y$-coordinate of the muon position is taken as the Gaussian mean of the peak signal amplitude distribution across groups of contiguous strips. The process of grouping contiguous strip hits on a layer is called clustering, and the resulting group is called a cluster. Figure~\ref{fig:mwpc_coords} sketches the clustering process and a sample cluster is shown in figure~\ref{fig:sample_cluster}. The data acquisition system recorded the identification number of the strip electrode that was hit and in the clustering process the position of the center of the strip electrode is calculated based on the nominal quadruplet geometry. Typically, clusters are built of 3-5 strips. The thickness of the graphite coating over the cathode boards determined how many strips picked up the ionization image charge. Larger clusters can often originate from $\delta$-rays since they spread the ionization charge over a larger area.
-
 \newpage
 \thispagestyle{empty}
 \newgeometry{top=0.5in,bottom=0.5in}
@@ -77,6 +75,8 @@ The $y$-coordinate of the muon position is taken as the Gaussian mean of the pea
 \end{figure}
 \newpage
 \restoregeometry
+
+The $y$-coordinate of the muon position is taken as the Gaussian mean of the peak signal amplitude distribution across groups of contiguous strips. The process of grouping contiguous strip hits on a layer is called clustering, and the resulting group is called a cluster. Figure~\ref{fig:mwpc_coords} sketches the clustering process and a sample cluster is shown in figure~\ref{fig:sample_cluster}. The data acquisition system recorded the identification number of the strip electrode that was hit and in the clustering process the position of the center of the strip electrode is calculated based on the nominal quadruplet geometry. Typically, clusters are built of 3-5 strips. The thickness of the graphite coating over the cathode boards determined how many strips picked up the ionization image charge. Larger clusters can often originate from $\delta$-rays since they spread the ionization charge over a larger area.
 
 Events are removed from further analysis if there are two reconstructed clusters on one sTGC, since some hits could be from electronic noise or a simultaneous second muon traversing the chamber. Clusters are rejected if the cluster size is lesser than three strips (which should not happen for real events thanks to neighbour triggering), and if the cluster size is greater than 25. After all quality selection cuts are applied on hits and clusters approximately half of the events recorded remain.
 
@@ -102,7 +102,6 @@ The offset of a strip from its nominal position can be modeled as a passive tran
 where $y_{nom, i}$ is the position of the muon that would have been recorded on layer $i$ if there was no local offset. Equation~\ref{eqn:local_translation} ignores other factors that affect the cluster position, like position resolution. With cosmics data, there was no external reference to measure $y_{nom, i}$ and the local offset is unknown. Therefore, only relative local offsets can be measured. 
 
 % Potential BREAK for Motivation section at beginning ^
-
 To measure relative local offsets, two of the four sTGC layers are chosen to provide the reference coordinate system with respect to which local offsets are calculated. The hits on the chosen two reference or fixed layers were used to create tracks that can be interpolated or extrapolated (polated) to the other two layers. The set of two fixed layers and the layer polated to are referred to as a tracking combination. The residual of track $i$, $\Delta_i$, is defined as,
 \begin{equation}
     \Delta_i = y_{i} - y_{track, i},
@@ -146,6 +145,8 @@ The area of the region of interest where tracks residuals were included in the r
 % It is only possible to calculate relative local offsets with cosmics data because there was no external reference to measure positions on all layers with respect to. As an example, assuming that the residual on layer 2 in figure~\ref{fig:fake_event_display} is representative of the relative local offset, the residual on layer 2 could be caused by the strips on layer 2 being misaligned from nominal, but it could also be caused by strips on layers 1 and 4 being misaligned from nominal while the strips on layer 2 are in their nominal positions! Any number of combinations of local offsets on layers 1, 2 and 4 could produce the residual on layer 2. The value of relative local offset measurements will be shown and discussed throughout this work.
 The mean of residuals is plotted across each strip layer for every possible tracking combination to get a picture of the how relative local offsets change as a function of position over the layer's surface. Figure~\ref{fig:res_mean_th2} shows the mean of residuals on layer 2 calculated with layers 1 and 3 as reference for two different quadruplets, referred to as QL2.P.11 and QL2.P.8. In figure~\ref{fig:res_mean_th2_ql2p11}, the Gaussian mean of the residual distribution in figure~\ref{fig:res_dist_L2_F13} is the entry in the bin defined by boundaries $x\in\left[197, 297\right]$~mm,  $y\in\left[594.6, 694.6\right]$~mm.
 
+Many of the residual means are non-zero and change smoothly over layer 2, indicating that there are relative local offsets stemming from global misalignments between the strip patterns of different sTGC layers in both quadruplets. Given that the residual mean changes with $x$ in figure~\ref{fig:res_mean_th2_ql2p11}, quadruplet QL2.P.11 likely has a rotation of layer 2 with respect to layers 1 and 3, combined with an offset of the entire layer. The residual means are smaller in figure~\ref{fig:res_mean_th2_ql2p8} indicating that quadruplet QL2.P.8 is less misaligned overall than QL2.P.11; however the relative local offsets range between $\pm$\SI{200}{\micro\meter} so they are significant enough to warrant correction strip positions to achieve the required track angular resolution in the NSW.
+
 \newpage
 \thispagestyle{empty}
 \newgeometry{top=0.5in,bottom=0.5in}
@@ -169,8 +170,6 @@ The mean of residuals is plotted across each strip layer for every possible trac
 \end{figure}
 \newpage
 \restoregeometry
-
-Many of the residual means are non-zero and change smoothly over layer 2, indicating that there are relative local offsets stemming from global misalignments between the strip patterns of different sTGC layers in both quadruplets. Given that the residual mean changes with $x$ in figure~\ref{fig:res_mean_th2_ql2p11}, quadruplet QL2.P.11 likely has a rotation of layer 2 with respect to layers 1 and 3, combined with an offset of the entire layer. The residual means are smaller in figure~\ref{fig:res_mean_th2_ql2p8} indicating that quadruplet QL2.P.8 is less misaligned overall than QL2.P.11; however the relative local offsets range between $\pm$\SI{200}{\micro\meter} so they are significant enough to warrant correction strip positions to achieve the required track angular resolution in the NSW.
 
 % --------------------------------------------------
 \section{Systematic uncertainty}
