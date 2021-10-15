@@ -99,7 +99,7 @@ The offset of a strip from its nominal position can be modeled as a passive tran
     \label{eqn:local_translation}
 \end{equation}
 % Maybe useful sentence?: The true position of individual cosmic muons is not known, and in the analysis the four detector planes float with respect to a software-implemented origin that is not associated with a fixed physical location.
-where $y_{nom, i}$ is the position of the muon that would have been recorded on layer $i$ if there was no local offset. Equation~\ref{eqn:local_translation} ignores other factors that affect the cluster position, like position resolution. With cosmics data, there was no external reference to measure $y_{nom, i}$ and the local offset is unknown. Therefore, only relative local offsets can be measured. 
+where $y_{nom, i}$ is the position of the muon that would have been recorded on layer $i$ if there was no local offset. Equation~\ref{eqn:local_translation} ignores other factors that affect the cluster position, like position resolution. With cosmics data, there was no external reference to measure $y_{nom, i}$ and the local offset is unknown. Therefore, only {\em relative} local offsets can be measured. 
 
 % Potential BREAK for Motivation section at beginning ^
 To measure relative local offsets, two of the four sTGC layers are chosen to provide a reference coordinate system. Relative local offsets are calculated with respect to the two reference or fixed layers. The hits on the two fixed layers were used to create tracks that can be interpolated or extrapolated (polated) to the other two layers. The set of two fixed layers and the layer polated to are referred to as a tracking combination. The residual of track $i$, $\Delta_i$, is defined as,
