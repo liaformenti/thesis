@@ -28,7 +28,7 @@ Predicting the number of proton-proton interactions requires defining a metric c
 \label{eqn:inst_lum}
 \end{equation}
 
-where $f$ is the frequency of the bunch crossings (\SI{25}{\nano\second}), $N_{1}$ and $N_{2}$ are the number of protons in each bunch ($\sim 10^{11}$ protons / bunch), and $\sigma_{x}$ and $\sigma_{y}$ are the RMS of the spatial distributions of the bunch. Therefore, luminosity is a property of accelerator beams, which are set by the capabilities of the accelerator. The design luminosity of the LHC was $10^{34}$~cm$^{-2}$s$^{-1}$. The units of luminosity are an inverse area; multiplying the luminosity by the cross section of a given process gives the expected rate for that process.
+where $f$ is the frequency of the bunch crossings (\SI{40}{MHz}, corresponding to \SI{25}{\nano\second}), $N_{1}$ and $N_{2}$ are the number of protons in each bunch ($\sim 10^{11}$ protons / bunch), and $\sigma_{x}$ and $\sigma_{y}$ are the RMS of the spatial distributions of the bunch. Therefore, luminosity is a property of accelerator beams, which are set by the capabilities of the accelerator. The design luminosity of the LHC was $10^{34}$~cm$^{-2}$s$^{-1}$. The units of luminosity are an inverse area per unit time; multiplying the luminosity by the cross section of a given process gives the expected rate for that process.
 
 Integrating the \textit{instantaneous} luminosity (Equation~\ref{eqn:inst_lum}) over a period of data collection time gives the integrated luminosity,
 
@@ -70,7 +70,7 @@ One of the most anticipated measurements at the HL-LHC is the value of the tripl
 % --------------------------------------------------
 \label{sec:atlas}
 
-The ATLAS experiment~\cite{collaboration_atlas_2008} was designed to support all the physics goals of the LHC. It is \SI{44}{\meter} long and \SI{25}{\meter} in diameter, and weighs 7000 tonnes. The ATLAS experiment is centered around one of the LHC's interaction points (a place where the beams collide). As shown schematically in Figure~\ref{fig:atlas}, ATLAS consists of an array of particle detector subsystems arranged concentrically around the beam pipe.  The ATLAS experiment is cylindrical because it aims to provide 4$\pi$ coverage around the interaction point. In reference to the cylindrical geometry of the experiment, it is helpful to separate the subsystems of ATLAS into the so-called ``barrel'' and ``endcap''/``forward'' regions.
+The ATLAS experiment~\cite{collaboration_atlas_2008} was designed to support all the physics goals of the LHC. It is \SI{44}{\meter} long and \SI{25}{\meter} in diameter, and weighs 7000 tonnes. The ATLAS experiment is centered around one of the LHC's interaction points (a place where the beams collide). As shown schematically in Figure~\ref{fig:atlas}, ATLAS consists of an array of particle detector subsystems arranged concentrically around the beam pipe. The ATLAS experiment has cylindrical symmetry to accommodate the beam pipe and other construction constraints while providing $4\pi$ coverage around the interaction point. In reference to the cylindrical geometry of the experiment, it is helpful to separate the subsystems of ATLAS into the so-called ``barrel'' and ``endcap''/``forward'' regions.
 
 \begin{figure}[h]
     \centering
@@ -81,10 +81,7 @@ The ATLAS experiment~\cite{collaboration_atlas_2008} was designed to support all
 
 For analysis purposes, a spherical coordinate system is defined. The azimuthal angle $\phi$ is measured around the beampipe and the polar angle $\theta$ is measured from the beam pipe. The polar angle is more often expressed in terms of pseudo-rapidity, defined as $\eta = -\ln\tan\left(\theta/2\right)$.  Pseudo-rapidity values vary from 0 (perpendicular to the beam) to $\pm\infty$ (parallel to the beam, defined as the z-direction) and is an approximation to the rapidity of a particle when its momentum is much greater than its mass. It is useful to describe the direction of outgoing particles in proton-proton collisions because differences in rapidity are invariant to a Lorentz boost along the beam direction.
 
-The ATLAS experiment provides identification and kinematic measurements for each particle created after the initial collision, which is done by assembling offline the information recorded by each subsystem. With this information, signatures of processes of interest can be identified and studied. An overview of the main ATLAS subsystems is given below.
-
-\paragraph*{The inner detector} \hfill \break
-The inner detector~\cite{atlas_inner_detector_tdr_1, atlas_inner_detector_tdr_2} (Figure~\ref{fig:atlas_inner_detector}) is for precise measurements of charged particle trajectories, measurement of primary and secondary interaction vertices and assistance in the identification of electrons. A \SI{2}{\tesla} solenoid with field parallel to the beam bends the trajectory of outgoing charged particles. A measurement of the bending radius of each charged particle provides information about its momentum. The innermost part of the inner tracker is made of high-resolution semiconductor pixel and strip detectors while the outermost part is made of straw-tubes. The straw tubes are used in the trajectory measurements but they are also interspersed with material designed to enhance the creation of transition radiation. Transition radiation occurs when a highly relativistic charged particle traverses a material boundary~\cite{grupen_particle_2008}. The amount of transition radiation emitted by a charged particle is detected by the straw-tubes and is used to identify electrons. 
+The ATLAS experiment provides identification and kinematic measurements for each particle created after the initial collision, which is done by assembling offline the information recorded by each subsystem. With this information, signatures of processes of interest can be identified and studied. An overview of the main ATLAS subsystems is given below, starting with the innermost subsystem and moving outwards from the beam pipe.
 
 \begin{figure}[h]
     \centering
@@ -93,7 +90,9 @@ The inner detector~\cite{atlas_inner_detector_tdr_1, atlas_inner_detector_tdr_2}
     \label{fig:atlas_inner_detector}
 \end{figure}
 
-% YOU ARE HERE
+\paragraph*{The inner detector} \hfill \break
+The inner detector~\cite{atlas_inner_detector_tdr_1, atlas_inner_detector_tdr_2} (Figure~\ref{fig:atlas_inner_detector}) is for precise measurements of charged particle trajectories, measurement of primary and secondary interaction vertices and assistance in the identification of electrons. A \SI{2}{\tesla} solenoid with field parallel to the beam bends the trajectory of outgoing charged particles. A measurement of the bending radius of each charged particle provides information about its momentum. The innermost part of the inner tracker is made of high-resolution semiconductor pixel and strip detectors while the outermost part is made of straw-tubes. The straw tubes are used in the trajectory measurements but they are also interspersed with material designed to enhance the creation of transition radiation. Transition radiation occurs when a highly relativistic charged particle traverses a material boundary~\cite{grupen_particle_2008}. The amount of transition radiation emitted by a charged particle is detected by the straw-tubes and is used to identify electrons. 
+
 \paragraph*{Calorimetry system} \hfill \break
 Electromagnetic and hadronic sampling calorimeter units are used to record the energy of electrons, photons and jets\footnote{When quarks or gluons are expelled in a high energy collsion, they create collimated groups of hadrons called jets because they carry a charge called ``colour'', and nature only allows ``colourless'' combinations to exist~\cite{grupen_particle_2008}.}. A combination of liquid-argon (LAr) electromagnetic and hadronic calorimeters~\cite{atlas_lar_cal_tdr} and tile-scintillator hadronic calorimeters~\cite{atlas_tile_cal_tdr} cover the rapidity range $|\eta| < 4.9$, as shown in Figure~\ref{fig:atlas_calorimeter}.
 
@@ -105,6 +104,15 @@ Sampling calorimeters have alternating layers of dense material and material tha
     \caption{Schematic diagram of the ATLAS calorimeter system, with the different segments and the technology used labeled~\cite{collaboration_atlas_2008}.}
     \label{fig:atlas_calorimeter}
 \end{figure}
+
+Before moving onto the next detector layer of the ATLAS experiment, the muon spectrometer, the trigger system is introduced because details about how the muon spectrometer feeds the trigger system partially motivate the NSW upgrade.
+
+\paragraph*{Trigger system} \hfill \break
+It would be impossible to record all the data from bunch crossings every \SI{25}{\nano\second}, corresponding to a rate of $\sim$\SI{40}{MHz}. The ATLAS experiment has a multi-level trigger system to select events of interest for permanent storage. The Level-1 (L1) hardware trigger~\cite{atlas_l1_trigger_tdr} uses partial-granularity information from the muon spectrometer and calorimeters to trigger on high $p_T$ muons, electrons, jets, missing transverse energy, and $\tau$ decaying to hadrons. After Run-3 an upgrade of the trigger system will allow a maximum trigger rate of \SI{1}{MHz} with a latency of \SI{10}{\micro\second}~\cite{tdaq_phase2_tdr}, but for now the working limits are a rate of \SI{100}{kHz}~\cite{martinez_run-2_2016} and \SI{2.5}{\micro\second}~\cite{atlas_l1_trigger_tdr}.
+
+% The Level-1 (L1) hardware trigger uses the muon spectrometer's TGCs and RPCs to trigger on high $p_T$ muons and the calorimeter detector units to trigger on electrons, jets, high missing transverse energy, and $\tau$ decaying to hadrons, with a maximum trigger rate of \SI{100}{kHz} and latency of \SI{2.5}{\micro\second}. The L1 trigger only uses a fraction of the granularity offered by the detectors.
+
+The L1 trigger is used to define regions of interest that are fed into the software high level trigger (HLT)~\cite{atlas_hlt_trigger_tdr}, in which the full granularity of the muon spectrometer and calorimeter are used with information from the inner detector to reduce the trigger rate to 1 kHz. Events that satisfy at least one of the L1 and HLT trigger criteria are recorded to permanent storage for offline analysis.
 
 \paragraph*{Muon spectrometer} \hfill \break
 The muon spectrometer~\cite{atlas_muon_spectrometer_tdr} consists of multiple layers of tracking chambers embedded in a 2 T magnetic field generated by an air-core superconducting toroid magnet system. Figure~\ref{fig:atlas_muon_spectrometer_3D} shows a schematic diagram of the layout of the different chambers and of the toroid magnets~\cite{collaboration_atlas_2008}. The trajectory of a muon is reconstructed from the information recorded by the different types and layers of tracking chambers. The amount of bending in the magnetic field provides a measure of the muon's momentum. In the barrel section of ATLAS, the toroidal magnetic field is created by eight coils bent into the shape of a  "race-track"  and symmetrically arranged around the beampipe.  In the forward region, two end-cap toriods, each with eight smaller racetrack-shaped coils arranged symmetrically around the beam pipe are inserted in the ends of the barrel toroid~\cite{atlas_magnet_tdr}.
@@ -148,16 +156,10 @@ Resistive plate chambers (RPCs) are used for triggering in the barrel and thin-g
 
 % The muon spectrometer is the outermost layer of the ATLAS detector, since only muons (and neutrinos) can pass through the calorimeters. For muons that are ejected towards the end-caps of ATLAS, their trajectory is bent by the magentic field and their position recorded by three successive wheels of muon detectors. With each wheel providing the position of the muon along its trajectory and knowledge of the magentic field, the momentum of the muon generated in the collision can be reconstructed. 
 
-\paragraph*{Trigger system} \hfill \break
-It would be impossible to record all the data from bunch crossings every \SI{25}{\nano\second}, corresponding to a rate of $\sim$\SI{40}{MHz}. The ATLAS experiment has a multi-level trigger system to select events of interest for permanent storage. The Level-1 (L1) hardware trigger~\cite{atlas_l1_trigger_tdr} uses partial-granularity information from the muon spectrometer and calorimeters to trigger on high $p_T$ muons, electrons, jets, missing transverse energy, and $\tau$ decaying to hadrons. After Run-3 an upgrade of the trigger system will allow a maximum trigger rate of \SI{1}{MHz} with a latency of \SI{10}{\micro\second}~\cite{tdaq_phase2_tdr}, but for now the working limits are a rate of \SI{100}{kHz}~\cite{martinez_run-2_2016} and \SI{2.5}{\micro\second}~\cite{atlas_l1_trigger_tdr}.
-
-% The Level-1 (L1) hardware trigger uses the muon spectrometer's TGCs and RPCs to trigger on high $p_T$ muons and the calorimeter detector units to trigger on electrons, jets, high missing transverse energy, and $\tau$ decaying to hadrons, with a maximum trigger rate of \SI{100}{kHz} and latency of \SI{2.5}{\micro\second}. The L1 trigger only uses a fraction of the granularity offered by the detectors.
-
-The L1 trigger is used to define regions of interest that are fed into the software high level trigger (HLT)~\cite{atlas_hlt_trigger_tdr}, in which the full granularity of the muon spectrometer and calorimeter are used with information from the inner detector to reduce the trigger rate to 1 kHz. Events that satisfy at least one of the L1 and HLT trigger criteria are recorded to permanent storage for offline analysis.
-
 % Paragraph separator line
-\begin{center}
-  \noindent\rule[0.5ex]{0.1\linewidth}{0.5pt}
-\end{center}
+%\begin{center}
+% \noindent\rule[0.5ex]{0.1\linewidth}{0.5pt}
+%\end{center}
+\newpage
 
 With the foreseen increase in luminosity at HL-LHC, it is a priority to upgrade the ATLAS detector to further reduce the muon trigger fake rate in the forward region. The New Small Wheels being commissioned to replace the original ATLAS muon small wheels will address this challenge.
