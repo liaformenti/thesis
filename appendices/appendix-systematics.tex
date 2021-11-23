@@ -29,7 +29,7 @@ G(r) = A_{s}exp\left[ \frac{-(r-\mu)^{2}}{2\sigma_s^{2}} \right] + A_{b}exp\left
 
 where $r$ is the residual, $A$ is the Gaussian amplitude, $\mu$ is the Gaussian mean, $\sigma$ is the Gaussian sigma, and the subscripts $s$ and $b$ stand for signal and background respectively. One Gaussian captures the real (signal) tracks and the other captures the tracks built from noise (background). The Gaussian with the smaller width is identified as the signal. 
 
-A single Gaussian fit failed less often than a double Gaussian fit. The Gaussian fits were performed by initially estimating the amplitude to be 100 tracks, the Gaussian mean to be the histogram mean, and Gaussian $\sigma$ to be the RMS. The fit range was restricted to $\pm$1 root-mean-square (RMS) from the histogram mean. The modification helped the Gaussian fit capture the signal peak. An example residual distribution is shown in Figure~\ref{fig:double_Gaussian_example_fit}. 
+A double Gaussian fit was more prone to failure than a single Gaussian fit. The Gaussian fits were performed by initially estimating the amplitude to be 100 tracks, the Gaussian mean to be the histogram mean, and Gaussian $\sigma$ to be the RMS. The fit range was restricted to $\pm$1 root-mean-square (RMS) from the histogram mean. The modification helped the Gaussian fit capture the signal peak. An example residual distribution is shown in Figure~\ref{fig:double_Gaussian_example_fit}. 
 
 \begin{figure}
     \centering
@@ -67,7 +67,7 @@ The Gaussian $\sigma$ should be larger than the double Gaussian $\sigma$ because
 \newpage
 \restoregeometry
 
-Ultimately, a Gaussian fit was chosen for the track residual distributions because it was more robust and did not affect the fitted mean values too strongly.
+Ultimately, a Gaussian fit was chosen for the track residual distributions because it was more robust and there was little significance in the difference between the residual means calculated with either algorithm.
 
 % --------------------------------------------------
 \section{Cosmic muon data collection voltage}
@@ -94,13 +94,13 @@ Neither dataset is better for calculating the mean of residuals in a given area,
 \begin{subfigure}{.45\textwidth}
   \centering
   \includegraphics[width=0.97\linewidth]{figures/figure_compare_residual_fits_QL2P08_2900V_2021-05-21_minus_QL2P08_3100V_2021-05-21_layer4_fixedlayers12_mean_differences.pdf}
-  \caption{Difference in residual means when measured with residuals on layer 4 built from clusters on layers 1 and 2.}
+  \caption{Difference in residual means for residuals on layer 4 built from clusters on layers 1 and 2.}
   \label{fig:voltage_compare_fits_412}
 \end{subfigure}\hfill
 \begin{subfigure}{.45\textwidth}
   \centering
   \includegraphics[width=0.97\linewidth]{figures/figure_compare_residual_fits_QL2P08_2900V_2021-05-21_minus_QL2P08_3100V_2021-05-21_layer2_fixedlayers13_mean_differences.pdf}
-  \caption{Difference in residual means when measured with residuals on layer 2 built from clusters on layers 1 and 3.}
+  \caption{Difference in residual means for residuals on layer 2 built from clusters on layers 1 and 3.}
   \label{fig:voltage_compare_fits_213}
 \end{subfigure}\hfill
 \caption{Difference in residual means for data collected with sample quadruplet QL2.P.8 at \SI{2.9}{kV} and \SI{3.1}{kV} respectively in \SI{100}{\milli\meter} by \SI{100}{\milli\meter} bins.}
@@ -119,13 +119,13 @@ To ensure that changing the cluster fitting algorithm like in Appendix~\ref{appe
     \begin{subfigure}{.45\textwidth}
       \centering
       \includegraphics[width=\linewidth]{figures/compare_residual_fits_QL2P08_3100V_2021-06-18_no_dnl_minus_QL2P08_3100V_2021-07-21_no_reclustering_layer4_fixedlayers12.pdf}
-      \caption{Difference in residual means when measured with residuals on layer 4 built from clusters on layers 1 and 2.}
+      \caption{Difference in residual means for residuals on layer 4 built from clusters on layers 1 and 2.}
       \label{fig:cluster_fit_res_mean_compare_fits_412}
     \end{subfigure}\hfill
     \begin{subfigure}{.45\textwidth}
       \centering
       \includegraphics[width=\linewidth]{figures/figure_compare_residual_fits_QL2P08_3100V_2021-06-18_no_dnl_minus_QL2P08_3100V_2021-07-21_no_reclustering_layer2_fixedlayers13.pdf}
-      \caption{Difference in residual means when measured with residuals on layer 2 built from clusters on layers 1 and 3.}
+      \caption{Difference in residual means for residuals on layer 2 built from clusters on layers 1 and 3.}
       \label{fig:cluster_fit_res_mean_compare_fits_213}
     \end{subfigure}\hfill
   \caption{Difference in residual means when the cluster fit algorithm is \package{Minuit2}~\cite{hatlo_developments_2005} versus Guo's method~\cite{guo_simple_2011} for two different tracking combinations for sample quadruplet, QL2.P.8.}
